@@ -1,5 +1,9 @@
 
 How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
 
+- For the best performance, run this program in VS Code.
+- If you are running this program in other IDEs some of the intended functionality may not work as intended, namely
+  the "clearConsole()" function.
+
 Pre-Game Configuration:
 Depending of whether you're using a Mac OS/Windows-based system you need to comment out

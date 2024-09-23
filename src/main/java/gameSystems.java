@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class gameSystems {
     public static void printWithDelay(String data, long delay) {
@@ -24,30 +25,40 @@ public class gameSystems {
         }
     }
 
-//    public static void clearConsole() {
-//        System.out.print("\033[H\033[2J");
-//        System.out.flush();
-//    }
+    public static void clearConsole() {
+        System.out.print("\033[H\033[2J"); // clears the terminal for better cutscenes
+        System.out.flush();
+    }
 
-    public static void gameDifficulty() {
+    public static void gameDifficulty(Scanner input) {
             ArrayList<String> gameDifficulty = new ArrayList<String>();
             gameDifficulty.add("Liquid Easy");
             gameDifficulty.add("Naked Normal");
             gameDifficulty.add("Solid Normal");
             gameDifficulty.add("Big Boss Hard");
 
-            System.out.println("1) " + gameDifficulty.get(0));
-            System.out.println("2) " + gameDifficulty.get(1));
-            System.out.println("3) " + gameDifficulty.get(2));
-            System.out.println("4) " + gameDifficulty.get(3));
-
-            System.out.println("\n\nSelect a difficulty: ");
+        System.out.println("\nSelect a game difficulty: \n");
+        for (int i = 0; i < gameDifficulty.size(); i++) {
+            System.out.println((i + 1) + ") " + gameDifficulty.get(i));
         }
 
-        public static void main(String[] args) {
-    //        printWithDelay("[You sneak past the guards and move deeper into the tanker]", 50); // Adjust the delay to control the speed of typing
-    //        pauseText(1500);
-    //        printWithDelay("CODEC: Snake!", 50);
-            gameDifficulty();
-        }
+        int choice;
+        do {
+            System.out.println("\nSelect [1], [2], [3], or [4]:\n");
+            while (!input.hasNextInt()) {
+                System.out.println("That's not a number. Please enter a number.");
+                input.next(); // this is important!
+            }
+            choice = input.nextInt();
+            if (choice >= 1 && choice <= 4) {
+                runGame();
+            } else {
+                System.out.println("Please select one of the given numbers...");
+            }
+        } while (choice < 1 || choice > 4);
+    }
+
+    public static void runGame() {
+        System.out.println("This is where Snake's adventure will start!");
+    }
 }
