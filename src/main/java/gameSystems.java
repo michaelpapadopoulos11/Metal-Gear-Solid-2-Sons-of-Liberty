@@ -1,4 +1,4 @@
-import java.io.IOException;
+// import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +13,6 @@ public class gameSystems {
                 System.out.println("Thread was interrupted");
             }
         }
-        System.out.println();
     }
 
     public static void pauseText(long milliseconds) { // this method will simply pause the line of text so it can stay on screen for a certain amount of time
@@ -46,19 +45,17 @@ public class gameSystems {
         do {
             System.out.println("\nSelect [1], [2], [3], or [4]:\n");
             while (!input.hasNextInt()) {
-                System.out.println("That's not a number. Please enter a number.");
-                input.next(); // this is important!
+                clearConsole();
+                System.out.println("That's not a number. Please enter [1], [2], [3], or [4]: ");
+                input.next();
             }
             choice = input.nextInt();
             if (choice >= 1 && choice <= 4) {
-                runGame();
+                Cutscene.runGame();
             } else {
-                System.out.println("Please select one of the given numbers...");
+                clearConsole();
+                System.out.println("Please select one of the difficulty options...");
             }
         } while (choice < 1 || choice > 4);
-    }
-
-    public static void runGame() {
-        System.out.println("This is where Snake's adventure will start!");
     }
 }
