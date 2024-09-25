@@ -1,9 +1,9 @@
 
 How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
 
-- For the best performance, run this program in VS Code.
-- If you are running this program in other IDEs some of the intended functionality may not work as intended, namely
-  the "clearConsole()" function.
+- For optimal performance, run this program in VS Code.
+- To start the game: Run the program from the 'Game.java' file.
 
-Pre-Game Configuration:
-Depending of whether you're using a Mac OS/Windows-based system you need to comment out
+If you're running the game in other IDEs (namely Intellij):
+- The 'clearConsole' function will not work at all (due to IntelliJ's built-in terminal).
+- The 'printwithDelay' function will not display as smoothly as intended.
