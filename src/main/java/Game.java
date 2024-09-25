@@ -6,10 +6,10 @@ public class Game {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        // gameIntro(input); // game menu function
+        gameIntro(input); // game menu function
     
         // game contents:
-        // Cutscene.gameLoading(); // fake intro
+        Cutscene.gameLoading(); // fake intro
 
         Cutscene.hudsonRiverIntro(); // testing the first cutscene
 
