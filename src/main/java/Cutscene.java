@@ -102,7 +102,7 @@ public class Cutscene {
         gameSystems.pauseText(2000);
         gameSystems.printWithDelay("revealing himself as Solid Snake.", 50);
         gameSystems.pauseText(2000);
-        System.out.println("\n\n'The Hero of Shadow Moses'");
+        System.out.println("\n\n                         'The Hero of Shadow Moses'");
         gameSystems.pauseText(4500);
 
         gameSystems.clearConsole();
