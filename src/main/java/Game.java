@@ -11,7 +11,8 @@ public class Game {
         // game contents:
         Cutscene.gameLoading(); // fake intro
 
-        Cutscene.hudsonRiverIntro(); // testing the first cutscene
+        // Cutscene.hudsonRiverIntro(); // testing the first cutscene
+        CODEC.otaconIntro();
 
         input.close();  // Close the scanner once all input operations are done
     }

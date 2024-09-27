@@ -1,4 +1,4 @@
-// // import java.io.IOException;
+// import java.io.IOException;
 // import java.util.ArrayList;
 // import java.util.Scanner;
 
@@ -32,7 +32,7 @@ public class Cutscene {
         gameSystems.pauseText(1500);
 
         gameSystems.clearConsole();
-        gameSystems.printWithDelay("We had classified intelligence that a new type of Metal Gear was \nscheduled for transport. ", 40);
+        gameSystems.printWithDelay("We had classified intelligence that a new type of 'Metal Gear' was \nscheduled for transport. ", 40);
         gameSystems.pauseText(1500);
         gameSystems.printWithDelay("The whole thing stank...", 40);
         gameSystems.pauseText(2000);
@@ -59,7 +59,7 @@ public class Cutscene {
         gameSystems.printWithDelay("cutting through the heavy fog. ", 50);
         gameSystems.pauseText(1500);
         System.out.print("\n         ");
-        gameSystems.printWithDelay("A hooded figure emerges, ", 50);
+        gameSystems.printWithDelay("\nA hooded figure emerges, ", 50);
         gameSystems.printWithDelay("the glow of a cigarette briefly illuminating a determined face ", 50);
         System.out.print("\n         ");
         gameSystems.printWithDelay("under the hood.", 50);
@@ -72,7 +72,7 @@ public class Cutscene {
         gameSystems.pauseText(1500);
 
         gameSystems.printWithDelay("Suddenly, the figure flickers and becomes invisible, ", 50);
-        gameSystems.printWithDelay("Only footsteps can be heard as he \n", 50);
+        gameSystems.printWithDelay("only footsteps can be heard as he \n", 50);
         gameSystems.printWithDelay("sprints through the rain. ", 50);
         gameSystems.pauseText(2000);
         gameSystems.printWithDelay("The poncho flaps wildly in the wind, ", 50);
@@ -105,9 +105,7 @@ public class Cutscene {
         System.out.println("\n\n                         'The Hero of Shadow Moses'");
         gameSystems.pauseText(4500);
 
-        gameSystems.clearConsole();
-        gameSystems.printWithDelay("The mission begins...", 0);
-        gameSystems.pauseText(3000);
-        gameSystems.clearConsole();
+        // NEED TO ADD THE OTACON: "HE'LL KNOW SOON ENOUGH" PART
+
     }
 }
