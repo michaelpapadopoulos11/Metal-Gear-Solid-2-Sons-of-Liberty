@@ -4,17 +4,20 @@ import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        // Scanner input = new Scanner(System.in);
         
-        gameIntro(input); // game menu function
+        // gameIntro(input); // game menu function
     
         // game contents:
-        Cutscene.gameLoading(); // fake intro
+        // Cutscene.gameLoading(); // fake intro
 
-        Cutscene.hudsonRiverIntro(); // testing the first cutscene
-        CODEC.otaconIntro();
+        // Cutscene.hudsonRiverIntro(); // testing the first cutscene
+        // CODEC.otaconIntro();
 
-        input.close();  // Close the scanner once all input operations are done
+        Cutscene.hudsonRiverPostIntro();
+        CODEC.otaconImageID();
+
+        // input.close();  // Close the scanner once all input operations are done
     }
 
     public static void gameIntro(Scanner input) { // runs the pre-game contents + difficulty selection
@@ -25,7 +28,6 @@ public class Game {
         gameSystems.clearConsole();
         gameSystems.printWithDelay("\n        A Hideo Kojima Original Game...", 50);
         gameSystems.pauseText(1500);
-
 
         gameSystems.clearConsole(); // clear console function does NOT work in IntelliJ !!
         gameSystems.printWithDelay("\n     Metal Gear Solid 2: Sons of Liberty", 50);

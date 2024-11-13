@@ -1,6 +1,6 @@
 // import java.io.IOException;
 // import java.util.ArrayList;
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class Cutscene {
 
@@ -40,7 +40,7 @@ public class Cutscene {
         gameSystems.pauseText(3000);
         gameSystems.clearConsole();
 
-        // describing the setting
+        // describing the setting -- add text delay to 50 for all text in this section
         gameSystems.clearConsole();
         gameSystems.printWithDelay("\nSetting: ",50);
         gameSystems.pauseText(2000);
@@ -62,38 +62,38 @@ public class Cutscene {
         gameSystems.printWithDelay("the glow of a cigarette briefly illuminating a determined face ", 50);
         System.out.print("\n         ");
         gameSystems.printWithDelay("under the hood.", 50);
-        gameSystems.pauseText(4000);
-
-        System.out.print("\n\n         ");
-        gameSystems.printWithDelay("The hooded figure quickens the pace, breaking into a jog. ", 50);
         gameSystems.pauseText(1500);
-        gameSystems.printWithDelay("The jog turns into a sprint.", 50);
+        gameSystems.printWithDelay(" The hooded figure quickens the pace, breaking into a jog. ", 50);
         gameSystems.pauseText(1500);
+        gameSystems.printWithDelay("The jog turns ", 50);
+        System.out.print("\n         ");
+        gameSystems.printWithDelay("into a sprint. ", 50);
 
-        System.out.print("\n\n         ");
+
+        gameSystems.pauseText(1500);
         gameSystems.printWithDelay("Suddenly, the figure flickers and becomes invisible, ", 50);
-        gameSystems.printWithDelay("only footsteps can be heard as he \n", 50);
-        System.out.print("         ");
+        gameSystems.printWithDelay("only footsteps can be ", 50);
+        System.out.print("\n         ");
+        gameSystems.printWithDelay("heard as he ", 50);
         gameSystems.printWithDelay("sprints through the rain. ", 50);
         gameSystems.pauseText(2000);
         gameSystems.printWithDelay("The poncho flaps wildly in the wind, ", 50);
-        gameSystems.printWithDelay("betraying the figure's swift, \n", 50);
+        gameSystems.printWithDelay("betraying the \n", 50);
         System.out.print("         ");
-        gameSystems.printWithDelay("ghost-like movements. ", 50);
+        gameSystems.printWithDelay("figure's swift, ghost-like movements.", 50);
+        System.out.print("         ");
+        gameSystems.printWithDelay(" ", 50);
         gameSystems.pauseText(1500);
 
         System.out.print("\n\n         ");
         gameSystems.printWithDelay("With a sudden burst of speed, the figure leaps, ", 50);
         gameSystems.printWithDelay("bungee cord attached, plunging towards the", 50);
         System.out.print("\n         ");
-        gameSystems.printWithDelay("Hudson River.\n\n", 50);
-
-        gameSystems.pauseText(2500);
-
+        gameSystems.printWithDelay("Hudson River. ", 50);
+        gameSystems.pauseText(2000);
+        gameSystems.printWithDelay("Below, the dark silhouette of a large cargo freighter comes into view, it's \n", 50);
         System.out.print("         ");
-        gameSystems.printWithDelay("Below, the dark silhouette of a large cargo freighter comes into view, it's the 'USS Discovery'", 50);
-        System.out.print("\n         ");
-        gameSystems.printWithDelay("Tanker.\n\n", 50);
+        gameSystems.printWithDelay("the 'USS Discovery' Tanker.\n\n", 50);
         gameSystems.pauseText(1500);
 
         System.out.print("         ");
@@ -102,8 +102,8 @@ public class Cutscene {
         System.out.print("\n         ");
         gameSystems.printWithDelay("rear section of the ship.", 50);
         gameSystems.pauseText(4000);
-        gameSystems.clearConsole();
 
+        gameSystems.clearConsole();
         gameSystems.printWithDelay("As the figure lands, the stealth camo starts zapping...\n\n", 50);
         gameSystems.pauseText(1000);
 
@@ -119,6 +119,52 @@ public class Cutscene {
         gameSystems.pauseText(4500);
 
         // NEED TO ADD THE OTACON: "HE'LL KNOW SOON ENOUGH" PART
-
     }
-}
+
+    public static void hudsonRiverPostIntro() {
+        gameSystems.clearConsole();
+    
+        gameSystems.printWithDelay("Context: ", 50);
+        gameSystems.pauseText(1500);
+    
+        String indent = "         ";
+    
+        gameSystems.printWithDelay("Suddenly, the quiet night erupts into chaos. Without warning, armed\n", 50);
+        gameSystems.printWithDelay(indent + "figures storm the USS Discovery. Under the cover of darkness and \n", 50);
+        gameSystems.printWithDelay(indent + "driving rain, they assert control with disturbing precision. Armed\n", 50);
+        gameSystems.printWithDelay(indent + "with rifles but relying on knives to maintain silence, they quickly\n", 50);
+        gameSystems.printWithDelay(indent + "neutralize the ship's guards. Their methodical and disciplined move-\n", 50);
+        gameSystems.printWithDelay(indent + "ments suggest military training. Snake overhears their commands sho-\n", 50);
+        gameSystems.printWithDelay(indent + "uted in Russian, confirming their identity.\n\n", 50);
+        gameSystems.pauseText(3500);
+    
+        gameSystems.printWithDelay(indent + "Among the shadows, a particular figure stands out, issuing orders.\n", 50);
+        gameSystems.printWithDelay(indent + "Snake suspects this man could be the groups leader, judging by his\n", 50);
+        gameSystems.printWithDelay(indent + "firm command over the men.\n\n", 50);
+        
+        // Simulating the capture of the photo
+        gameSystems.printWithDelay(indent + "[Snake captures an image of the unknown Russian leader].\n\n", 50);
+        gameSystems.pauseText(1000);
+    
+        System.out.println(indent + "Press [ENTER] to transmit the image to Otacon.");
+        new Scanner(System.in).nextLine();
+    
+        // image upload oart
+        gameSystems.clearConsole();
+        gameSystems.printWithDelay(indent + "Initiating secure upload protocol...\n", 30);
+        System.out.print(indent);
+        for (int i = 0; i < 10; i++) {
+            System.out.print("█");
+            gameSystems.pauseText(500); // Simulating the upload processing time with a progress bar
+        }
+    
+        System.out.println("\n" + indent + "Data encryption: 256-bit AES...");
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(indent + "Establishing VPN connection...\n", 5);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(indent + "Uploading via satellite link...\n\n", 10);
+        gameSystems.pauseText(1000);
+        System.out.println(indent + "Upload complete. Data packet secured.\n");
+        gameSystems.pauseText(2500);
+        }
+    }
