@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
-        // Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         
         // gameIntro(input); // game menu function
     
-        // game contents:
+        // // game contents:
         // Cutscene.gameLoading(); // fake intro
 
         // Cutscene.hudsonRiverIntro(); // testing the first cutscene
         // CODEC.otaconIntro();
+        // Cutscene.hudsonRiverPostIntro();
+        // CODEC.otaconImageID();
+        gameplayChoices.firstPlayerChoice();
 
-        Cutscene.hudsonRiverPostIntro();
-        CODEC.otaconImageID();
-
-        // input.close();  // Close the scanner once all input operations are done
+        input.close();  // Close the scanner once all input operations are done
     }
 
     public static void gameIntro(Scanner input) { // runs the pre-game contents + difficulty selection

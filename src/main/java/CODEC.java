@@ -153,7 +153,7 @@ public class CODEC {
     System.out.print("OTACON: ");
         gameSystems.printWithDelay("Exactly.", 40);
         gameSystems.pauseText(1000);
-        gameSystems.printWithDelay(" And now every state, group and dotcom.\n", 40);
+        gameSystems.printWithDelay(" And now every state, group and dotcom\n", 40);
         System.out.print("        ");
         gameSystems.printWithDelay("has its own version of Metal Gear.\n\n", 40);
         gameSystems.pauseText(500);
@@ -239,7 +239,7 @@ public class CODEC {
         System.out.print("OTACON: ");
         gameSystems.printWithDelay("Very good. ", 40);
         gameSystems.pauseText(200);
-        gameSystems.printWithDelay("Don't you forget thay you're a part of.\n", 40);
+        gameSystems.printWithDelay("Don't you forget that you're a part of.\n", 40);
         System.out.print("        ");
         gameSystems.printWithDelay("Philanthropy now, an anti-Metal Gear Organisation and \n", 40);
         System.out.print("        ");
@@ -293,8 +293,11 @@ public class CODEC {
         gameSystems.printWithDelay("All right. ", 40);
         gameSystems.pauseText(500);
         gameSystems.printWithDelay("I'll do my best.\n", 40);
-        gameSystems.pauseText(1000);
+        gameSystems.pauseText(3000);
 
         CODEC.codecEnd();
     }
+
+
+    // need an RNG codec function where the player can randomly call otacon and have a bunch of different call options.
 }
