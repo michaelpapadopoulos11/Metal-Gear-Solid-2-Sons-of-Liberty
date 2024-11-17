@@ -92,7 +92,7 @@ public class CODEC {
 
     System.out.print("SNAKE:  ");
         gameSystems.printWithDelay("Right, I didn't plan on relying on this gadget anyway.\n", 40);
-        gameSystems.pauseText(2000);
+        gameSystems.pauseText(1000);
 
         System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
         gameSystems.printWithDelay(indent, 0);  
@@ -268,10 +268,11 @@ public class CODEC {
         // CODEC.codecCalling();
     
         gameSystems.clearConsole();
-        System.out.println("\n" + "==[ CODEC ]=======================[ Frequency: 140.85 ]==");
-        System.out.println("" + "    SESSION: LIVE | PTT: ON                             ");
-        System.out.println("" + "---------------------------------------------------------");
-                
+        // System.out.println("\n" + "\033[1;30m==[ CODEC VIEWER ]================[ Frequency: 140.85 ]==\033[1;30m" + "\n");
+        System.out.println("\033[1;30m┌──────────────────────────────────────────────────────┐\033[0m");
+        System.out.println("\033[1;30m" + "│ CODEC  |  Frequency: 140.85                          │" + "\033[0m");
+        System.out.println("\033[1;30m└──────────────────────────────────────────────────────┘\033[0m");
+
         System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("I've transmitted the photo, let's get an ID on\n", 40);
         System.out.print("         ");
@@ -311,10 +312,11 @@ public class CODEC {
         gameSystems.pauseText(500);
         gameSystems.printWithDelay("I'll do my best.\n", 40);
         gameSystems.pauseText(3000);
-    
-        System.out.println("\n" + "---------------------------------------------------------");
-        System.out.println("\n" + "         [ENTER] to end call.");
-            gameSystems.readInput();            
+        
+        System.out.println("\n" + "\033[1;30m============================[  END SESSION: [ENTER] ]==");
+
+        // System.out.println("\n" + "\033[1;30m" + "         [ENTER] to end call." + "\033[1;30m");
+        gameSystems.readInput();            
         gameSystems.clearConsole();
         CODEC.codecEnd();
     }

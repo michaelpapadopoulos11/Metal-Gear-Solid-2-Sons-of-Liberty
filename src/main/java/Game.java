@@ -17,7 +17,7 @@ public class Game {
         // Cutscene.hudsonRiverPostIntro();
 
         CODEC.otaconImageID();
-        gameplayChoices.firstPlayerChoice();
+        // gameplayChoices.firstPlayerChoice();
 
         input.close();  // Close the scanner once all input operations are done
     }
