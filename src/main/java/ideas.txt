@@ -6,11 +6,6 @@
 - ammo count / pickup ammo
 - RNG for if snake can tranq the target properly
 
-
-
-
-
-
 //                          UI POTENTIAL DESIGN:
 
 // Context: Snake is currently at the rear end of the USS Discvery
@@ -29,3 +24,7 @@
 // 4) access back
 // ------------------------------------------------------------------------
 // choice : __
+
+
+- snakes health bar needs to change colours depending of current hp (green / yellow / red kinda thing)
+- cool chemical compound symbols on the main menu vibe / animate it ??

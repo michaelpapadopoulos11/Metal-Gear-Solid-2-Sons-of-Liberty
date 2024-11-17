@@ -6,6 +6,7 @@ public class CODEC {
 
     public static void codecCalling() { // codec ringtone function  
         gameSystems.clearConsole();
+        System.out.println("\n");
         System.out.println("   ┌────────────────────────────────────────────┐");
         System.out.println("   │                                            │");
         System.out.println("   │              CODEC CONNECTION              │");
@@ -15,6 +16,7 @@ public class CODEC {
         gameSystems.clearConsole();
         gameSystems.pauseText(500);
 
+        System.out.println("\n");
         System.out.println("   ┌────────────────────────────────────────────┐");
         System.out.println("   │                                            │");
         System.out.println("   │              CODEC CONNECTION              │");
@@ -25,41 +27,39 @@ public class CODEC {
         gameSystems.pauseText(500);
     
         gameSystems.clearConsole();
-        System.out.println("┌──────────────────────────────────────────────────┐");
-        System.out.println("│                                                  │");
-        System.out.println("│              CONNECTION ESTABLISHED              │");
-        System.out.println("│                                                  │");
-        System.out.println("└──────────────────────────────────────────────────┘");
+        System.out.println("\n");
+        System.out.println("\033[0;32m┌──────────────────────────────────────────────────┐\033[0m");
+        System.out.println("\033[0;32m│                                                  │\033[0m");
+        System.out.println("\033[0;32m│              CONNECTION ESTABLISHED              │\033[0m");
+        System.out.println("\033[0;32m│                                                  │\033[0m");
+        System.out.println("\033[0;32m└──────────────────────────────────────────────────┘\033[0m");
         gameSystems.pauseText(1500);
     }
 
     public static void codecEnd() { // end call function for codec calls
         gameSystems.clearConsole();
         
-        System.out.println("┌──────────────────────────────────────────────────┐");
-        System.out.println("│                                                  │");
-        System.out.println("│              TERMINATING CONNECTION              │");
-        System.out.println("│                                                  │");
-        System.out.println("└──────────────────────────────────────────────────┘");
-        gameSystems.pauseText(500); 
-    
         gameSystems.clearConsole();
         gameSystems.pauseText(500);
-        System.out.println("┌──────────────────────────────────────────────────┐");
-        System.out.println("│                                                  │");
-        System.out.println("│              TERMINATING CONNECTION              │");
-        System.out.println("│                                                  │");
-        System.out.println("└──────────────────────────────────────────────────┘");
-        gameSystems.pauseText(750); 
-    
+        System.out.println("\n");
+        System.out.println("\033[0;31m┌──────────────────────────────────────────────────┐\033[0m");
+        System.out.println("\033[0;31m│                                                  │\033[0m");
+        System.out.println("\033[0;31m│               CONNECTION TERMINATED              │\033[0m");
+        System.out.println("\033[0;31m│                                                  │\033[0m");
+        System.out.println("\033[0;31m└──────────────────────────────────────────────────┘\033[0m");
+        gameSystems.pauseText(1000); 
         gameSystems.clearConsole(); 
     }
-    
+
+        
     public static void otaconIntro() {
         codecCalling();
         gameSystems.clearConsole();
 
-    System.out.print("SNAKE:  ");
+        String indent = "\n         ";
+        System.out.println("\n\033[1;30m" + "==[ CODEC ]=======================[ Frequency: 140.85 ]\n" + "\033[0m");
+
+        System.out.print("SNAKE:  ");
         gameSystems.printWithDelay("This is Snake, do you read me Otacon?\n\n", 40);
         gameSystems.pauseText(1500);
 
@@ -91,10 +91,15 @@ public class CODEC {
         gameSystems.pauseText(1500);
 
     System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Right, I didn't plan on relying on this gadget anyway.\n\n", 40);
+        gameSystems.printWithDelay("Right, I didn't plan on relying on this gadget anyway.\n", 40);
         gameSystems.pauseText(2000);
 
+        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
+        gameSystems.printWithDelay(indent, 0);  
+        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
+        gameSystems.readInput();            
     gameSystems.clearConsole();
+
     System.out.print("OTACON: ");
         gameSystems.printWithDelay("The private sector's not too bad is it?\n", 40);
         System.out.print("        ");
@@ -145,7 +150,14 @@ public class CODEC {
         gameSystems.printWithDelay("were sold on the black market after Shadow Moses?'\n\n", 40);
         gameSystems.pauseText(2000);
 
+        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
+        gameSystems.printWithDelay(indent, 0);  
+        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
+        gameSystems.readInput();            
         gameSystems.clearConsole();
+
+
+
     System.out.print("SNAKE:  ");
         gameSystems.printWithDelay("All Ocelot's doing...\n\n", 40);
         gameSystems.pauseText(1000);
@@ -253,51 +265,61 @@ public class CODEC {
     }
 
     public static void otaconImageID() {
-        CODEC.codecCalling();
-
+        // CODEC.codecCalling();
+    
         gameSystems.clearConsole();
-        System.out.print("SNAKE:  ");
+        System.out.println("\n" + "==[ CODEC ]=======================[ Frequency: 140.85 ]==");
+        System.out.println("" + "    SESSION: LIVE | PTT: ON                             ");
+        System.out.println("" + "---------------------------------------------------------");
+                
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("I've transmitted the photo, let's get an ID on\n", 40);
-        System.out.print("        ");
+        System.out.print("         ");
         gameSystems.printWithDelay("him ASAP.\n\n", 40);
         gameSystems.pauseText(1000);
-
-        System.out.print("OTACON: ");
+    
+        System.out.print("\033[0;32mOTACON:  \033[0m");
         gameSystems.printWithDelay("I'm on it!\n\n", 40);
         gameSystems.pauseText(1500);
         
-        System.out.print("SNAKE:  ");
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("Looks like the tanker's theirs now.", 40);
         gameSystems.pauseText(500);
         gameSystems.printWithDelay(" We need to \n", 40);
-        System.out.print("        ");
+        System.out.print("         ");
         gameSystems.printWithDelay("get a fix on who they are.\n\n", 40);
-
-        System.out.print("OTACON: ");
+        gameSystems.pauseText(2000);
+    
+        System.out.print("\033[0;32mOTACON:  \033[0m");
         gameSystems.printWithDelay("Look, Snake, all we need is the photographic\n", 40);
-        System.out.print("        ");
+        System.out.print("         ");
         gameSystems.printWithDelay("evidence of Metal Gear.\n\n", 40);
         gameSystems.pauseText(2000);
-
-        System.out.print("        ");
+    
+        System.out.print("         ");
         gameSystems.printWithDelay("As long as we have those, we can put it online\n", 40);
-        System.out.print("        ");
+        System.out.print("         ");
         gameSystems.printWithDelay("and blow the whole thing wide open. ", 40);
         gameSystems.pauseText(500);
         gameSystems.printWithDelay("So no\n", 40);
-        System.out.print("        ");
+        System.out.print("         ");
         gameSystems.printWithDelay("pyrotechnics, okay?\n\n", 40);
         gameSystems.pauseText(500);
-
-        System.out.print("SNAKE:  ");
+    
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("All right. ", 40);
         gameSystems.pauseText(500);
         gameSystems.printWithDelay("I'll do my best.\n", 40);
         gameSystems.pauseText(3000);
-
+    
+        System.out.println("\n" + "---------------------------------------------------------");
+        System.out.println("\n" + "         [ENTER] to end call.");
+            gameSystems.readInput();            
+        gameSystems.clearConsole();
         CODEC.codecEnd();
     }
-
-
+    
+    // public static void otaconRNG() {}
+    // chinese proverb lines .......
     // need an RNG codec function where the player can randomly call otacon and have a bunch of different call options.
 }

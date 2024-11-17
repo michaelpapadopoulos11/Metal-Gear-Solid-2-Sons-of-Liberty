@@ -7,14 +7,16 @@ public class Game {
         Scanner input = new Scanner(System.in);
         
         // gameIntro(input); // game menu function
-    
+        // gameSystems.gameDifficulty(input);
+
         // // game contents:
         // Cutscene.gameLoading(); // fake intro
 
         // Cutscene.hudsonRiverIntro(); // testing the first cutscene
         // CODEC.otaconIntro();
         // Cutscene.hudsonRiverPostIntro();
-        // CODEC.otaconImageID();
+
+        CODEC.otaconImageID();
         gameplayChoices.firstPlayerChoice();
 
         input.close();  // Close the scanner once all input operations are done
@@ -22,39 +24,42 @@ public class Game {
 
     public static void gameIntro(Scanner input) { // runs the pre-game contents + difficulty selection
         gameSystems.clearConsole();
-        gameSystems.printWithDelay("\n               Mike presents...", 50);
+        System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
+    
+        // Print "Mike presents..." centered with delay
+        String introText = "Mike presents...";
+        int padding = (80 - introText.length()) / 2; // calculate padding
+        String paddedIntro = String.format("%" + padding + "s%s", "", introText); // apply padding
+        gameSystems.printWithDelay("\033[0;37m" + paddedIntro + "\033[0m", 50);
         gameSystems.pauseText(1500);
-
+    
         gameSystems.clearConsole();
-        gameSystems.printWithDelay("\n        A Hideo Kojima Original Game...", 50);
+        System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
+    
+        // Print "A Hideo Kojima Original Game..." centered with delay
+        String hideoGame = "A Hideo Kojima Original Game...";
+        padding = (80 - hideoGame.length()) / 2;
+        String paddedHideo = String.format("%" + padding + "s%s", "", hideoGame);
+        gameSystems.printWithDelay("\033[0;37m" + paddedHideo + "\033[0m", 50);
         gameSystems.pauseText(1500);
-
-        gameSystems.clearConsole(); // clear console function does NOT work in IntelliJ !!
-        gameSystems.printWithDelay("\n     Metal Gear Solid 2: Sons of Liberty", 50);
+    
+        gameSystems.clearConsole();
+        System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
+    
+        // Print "Metal Gear Solid 2: Sons of Liberty" centered with delay
+        String mgsTitle = "Metal Gear Solid 2: Sons of Liberty";
+        padding = (80 - mgsTitle.length()) / 2;
+        String paddedTitle = String.format("%" + padding + "s%s", "", mgsTitle);
+        gameSystems.printWithDelay("\033[1;36m" + paddedTitle + "\033[0m", 50);
         gameSystems.pauseText(1500);
-        System.out.println("\n     ------- THE TANKER INCIDENT -------");
+    
+        System.out.println("\033[1;32m\n                      ------- THE TANKER INCIDENT -------\033[0m");
         gameSystems.pauseText(2000);
-        gameSystems.printWithDelay("\n (An interactive text-adventure experience!)\n", 60);
-        gameSystems.pauseText(1000);
-
-        int choice = 0; 
-
-        System.out.println("\n    Select [1] to continue or [2] to exit\n");
-        String userInput = input.nextLine(); // reads user input
+    
+        // Continue with the game or exit option
+        System.out.println("\033[32m\n\n\n\n\n\n\n\n\n\n                   Select [ENTER] to continue or [0] to exit\033[0m");
+        System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
+        gameSystems.readInput();        
         gameSystems.clearConsole();
-
-    try {
-        choice = Integer.parseInt(userInput);
-        if (choice == 1) {
-            gameSystems.gameDifficulty(input);
-        } else if (choice == 2) {
-                System.out.println("* exits terminal - functionality not finished *");
-        } else {
-                System.out.println("must select either [1] or [2]");
-                input.next();
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("invalid number, please enter [1] or [2]");
         }
     }
-}

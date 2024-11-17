@@ -1,8 +1,23 @@
 
+"Metal Gear Solid 2: Sons of Liberty - The Text Adventure!" Read Me
+
+
+BEFORE STARTING THE APPLICATION :
+
+1. Selecting the correct theme:
+Navigate to: Bottom left of VS Code --> Select the Gear Icon --> Themes --> Colour Theme --> Solarized Dark - for the intended experience.
+
+2. Selecting the correct font:
+- Go to the link : https://fonts.google.com/specimen/Anonymous+Pro and install the theme.
+- (*On VS Code*) Navigate to: File --> Preferences --> Settings --> In the search bar type "terminal font" --> In the 'Font Family' box enter 
+  "Anonymous Pro".
+
+------------------------------------------------------------------------------
+
 How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
 
-- For optimal performance, run this program in VS Code.
-- To start the game: Run the program from the 'Game.java' file.
+- For optimal and intended purposes, run this program in VS Code IDE.
+- To start the game : Run the program from the 'Game.java' file.
 
 If you're running the game in other IDEs (namely Intellij):
 - The 'clearConsole' function will not work at all (due to IntelliJ's built-in terminal).
