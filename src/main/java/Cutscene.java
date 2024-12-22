@@ -1,6 +1,6 @@
 // import java.io.IOException;
 // import java.util.ArrayList;
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Cutscene {
 
@@ -22,12 +22,27 @@ public class Cutscene {
         gameSystems.pauseText(2000);
     }
 
+    public static void topHeader() {
+        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        System.out.println("" + "\033[1;30m" + "                                        Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
+        // System.out.println("" + "\033[1;30m" + "                     Metal Gear Solid 2: The Tanker Incident"                 + "\033[0m");
+        // System.out.println("" + "\033[1;30m" + " Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
+        System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
+    }
+
+    public static void bottomHeader() {
+        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        System.out.println("\033[1;30m" + "\n         " +"Select [ENTER] to continue." + "\033[1;30m");
+        gameSystems.readInput();            
+    }
+
     public static void hudsonRiverIntro() {
         String indent = "\n         ";
 
         // // first game cutscene !!!
             gameSystems.clearConsole();
-            System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+            topHeader();
+
             gameSystems.pauseText(1500);
             gameSystems.printWithDelay(indent, 0);  
             gameSystems.printWithDelay("'The Hudson River, ", 50);
@@ -48,15 +63,13 @@ public class Cutscene {
             gameSystems.printWithDelay(indent, 0);  
             gameSystems.printWithDelay("...but our noses have been out in the cold too long.'\n", 40);
             gameSystems.pauseText(1500);
-            System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
+            bottomHeader();
             gameSystems.printWithDelay(indent, 0);  
-            System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
-            gameSystems.readInput();            
             gameSystems.clearConsole();
     
         
         // describing the setting -- add text delay to 50 for all text in this section
-        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        topHeader();
         gameSystems.printWithDelay("\nSetting: ",50);
         gameSystems.pauseText(2000);
         gameSystems.printWithDelay("A stormy night. ", 50);
@@ -113,14 +126,11 @@ public class Cutscene {
         gameSystems.printWithDelay(indent, 0);  
         gameSystems.printWithDelay("their trajectory onto the rear section of the ship.", 50);
         gameSystems.printWithDelay(indent, 0);  
-        gameSystems.pauseText(2000);
-        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
-        gameSystems.printWithDelay(indent, 0);  
-        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
-        gameSystems.readInput();        
+        gameSystems.pauseText(1000);
+        bottomHeader();
 
         gameSystems.clearConsole();
-        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        topHeader();
         gameSystems.printWithDelay(indent, 0);  
         gameSystems.printWithDelay("As the figure lands, the stealth camo starts zapping...", 50);
         gameSystems.printWithDelay(indent, 0);  
@@ -140,10 +150,7 @@ public class Cutscene {
         gameSystems.pauseText(2000);
         System.out.println("\033[0;34m\n\n                              'The Hero of Shadow Moses'\033[0m");
         gameSystems.pauseText(2500);
-        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
-        gameSystems.printWithDelay(indent, 0);  
-        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
-        gameSystems.readInput();        
+        bottomHeader();
 
 
         // NEED TO ADD THE OTACON: "HE'LL KNOW SOON ENOUGH" PART
@@ -156,7 +163,7 @@ public class Cutscene {
     public static void hudsonRiverPostIntro() {
         gameSystems.clearConsole();
     
-        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        topHeader();
         gameSystems.printWithDelay("\nContext: ", 50);
         gameSystems.pauseText(1500);
     
@@ -176,20 +183,21 @@ public class Cutscene {
         gameSystems.printWithDelay(indent + "firm command over the men.\n\n", 40);
         
         // Simulating the capture of the photo
-        gameSystems.printWithDelay(indent + "[Snake captures an image of the unknown Russian leader].\n\n", 40);
+        gameSystems.printWithDelay("        [Snake captures an image of the unknown Russian leader].\n", 40);
         gameSystems.pauseText(1000);
     
-        System.out.println("\033[1;30m================================================================================\033[0m");
+        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
         System.out.println("\n" + "\033[0;32m" + indent + "Press [ENTER] to transmit the image to Otacon.\033[0m");
-        new Scanner(System.in).nextLine();
+        gameSystems.readInput();        
     
         // image upload art
         gameSystems.clearConsole();
+        topHeader();
         gameSystems.printWithDelay("\n" + indent + "Initiating secure upload protocol...\n", 30);
         System.out.print(indent);
         for (int i = 0; i < 10; i++) {
-            System.out.print("█");
-            gameSystems.pauseText(500);
+        System.out.print("█");
+        gameSystems.pauseText(500);
         }
     
         System.out.println("\033[1;30m\n" + indent + "Data encryption: 256-bit AES...\033[0m");
@@ -199,6 +207,6 @@ public class Cutscene {
         gameSystems.printWithDelay("\033[1;30m" + indent + "Uploading via satellite link...\n\n\033[0m", 10);
         gameSystems.pauseText(1000);
         System.out.println("\033[0;32m" + indent + "Upload successful. Data packet secured.\n\033[0m");
-        gameSystems.pauseText(2500);
+        gameSystems.pauseText(2000);
         }
     }

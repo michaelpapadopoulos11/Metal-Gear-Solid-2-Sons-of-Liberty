@@ -9,15 +9,15 @@ public class Game {
         // gameIntro(input); // game menu function
         // gameSystems.gameDifficulty(input);
 
-        // // game contents:
+        // // // game contents:
         // Cutscene.gameLoading(); // fake intro
 
         // Cutscene.hudsonRiverIntro(); // testing the first cutscene
-        // CODEC.otaconIntro();
-        // Cutscene.hudsonRiverPostIntro();
+        CODEC.otaconIntro();
+        Cutscene.hudsonRiverPostIntro();
 
         CODEC.otaconImageID();
-        // gameplayChoices.firstPlayerChoice();
+        gameplayChoices.firstPlayerChoice();
 
         input.close();  // Close the scanner once all input operations are done
     }
@@ -27,7 +27,7 @@ public class Game {
         System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
     
         // Print "Mike presents..." centered with delay
-        String introText = "Mike presents...";
+        String introText = "       Mike presents...";
         int padding = (80 - introText.length()) / 2; // calculate padding
         String paddedIntro = String.format("%" + padding + "s%s", "", introText); // apply padding
         gameSystems.printWithDelay("\033[0;37m" + paddedIntro + "\033[0m", 50);
@@ -57,7 +57,7 @@ public class Game {
         gameSystems.pauseText(2000);
     
         // Continue with the game or exit option
-        System.out.println("\033[32m\n\n\n\n\n\n\n\n\n\n                   Select [ENTER] to continue or [0] to exit\033[0m");
+        System.out.println("\033[32m\n\n\n\n\n\n\n                   Select [ENTER] to continue or [0] to exit\033[0m");
         System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
         gameSystems.readInput();        
         gameSystems.clearConsole();

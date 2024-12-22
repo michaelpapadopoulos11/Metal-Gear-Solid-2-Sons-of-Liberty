@@ -51,227 +51,266 @@ public class CODEC {
         gameSystems.clearConsole(); 
     }
 
+    public static void codecTopBorder() {
+        System.out.println("\033[1;30m" + " ======================================================" + "\033[1;30m"); 
+        System.out.println("\033[1;30m" + "  CODEC  |                |  FREQ: 140.85  |  < TUNE > \033[1;30m");
+        System.out.println("\033[1;30m" + " ======================================================" + "\033[1;30m\n");
+            }
+
+    public static void codecBottomContinueBorder() {
+        System.out.println("\n\033[1;30m" + " ======================================================" + "\033[1;30m"); 
+        System.out.println("\033[1;30m" +   "  PTT: ON  |                 |  CONTINUE CALL: [ENTER]  " + "\033[1;30m");
+        System.out.println("\033[1;30m" +   " ======================================================" + "\033[1;30m\n");
+    }
+
+    public static void codecBottomBorder() {
+        System.out.println("\n\033[1;30m" + " ======================================================" + "\033[1;30m"); 
+        System.out.println("\033[1;30m" +   "  PTT: ON  |                      |  END CALL: [ENTER]  " + "\033[1;30m");
+        System.out.println("\033[1;30m" +   " ======================================================" + "\033[1;30m\n");
+    }               
         
     public static void otaconIntro() {
         codecCalling();
         gameSystems.clearConsole();
 
-        String indent = "\n         ";
-        System.out.println("\n\033[1;30m" + "==[ CODEC ]=======================[ Frequency: 140.85 ]\n" + "\033[0m");
-
-        System.out.print("SNAKE:  ");
+        codecTopBorder();
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("This is Snake, do you read me Otacon?\n\n", 40);
         gameSystems.pauseText(1500);
 
-    System.out.print("OTACON: ");
+        System.out.print("\033[0;32mOTACON:  \033[0m");
         gameSystems.printWithDelay("Loud and clear, Snake.\n\n", 40);
         gameSystems.pauseText(1500);
 
-    System.out.print("SNAKE:  ");
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("Kept you waiting, huh?\n", 40);
         gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("        I'm at the 'sneak point.'\n\n", 40);
+        gameSystems.printWithDelay("         I'm at the 'sneak point'.\n\n", 40);
         gameSystems.pauseText(2000);
 
-    System.out.print("OTACON: ");
+        System.out.print("\033[0;32mOTACON:  \033[0m");
         gameSystems.printWithDelay("Everything going okay?\n\n", 40);
         gameSystems.pauseText(1500);
 
-    System.out.print("SNAKE:  ");
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("The stealth camos busted. Landing impact.\n\n", 40);
         gameSystems.pauseText(2000);
 
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("We must have overused it. Sorry, but you're gonna\n", 40);
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("We must have overused it. Sorry, but you're \n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("have to deal with it.\n\n", 40);
+        gameSystems.printWithDelay(" gonna have to deal with it.\n\n", 40);
         System.out.print("        ");
         gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("You're not in the military anymore.\n\n", 40);
+        gameSystems.printWithDelay(" You're not in the military anymore.\n\n", 40);
         gameSystems.pauseText(1500);
 
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Right, I didn't plan on relying on this gadget anyway.\n", 40);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Right, I didn't plan on relying on this gadget\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" anyway.\n", 40);
+
         gameSystems.pauseText(1000);
 
-        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
-        gameSystems.printWithDelay(indent, 0);  
-        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
-        gameSystems.readInput();            
-    gameSystems.clearConsole();
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("The private sector's not too bad is it?\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("Privacy guarenteed...\n\n", 40);
-        gameSystems.pauseText(1500);
-    
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("I'm happy as long as no one gives me any more\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("unwanted gifts.\n\n", 40);
-        gameSystems.pauseText(1500);
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("You mean that thing with Naomi?\n\n", 40);
-        gameSystems.pauseText(1500);
-
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("And I can't say I miss that chattering nanny.\n\n", 40);
-        gameSystems.pauseText(1500);
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("Mei Ling's not so bad. That reminds me,\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("I have to get in touch with her again about\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("that new Natik flashware.\n\n", 40);
-        gameSystems.pauseText(1500);
-
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Diverting toys from the SSCEN (U.S Army\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("Soldier System Center) again? Give her a\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("message from me: \n\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("Someone will find out sooner or later. She's\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("better off assuming it's sooner and quit while\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("she's safe.\n\n", 40);
-        gameSystems.pauseText(1500);
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("Too true. Okay Snake, let's get to work.\n\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("You know how the technical specs of Metal Gear\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("were sold on the black market after Shadow Moses?'\n\n", 40);
-        gameSystems.pauseText(2000);
-
-        System.out.println("\n" + "\033[1;30m" + "--------------------------------------------------------------------------------" + "\033[0m");
-        gameSystems.printWithDelay(indent, 0);  
-        System.out.println("\033[1;30m" + "Select [ENTER] to continue." + "\033[1;30m");
+        codecBottomContinueBorder();
         gameSystems.readInput();            
         gameSystems.clearConsole();
 
-
-
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("All Ocelot's doing...\n\n", 40);
-        gameSystems.pauseText(1000);
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("Exactly.", 40);
-        gameSystems.pauseText(1000);
-        gameSystems.printWithDelay(" And now every state, group and dotcom\n", 40);
+        codecTopBorder();
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("The private sector's not too bad is it?\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("has its own version of Metal Gear.\n\n", 40);
-        gameSystems.pauseText(500);
-
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Not Exactly a classified weapon for today's nuclear\n", 40);
+        gameSystems.printWithDelay(" Privacy guarenteed...\n\n", 40);
+        gameSystems.pauseText(1500);
+    
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("I'm happy as long as no one gives me any more\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("powers.\n\n", 40);
-        gameSystems.pauseText(500);
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("This new one seems to have been designed to wipe\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("the floor with all the other models.\n\n", 40);
-        System.out.print("        ");
-        gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("The only consistent description is that it's an \n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("amphibious, anti Metal Gear vehicle...\n\n", 40);
-        gameSystems.pauseText(500);
-
-    System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("That explains why this one is under Marine Corp\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("jurisdiction.", 40);
-        gameSystems.pauseText(4000);
-        gameSystems.clearConsole(); 
-
-    System.out.print("OTACON: ");
-        gameSystems.printWithDelay("Snake, your mission objectives are to make visual\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("confirmation with the new Metal Gear being transported\n", 40);
-        System.out.print("        ");
-        gameSystems.pauseText(2000);
-        gameSystems.printWithDelay("by that Tanker and bring back photographic evidence.\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("But I want you first to go up to the top level of the\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("infrastructure, to the bridge.\n\n", 40);
-        gameSystems.pauseText(500);
-        System.out.print("        ");
-        gameSystems.printWithDelay("We need to find out where the Tanker is headed.\n\n", 40);
+        gameSystems.printWithDelay(" unwanted gifts.\n\n", 40);
         gameSystems.pauseText(1500);
 
-        System.out.print("SNAKE:  ");
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("You mean that thing with Naomi?\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("And I can't say I miss that chattering nanny.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Mei Ling's not so bad. That reminds me,\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" I have to get in touch with her again about\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" that new Natik flashware.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32m SNAKE: \033[0m");
+        gameSystems.printWithDelay(" Diverting toys from the SSCEN (U.S Army\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" Soldier System Center) again? Give her a\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" message from me: \n\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" Someone will find out sooner or later. She's\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" better off assuming it's sooner and quit\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" while she's safe.\n", 40);
+        gameSystems.pauseText(1500);
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();            
+        gameSystems.clearConsole();
+
+        codecTopBorder();
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Too true. Okay Snake, let's get to work.\n\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" You know how the technical specs of Metal Gear\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" were sold on the black market after Shadow\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" Moses?'\n\n", 40);
+
+        System.out.print("\033[0;32m SNAKE: \033[0m");
+        gameSystems.printWithDelay(" All Ocelot's doing...\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Exactly.", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(" And now every state, group and\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" dotcom has its own version of Metal Gear.\n\n", 40);
+        gameSystems.pauseText(500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Not Exactly a classified weapon for today's\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" nuclear powers.\n\n", 40);
+        gameSystems.pauseText(500);
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("This new one seems to have been designed to\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" wipe the floor with all the other models.\n\n", 40);
+        System.out.print("        ");
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(" The only consistent description is that it's \n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" an amphibious, anti Metal Gear vehicle...\n\n", 40);
+        gameSystems.pauseText(500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("That explains why this one is under Marine\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" Corp jurisdiction.\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();            
+        gameSystems.clearConsole(); 
+
+        codecTopBorder();
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Snake, your mission objectives are to make\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" visual confirmation with the new Metal Gear\n", 40);
+        System.out.print("        ");
+        gameSystems.pauseText(2000);
+        gameSystems.printWithDelay(" being transported by that Tanker and bring\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" back photographic evidence. But I want you\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" first to go up to the top level of the\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" infrastructure, to the bridge.\n\n", 40);
+
+        gameSystems.pauseText(500);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" We need to find out where the Tanker is\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" headed.\n\n", 40);
+
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("A little reconnaissance huh?\n\n", 40);
         gameSystems.pauseText(500);
 
-        System.out.print("OTACON: ");
-        gameSystems.printWithDelay("There's too much we don't know about this new prototype:\n", 40);
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("There's too much we don't know about this\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("capabilities, deployment method, we don't even know how\n", 40);
+        gameSystems.printWithDelay(" new prototype: capabilities, deployment\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("close it is to completion...\n\n", 40);
+        gameSystems.printWithDelay(" method, we don't even know how close it\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" is to completion...\n\n", 40);
+
         gameSystems.pauseText(500);
         System.out.print("        ");
-        gameSystems.printWithDelay("If we know where the testing arena is, I can start to draw\n", 40);
+        gameSystems.printWithDelay(" If we know where the testing arena is, I\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("some reasonable conclusions.\n\n", 40);
+        gameSystems.printWithDelay(" can start to draw some reasonable\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" conclusions.\n\n", 40);
+
         gameSystems.pauseText(1500);
 
-        System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Alright, I'll head to the bridge ASAP.\n\n", 40);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Alright, I'll head to the bridge ASAP.\n", 40);
+        gameSystems.pauseText(500);
+        codecBottomContinueBorder();
+        gameSystems.readInput();  
+
+        gameSystems.clearConsole();          
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Try to avoid confrontations, our goal is to\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" collect evidence on Metal Gear development\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" and expose it to the world.\n\n", 40);
+        gameSystems.pauseText(500);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" It would be best if you could get out of\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" there without alerting anyone.\n\n", 40);
         gameSystems.pauseText(500);
 
-        System.out.print("OTACON: ");
-        gameSystems.printWithDelay("Try to avoid confrontations, our goal is to collect evidence\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("on Metal Gear development and expose it to the world.\n\n", 40);
-        gameSystems.pauseText(500);
-        System.out.print("        ");
-        gameSystems.printWithDelay("It would be best if you could get out of there without\n", 40);
-        System.out.print("        ");
-        gameSystems.printWithDelay("alerting anyone.\n\n", 40);
-        gameSystems.pauseText(500);
-
-        System.out.print("SNAKE:  ");
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("Don't worry, I know the drill.", 40);
         gameSystems.pauseText(250);
-        gameSystems.printWithDelay(" We're not Terrorists.\n\n", 40);
-        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" We're not\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" Terrorists\n\n", 40);
 
-        System.out.print("OTACON: ");
+        System.out.print("\033[0;32mOTACON:  \033[0m");
         gameSystems.printWithDelay("Very good. ", 40);
         gameSystems.pauseText(200);
-        gameSystems.printWithDelay("Don't you forget that you're a part of.\n", 40);
+        gameSystems.printWithDelay("Don't you forget that you're a\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("Philanthropy now, an anti-Metal Gear Organisation and \n", 40);
+        gameSystems.printWithDelay(" part of Philanthropy now, an ani-\n", 40);
         System.out.print("        ");
-        gameSystems.printWithDelay("officially recognized by the UN.\n\n", 40);
+        gameSystems.printWithDelay(" Metal Gear Organisation and officially\n", 40);
+        System.out.print("        ");
+        gameSystems.printWithDelay(" recognized by the UN.\n\n", 40);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Recognized, but still fringe Otacon.\n", 40);
         gameSystems.pauseText(1000);
 
-        System.out.print("SNAKE:  ");
-        gameSystems.printWithDelay("Recognized, but still fringe Otacon.", 40);
-        gameSystems.pauseText(5000);
+        codecBottomBorder();
+        gameSystems.readInput();            
         codecEnd();
     }
 
     public static void otaconImageID() {
-        // CODEC.codecCalling();
-    
+        codecCalling();
         gameSystems.clearConsole();
-        // System.out.println("\n" + "\033[1;30m==[ CODEC VIEWER ]================[ Frequency: 140.85 ]==\033[1;30m" + "\n");
-        System.out.println("\033[1;30m┌──────────────────────────────────────────────────────┐\033[0m");
-        System.out.println("\033[1;30m" + "│ CODEC  |  Frequency: 140.85                          │" + "\033[0m");
-        System.out.println("\033[1;30m└──────────────────────────────────────────────────────┘\033[0m");
+        codecTopBorder();
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
         gameSystems.printWithDelay("I've transmitted the photo, let's get an ID on\n", 40);
@@ -311,11 +350,10 @@ public class CODEC {
         gameSystems.printWithDelay("All right. ", 40);
         gameSystems.pauseText(500);
         gameSystems.printWithDelay("I'll do my best.\n", 40);
-        gameSystems.pauseText(3000);
+        gameSystems.pauseText(1000);
         
-        System.out.println("\n" + "\033[1;30m============================[  END SESSION: [ENTER] ]==");
+        codecBottomBorder();
 
-        // System.out.println("\n" + "\033[1;30m" + "         [ENTER] to end call." + "\033[1;30m");
         gameSystems.readInput();            
         gameSystems.clearConsole();
         CODEC.codecEnd();

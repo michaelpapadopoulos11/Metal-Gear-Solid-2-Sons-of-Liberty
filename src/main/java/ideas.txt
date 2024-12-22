@@ -28,3 +28,5 @@
 
 - snakes health bar needs to change colours depending of current hp (green / yellow / red kinda thing)
 - cool chemical compound symbols on the main menu vibe / animate it ??
+
+- ASCII gifs of Snake taking out guards (could potentially be better looking than ASCII images??)

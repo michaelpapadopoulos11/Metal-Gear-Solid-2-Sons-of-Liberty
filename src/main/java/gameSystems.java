@@ -62,7 +62,7 @@ public class gameSystems {
 
         do {
             System.out.println("\033[1;30m" + "---------------------------------------------------------------------------------" + "\033[0m");
-            System.out.println("\n\033[32mSelect [1], [2], [3] or [4]: \033[0m");
+            System.out.print("\n\033[32mSelect [1], [2], [3] or [4]: \033[0m");
             while (!input.hasNextInt()) {
                 clearConsole();
                 System.out.println("\033[1;31mThat's not a number. Please enter [1], [2], [3], or [4]: \033[0m");

@@ -1,4 +1,4 @@
 {
     "java.configuration.updateBuildConfiguration": "disabled",
-    "terminal.integrated.fontFamily": "Anonymous Pro"
+    "terminal.integrated.fontFamily": "monospace"
 }
