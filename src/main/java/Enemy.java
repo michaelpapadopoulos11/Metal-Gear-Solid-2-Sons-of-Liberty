@@ -1,34 +1,84 @@
-import java.util.ArrayList;
+import java.util.Random;
 
 public class Enemy {
+    private int enemyHealth;
+    private int maxHealth;
+    private int attackPower;
+    private String enemyType;
+    private Random random = new Random();
 
-    private int enemyHealth = 100;
-    private int attackValue;
+    public Enemy(String type) {
+        this.enemyType = type;
+        initializeEnemy();
+    }
 
-        // enemy health bar indication
-        // public void checkEnemyHealthBar() {
-        //     if (enemyHealth >= 90 && enemyHealth <= 100) {
-        //         System.out.println("[██████████]");
-        //     } else if (enemyHealth >= 80 && enemyHealth <= 89) {
-        //         System.out.println("[█████████ ]");
-        //     } else if (enemyHealth >= 70 && enemyHealth <= 79) {
-        //         System.out.println("[████████  ]");
-        //     } else if (enemyHealth >= 60 && enemyHealth <= 69) {
-        //         System.out.println("[███████   ]");
-        //     } else if (enemyHealth >= 50 && enemyHealth <= 59) {
-        //         System.out.println("[██████    ]");
-        //     } else if (enemyHealth >= 40 && enemyHealth <= 49) {
-        //         System.out.println("[█████     ]");
-        //     } else if (enemyHealth >= 30 && enemyHealth <= 39) {
-        //         System.out.println("[████      ]");
-        //     } else if (enemyHealth >= 20 && enemyHealth <= 29) {
-        //         System.out.println("[███       ]");
-        //     } else if (enemyHealth >= 10 && enemyHealth <= 19) {
-        //         System.out.println("[██        ]");
-        //     } else if (enemyHealth >= 1 && enemyHealth <= 9) {
-        //         System.out.println("[█         ]");
-        //     } else {
-        //         System.out.println("[]");
-        //     }
-        // }
+    private void initializeEnemy() {
+        if (enemyType.toLowerCase().contains("guard")) {
+            this.maxHealth = 50;
+            this.enemyHealth = 50;
+            this.attackPower = 8;
+        } else if (enemyType.toLowerCase().contains("commander")) {
+            this.maxHealth = 80;
+            this.enemyHealth = 80;
+            this.attackPower = 12;
+        }
+    }
+
+    public int getHealth() {
+        return enemyHealth;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public String getEnemyType() {
+        return enemyType;
+    }
+
+    public void takeDamage(int damage) {
+        enemyHealth -= damage;
+        if (enemyHealth < 0) {
+            enemyHealth = 0;
+        }
+    }
+
+    public int attackSnake() {
+        int baseDamage = attackPower;
+        int variance = random.nextInt(5) - 2;
+        return Math.max(1, baseDamage + variance);
+    }
+
+    public boolean isAlive() {
+        return enemyHealth > 0;
+    }
+
+    public void displayHealthBar() {
+        int healthPercent = (enemyHealth * 100) / maxHealth;
+        String healthBar = "";
+        
+        if (healthPercent >= 90) {
+            healthBar = "[██████████]";
+        } else if (healthPercent >= 80) {
+            healthBar = "[█████████ ]";
+        } else if (healthPercent >= 70) {
+            healthBar = "[████████  ]";
+        } else if (healthPercent >= 60) {
+            healthBar = "[███████   ]";
+        } else if (healthPercent >= 50) {
+            healthBar = "[██████    ]";
+        } else if (healthPercent >= 40) {
+            healthBar = "[█████     ]";
+        } else if (healthPercent >= 30) {
+            healthBar = "[████      ]";
+        } else if (healthPercent >= 20) {
+            healthBar = "[███       ]";
+        } else if (healthPercent >= 10) {
+            healthBar = "[██        ]";
+        } else {
+            healthBar = "[█         ]";
+        }
+        
+        System.out.println("\033[1;31m" + enemyType + " Health - " + healthBar + " " + healthPercent + "%" + "\033[0m");
+    }
 }

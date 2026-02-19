@@ -1,9 +1,6 @@
-import java.util.Scanner;
-
 public class gameplayChoices {
 
     static Player player = new Player();  // Create a player
-    static Scanner scanner = new Scanner(System.in);
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -28,14 +25,14 @@ public class gameplayChoices {
 
         // Choice prompt
         System.out.print("\033[0;90mChoice : \033[0m");
-        int choice = Integer.parseInt(scanner.nextLine());  // Read the entire line as input
+        int choice = Integer.parseInt(gameSystems.readInput());  // Read the entire line as input
 
         switch (choice) {
             case 0:
                 player.displayInventory();
                 
                 System.out.println("\033[0;90m\nPress [ENTER] to return\n\033[0m");
-                scanner.nextLine();  // Correctly wait for user input
+                gameSystems.readInput();  // Correctly wait for user input
                 firstPlayerChoice();
             break;
 
@@ -48,17 +45,17 @@ public class gameplayChoices {
             Cutscene.bottomHeader();
             firstPlayerChoice();
 
-        case 2: // option : go left
+        case 2: // option : approach the guard
         gameSystems.clearConsole();
-        Combat.firstCombatEvent();
-        scanner.nextLine();  // Correctly wait for user input
-        firstPlayerChoice();
+        Enemy guard = new Enemy("Russian Guard");
+        Combat.startCombat(player, guard);
+        break;
 
         case 3:
         gameSystems.clearConsole();
         System.out.println("Work in progress");
         System.out.println("\nPress [ENTER] to return\n");
-        scanner.nextLine();  // Correctly wait for user input
+        gameSystems.readInput();  // Correctly wait for user input
         firstPlayerChoice();
 
         case 4:
@@ -71,7 +68,7 @@ public class gameplayChoices {
                 gameSystems.clearConsole();
                 System.out.println("Work in progress");
                 System.out.println("\nPress [ENTER] to return\n");
-                scanner.nextLine();  // Correctly wait for user input
+                gameSystems.readInput();  // Correctly wait for user input
                 firstPlayerChoice();
     
                 firstPlayerChoice();
