@@ -30,6 +30,12 @@ public class Cutscene {
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
     }
 
+    public static void combatTopHeader() {
+        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        System.out.println("" + "\033[1;30m" + "[COMBAT VIEWER]                          Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
+        System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
+    }
+
     public static void bottomHeader() {
         System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
         System.out.println("\033[1;30m" + "\n         " +"Select [ENTER] to continue." + "\033[1;30m");
