@@ -15,12 +15,12 @@ public class gameplayChoices {
         System.out.println("\033[32m0) Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
         System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
 
-        System.out.println("\033[0;37m1) More Reconnaissance");
-        System.out.println("2) Approach the guard "); // Sneak Left"); // sneak left
-        System.out.println("3) ..."); // sneak right
-        System.out.println("4) [View image of the unknown Russian Leader]\033[0m\n");
+        System.out.println("\033[0;37m   [1] More Reconnaissance");
+        System.out.println("   [2] Approach the guard watching over the waters"); // Sneak Left"); // sneak left
+        System.out.println("   [3] ..."); // sneak right
+        System.out.println("   [4] [View image of the unknown Russian Leader]\033[0m\n");
 
-        System.out.println("5) CODEC OTACON\n");
+        System.out.println("   [5] CODEC OTACON\n");
         System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
 
         // Choice prompt
@@ -31,7 +31,7 @@ public class gameplayChoices {
             case 0:
                 player.displayInventory();
                 
-                System.out.println("\033[0;90m\nPress [ENTER] to return\n\033[0m");
+                System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
                 gameSystems.readInput();  // Correctly wait for user input
                 firstPlayerChoice();
             break;
@@ -39,7 +39,7 @@ public class gameplayChoices {
         case 1: // option : more recon
             gameSystems.clearConsole();
             Cutscene.topHeader();
-            gameSystems.printWithDelay("\n[Using his binoculars, Snake observes the ship's layout. On the lower left deck,\na guard silently watches over the dark waters. Above, on the upper deck, another\nguard admires the distant New York City skyline].\n", 30);
+            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n\n", 40);
             gameSystems.pauseText(1000);
 
             Cutscene.bottomHeader();
@@ -54,7 +54,7 @@ public class gameplayChoices {
         case 3:
         gameSystems.clearConsole();
         System.out.println("Work in progress");
-        System.out.println("\nPress [ENTER] to return\n");
+        System.out.println("\n          Press [ENTER] to return\n");
         gameSystems.readInput();  // Correctly wait for user input
         firstPlayerChoice();
 
@@ -68,9 +68,7 @@ public class gameplayChoices {
                 gameSystems.clearConsole();
                 System.out.println("Work in progress");
                 System.out.println("\nPress [ENTER] to return\n");
-                gameSystems.readInput();  // Correctly wait for user input
-                firstPlayerChoice();
-    
+                gameSystems.readInput();  // Correctly wait for user input    
                 firstPlayerChoice();
         }
     }
@@ -78,5 +76,4 @@ public class gameplayChoices {
     public static void secondPlayerChoice() {
         System.out.println("2nd player choice screen");
     }
-
 }

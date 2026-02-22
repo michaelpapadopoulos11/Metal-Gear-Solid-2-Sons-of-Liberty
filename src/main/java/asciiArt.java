@@ -2,7 +2,7 @@ public class asciiArt {
 
     public static void digitalCameraTopUI() {
         System.out.println("\n" + "\033[1;30m" + "====================================================================================================" + "\033[0m");
-        System.out.println("" + "\033[1;30m" + " DIGITAL CAMERA VIEWER | IMG 034/034 | 14:32:55 |                             | MODE: TACTICAL VIEW " + "\033[0m");
+        System.out.println("" + "\033[1;30m" + " DIGITAL CAMERA VIEWER | IMG 002/002 | 14:32:55 |                             | MODE: TACTICAL VIEW " + "\033[0m");
         System.out.println("" + "\033[1;30m" + "====================================================================================================" + "\033[0m\n");
     }
 
@@ -86,4 +86,5 @@ public class asciiArt {
         digitalCameraBottomUI();
         }
     // public static void posterOne() {} // lewd poster moment
+
 }

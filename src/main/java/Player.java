@@ -76,9 +76,9 @@ public class Player {
             System.out.println("\033[0;90m                                    Inventory\033[0m");
             System.out.println("\033[1;30m\n================================================================================\033[0m");
 
-            System.out.println("\n\033[0;37mSnake is currently holding " + snakeInventory.size() + " items:\033[0m\n");
+            System.out.println("\n\033[0;37m  Snake is currently holding " + snakeInventory.size() + " items:\033[0m\n");
                 for (String item : snakeInventory) {
-                    System.out.println("\033[0;32m- " + item + "\033[0m");
+                    System.out.println("\033[0;32m    - " + item + "\033[0m");
                 }
                 System.out.println("\033[1;30m\n================================================================================\033[0m");
         }
