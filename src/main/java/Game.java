@@ -6,17 +6,17 @@ public class Game {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        gameIntro(input); // game menu function
-        gameSystems.gameDifficulty(input);
+        // gameIntro(input); // game menu function
+        // gameSystems.gameDifficulty(input);
 
-        // // game contents:
-        Cutscene.gameLoading(); // fake intro
+        // // // game contents:
+        // Cutscene.gameLoading(); // fake intro
 
-        Cutscene.hudsonRiverIntro(); // testing the first cutscene
-        CODEC.otaconIntro();
-        Cutscene.hudsonRiverPostIntro();
+        // Cutscene.hudsonRiverIntro(); // testing the first cutscene
+        // CODEC.otaconIntro();
+        // Cutscene.hudsonRiverPostIntro();
 
-        CODEC.otaconImageID();
+        // CODEC.otaconImageID();
         gameplayChoices.firstPlayerChoice();
 
         input.close();  // Close the scanner once all input operations are done

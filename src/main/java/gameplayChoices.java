@@ -74,4 +74,9 @@ public class gameplayChoices {
                 firstPlayerChoice();
         }
     }
+
+    public static void secondPlayerChoice() {
+        System.out.println("2nd player choice screen");
+    }
+
 }

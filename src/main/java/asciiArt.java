@@ -33,19 +33,19 @@ public class asciiArt {
             gameSystems.pauseText(500);
         }
 
-        gameSystems.printWithDelay("\n" + indent + "\033[1;30mDecoding image data...\033[0m", 5);
+        gameSystems.printWithDelay("\n" + indent + "\033[1;30mDecoding image data...\033[0m", 2);
         gameSystems.pauseText(500);
-        gameSystems.printWithDelay("\n" + indent + "\033[1;30mDecrypting image...\033[0m\n", 5);
+        gameSystems.printWithDelay("\n" + indent + "\033[1;30mDecrypting image...\033[0m\n", 2);
         gameSystems.pauseText(500);
-        gameSystems.printWithDelay(indent + "\033[1;30mVerifying image data...\033[0m\n", 5);
-        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(indent + "\033[1;30mVerifying image data...\033[0m\n", 2);
+        gameSystems.pauseText(300);
 
         gameSystems.printWithDelay("\n" + indent + "\033[0;32mImage retrieval successful. Now displaying image\033[0m", 5);
         int i = 0;
         while (i < 3) {
             System.out.print("\033[0;32m.\033[0m"); 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -84,7 +84,6 @@ public class asciiArt {
             gameSystems.printWithDelay(" ::::::::::::::::::::::  #@  ::::::::  @   .@ @@     .::::::::::::::::::::::      @@@@@@:::::::::::\n", 1);
             gameSystems.printWithDelay(" :::::::::::::::::::::. @@  :::::::.  @      @   :::::::::::::::::::::::    =@@@@@     @@@:::::::::\n", 1);
         digitalCameraBottomUI();
-
         }
     // public static void posterOne() {} // lewd poster moment
 }

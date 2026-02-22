@@ -13,14 +13,11 @@ public class Combat {
         
         // gameSystems.pauseText(800);
         Cutscene.topHeader();
-        gameSystems.printWithDelay("\n\033[1;36m[Snake stealthily sneaks up behind the guard!]\033[0m\n", 30);
+        gameSystems.printWithDelay("\n\033[1;36m[Snake stealthily sneaks up behind the guard!]\033[0m", 30);
         gameSystems.pauseText(1000);
         System.out.println();
         
-        System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
-        System.out.print("\033[0;90m[Press ENTER to engage in combat]\033[0m");
-        gameSystems.readInput();
-
+        Cutscene.bottomHeader();
         combatTurn();
     }
 
@@ -167,14 +164,14 @@ public class Combat {
         gameSystems.clearConsole();
         Cutscene.combatTopHeader();
 
-        System.out.println("\n\033[0;37m[Snake takes a moment to eat a ration...]\033[0m");
+        gameSystems.printWithDelay("\n\033[0;37m[Snake takes a moment to eat a ration...]\033[0m\n\n", 20);
         gameSystems.pauseText(800);
         
         int oldHealth = player.getHealth();
         player.healDamage(20);
         int healAmount = player.getHealth() - oldHealth;
-        
-        System.out.println("\033[1;32m[Recovered " + healAmount + " health!]\033[0m");
+        gameSystems.printWithDelay("\033[0;37mSnake recovered \033[1;32m[+" + healAmount + "]\033[0;37m health!\033[0m\n", 20);
+        Cutscene.bottomHeader();
     }
 
     private static void playerFlee() {
@@ -220,15 +217,14 @@ public class Combat {
         System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
 
-        System.out.println("\033[1;36m[The guard falls to the tranquilizer. Snake stands victorious.]\033[0m\n");
-        System.out.println("\033[0;37m[You proceed deeper into the ship...]\033[0m\n");
+        gameSystems.printWithDelay("\033[1;36m[Snake defeats the " + enemy.getEnemyType() + " and proceeds deeper into the tanker!]\033[0m\n", 20);
+        gameSystems.pauseText(1000);
 
-        System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
-        System.out.print("\033[0;90m[Press ENTER to continue]\033[0m");
+        Cutscene.bottomHeader();
         gameSystems.readInput();
 
         gameSystems.clearConsole();
-        gameplayChoices.firstPlayerChoice();
+        gameplayChoices.secondPlayerChoice();
     }
 
     private static void playerDefeat() {

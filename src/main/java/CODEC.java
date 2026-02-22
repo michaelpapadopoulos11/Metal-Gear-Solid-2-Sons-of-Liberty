@@ -38,8 +38,6 @@ public class CODEC {
 
     public static void codecEnd() { // end call function for codec calls
         gameSystems.clearConsole();
-        
-        gameSystems.clearConsole();
         gameSystems.pauseText(500);
         System.out.println("\n");
         System.out.println("\033[0;31m┌──────────────────────────────────────────────────┐\033[0m");
