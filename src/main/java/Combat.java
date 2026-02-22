@@ -15,7 +15,7 @@ public class Combat {
         Cutscene.topHeader();
         gameSystems.printWithDelay("\n\033[1;36m  [The storm drowns out Snake's footsteps as he closes in...]\033[0m\n", 30);
         gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("\n\033[1;36m  [The guard stands at the railing, watching the lights of Manhattan \n  shimmer through the rain.]\033[0m", 30);
+        gameSystems.printWithDelay("\n\033[1;36m  [The guard stands by the railing, watching the lights of Manhattan \n  shimmer through the rain.]\033[0m", 30);
         gameSystems.pauseText(1000);
 
         System.out.println();
@@ -235,11 +235,18 @@ public class Combat {
         System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
 
-        gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + " and proceeds deeper into the tanker!]\033[0m\n", 20);
+        gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + ", rendering him unconscious]\033[0m\n\n", 30);
         gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("\033[1;36m  [He drags the unconscious body across the rain-soaked deck.]\033[0m\n\n", 30);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("\033[1;36m  [With a swift motion, he throws the guard overboard-]\033[0m\n\n", 30);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay("\033[1;36m  [the splash completely masked by the pounding rain.]\033[0m\n\n", 30);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("\033[1;36m  [Snake turns toward the nearest hatch and slips inside the tanker.]\033[0m\n", 30);
+        gameSystems.pauseText(2000);
 
         Cutscene.bottomHeader();
-        gameSystems.readInput();
 
         gameSystems.clearConsole();
         gameplayChoices.secondPlayerChoice();
