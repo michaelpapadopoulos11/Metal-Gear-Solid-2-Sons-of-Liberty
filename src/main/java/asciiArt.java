@@ -89,18 +89,17 @@ public class asciiArt {
 
 
     public static void displaySolitonRadar() { // screen 1 mini maps 
-            System.out.println("\033[1;36m"); // Cyan color
-            gameSystems.printWithDelay("                      [ SOLITON RADAR SYSTEM : ACTIVE ]", 10);
-            gameSystems.pauseText(1000);
-            gameSystems.printWithDelay("\n                                                       \n", 1);
-            gameSystems.printWithDelay("                            ^   [UPPER DECK]           \n", 1);
-            gameSystems.printWithDelay("                .-----|---------.                    \n", 1);
-            gameSystems.printWithDelay("                |     |         |                    \n", 2);
-            gameSystems.printWithDelay("                |     |         |                    \n", 2);
-            gameSystems.printWithDelay("                |     |         |                    \n", 2);
-            gameSystems.printWithDelay("                |  ^  '---------|                    \n", 2);
-            gameSystems.printWithDelay("                | [SNAKE]       |                    \n", 2);
-            gameSystems.printWithDelay("                '---------------'                    \n", 2);
+
+            gameSystems.printWithDelay("\n                      \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);            gameSystems.pauseText(1000);
+            gameSystems.printWithDelay("\033[1;90m\n                                                      \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                           ^   [UPPER DECK]           \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                .----|---------.                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |    |         |                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |    |         |                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |    |         |                    \n\033[0m", 2);            
+            gameSystems.printWithDelay("\033[1;90m                | \033[0;36m^\033[1;90m  '---------|                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |\033[0;36m[SNAKE]\033[1;90m       |                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                '--------------'                    \033[0m\n", 2);
             gameSystems.printWithDelay("\n\033[0;90m    [!] Signals blocked. Perform Recon to identify targets.\n\033[0m", 4);
             gameSystems.pauseText(1000);
         }
@@ -113,16 +112,17 @@ public class asciiArt {
             }
 
             System.out.println("\033[1;36m"); // Cyan color
-            System.out.println("                      [ SOLITON RADAR SYSTEM : ACTIVE ]");
-            System.out.println("                                                       ");
-            System.out.println("                            ^   [UPPER DECK]           ");
-            System.out.println("                .-------|---------.                    ");
-            System.out.println("                |       |     (X) |  <-- Target 02     ");
-            System.out.println("                |       |         |                    ");
-            System.out.println("                |   (X) |         |  <-- Target 01     ");
-            System.out.println("                |    ^  '---------|                    ");
-            System.out.println("                |  [SNAKE]        |                    ");
-            System.out.println("                '-----------------'                    ");
-            System.out.println("\033[0m");
+            gameSystems.printWithDelay("\n                      \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);            gameSystems.pauseText(1000);
+            gameSystems.printWithDelay("\033[1;90m\n                                                      \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                           ^   [UPPER DECK]           \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                .-------|---------.                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |       |     (\033[0;31mX\033[1;90m) |  <-- Russian Soldier     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |       |         |                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |   (\033[0;31mX\033[1;90m) |         |  <-- Russian Soldier     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |    \033[0;36m^\033[1;90m  '---------|                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                |  \033[0;36m[SNAKE]\033[1;90m        |                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                '-----------------'                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\n\033[1;96m    [!] Intel acquired. Targets identified.\n\033[0m", 4);
+            gameSystems.pauseText(1000);
         }
 }

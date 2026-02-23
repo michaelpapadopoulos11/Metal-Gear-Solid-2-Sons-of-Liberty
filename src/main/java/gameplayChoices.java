@@ -12,6 +12,7 @@ public class gameplayChoices {
         System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
 
         // inventory / health
+        // System.out.println("\033[32m[0] Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
         System.out.println("\033[32m[0] Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
         System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
 
@@ -43,7 +44,7 @@ public class gameplayChoices {
             hasGatheredIntel = true;
 
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\n  [Snake's map has been updated]\n", 40);
+            gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 40);
             gameSystems.pauseText(1000);
 
             Cutscene.bottomHeader();
@@ -87,21 +88,5 @@ public class gameplayChoices {
         System.out.println("\033[1;37m\nContext: \033[0;37msnake sneakily enters the ship through");
         System.out.println("         Tanker, behind the ship's anchor connector points.\n" + "\033[0m");
         System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
-
-        // // inventory / health
-        // System.out.println("\033[32m0) Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
-        // System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
-
-        // System.out.println("\033[0;37m   [1] More Reconnaissance");
-        // System.out.println("   [2] Approach the guard watching over the waters"); // Sneak Left"); // sneak left
-        // System.out.println("   [3] ..."); // sneak right
-        // System.out.println("   [4] [View image of the unknown Russian Leader]\033[0m\n");
-
-        // System.out.println("   [5] CODEC OTACON\n");
-        // System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
-
-        // // Choice prompt
-        // System.out.print("\033[0;90mChoice : \033[0m");
-        // int choice = Integer.parseInt(gameSystems.readInput());  // Read the entire line as input
     }
 }
