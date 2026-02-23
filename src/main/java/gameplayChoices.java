@@ -40,11 +40,11 @@ public class gameplayChoices {
         case 1: // option : more recon
             gameSystems.clearConsole();
             Cutscene.topHeader();
-            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 40);
+            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 30);
             hasGatheredIntel = true;
 
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 40);
+            gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 30);
             gameSystems.pauseText(1000);
 
             Cutscene.bottomHeader();
@@ -58,11 +58,7 @@ public class gameplayChoices {
 
         case 3:
             gameSystems.clearConsole();
-            Cutscene.topHeader();
-
                 asciiArt.displaySolitonRadar(hasGatheredIntel);
-
-            Cutscene.bottomHeader();
             firstPlayerChoice();
         break;
 
