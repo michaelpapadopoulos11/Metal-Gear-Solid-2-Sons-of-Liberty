@@ -378,10 +378,50 @@ public class CODEC {
     }
 }
 
-    public static void codecCall_1() {
-        System.out.println("option 1");
-    
+    public static void codecCall_1() { // bird gluttony call
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Okay...\n", 40);
+        gameSystems.pauseText(400);
+        System.out.print("         ");
+        gameSystems.printWithDelay("There's a saying that goes-\n\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("'Even a bird on high dies a glutton's \n         death, as do the fish of The Deeps.'\n\n", 40);
+        gameSystems.pauseText(1500);
+        System.out.print("         ");
+        gameSystems.printWithDelay("The lesson is --er,", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(" don't be greedy.\n\n", 40);
+        gameSystems.pauseText(500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("...Okay, if you say so.\n\n", 40);
+        gameSystems.pauseText(1500);    
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("I do Snake.", 40);
+        gameSystems.pauseText(600);
+        gameSystems.printWithDelay(" don't take on unnecessary\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("risks just because you're greedy for more\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("items\n\n", 40);
+        gameSystems.pauseText(1500);
+        System.out.print("         ");
+        gameSystems.printWithDelay("Remember the Deep family's fish.\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("...\n", 20);
+        gameSystems.pauseText(1000);    
+
+        codecBottomBorder();
         gameSystems.readInput();            
+        gameSystems.clearConsole();
+        CODEC.codecEnd();
         gameplayChoices.firstPlayerChoice();
     }
     
