@@ -84,6 +84,19 @@ public class asciiArt {
             gameSystems.printWithDelay(" ::::::::::::::::::::::  #@  ::::::::  @   .@ @@     .::::::::::::::::::::::      @@@@@@:::::::::::\n", 1);
             gameSystems.printWithDelay(" :::::::::::::::::::::. @@  :::::::.  @      @   :::::::::::::::::::::::    =@@@@@     @@@:::::::::\n", 1);
         digitalCameraBottomUI();
+        gameSystems.readInput();
+
+            // Closing out animation
+            gameSystems.clearConsole();
+            asciiArt.digitalCameraTopUI();
+            gameSystems.pauseText(600);
+            System.out.println("\n");
+            gameSystems.printWithDelay("         \033[1;90mClosing viewer...\033[0m\n", 5);
+            gameSystems.pauseText(2000);
+            gameSystems.clearConsole();
+
+            // Return to main choice
+            gameplayChoices.firstPlayerChoice();
         }
     // public static void posterOne() {} // lewd poster moment
 

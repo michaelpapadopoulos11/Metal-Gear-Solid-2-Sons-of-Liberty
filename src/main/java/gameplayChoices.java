@@ -65,8 +65,7 @@ public class gameplayChoices {
         case 4:
             gameSystems.clearConsole();
             asciiArt.imageRussianLeader();
-            gameSystems.readInput();        
-                firstPlayerChoice();
+        break;
 
         case 5:
             gameSystems.clearConsole();
