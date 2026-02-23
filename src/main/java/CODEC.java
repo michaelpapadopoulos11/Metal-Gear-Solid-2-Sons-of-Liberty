@@ -425,19 +425,101 @@ public class CODEC {
         gameplayChoices.firstPlayerChoice();
     }
     
-    public static void codecCall_2() {
-        System.out.println("option 2");
+    public static void codecCall_2() { // cows and UFOs
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("This is my favourite Chinese saying:\n\n", 40);
+        gameSystems.pauseText(400);
+        System.out.print("        ");
+        gameSystems.printWithDelay("'Better to be first among roosters than last\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("among bulls.'\n\n", 40);
+        gameSystems.pauseText(2000);
+        System.out.print("         ");
+        gameSystems.printWithDelay("Of course, the meaning is clear:\n         If you have to choose between being a chicken\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("or a cow, be the chicken.\n\n", 40);
+        gameSystems.pauseText(1500);
+        System.out.print("         ");
+        gameSystems.printWithDelay("Cows are always being messed with by aliens -\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("cattle mutilations are up, you know. ", 40);
+        gameSystems.pauseText(1500);
+        gameSystems.printWithDelay("Why go \n         looking for trouble, right?\n\n", 40);
+        gameSystems.pauseText(2000);
+
+        System.out.print("         ");
+        gameSystems.printWithDelay("If an enemy spots you, you'll be in \n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("more trouble than a cow on a UFO. You stay out\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("of their sights!\n", 40);
+        gameSystems.pauseText(2000);
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();            
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Why would aliens be in an old Chinese proverb?\n\n", 40);
+        gameSystems.pauseText(1500);    
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Everyone knows they've been visiting us for\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("thousands of years.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("...", 100);
+        gameSystems.printWithDelay("news to me.\n", 40);
+        gameSystems.pauseText(1500);    
+        codecBottomBorder();
 
         gameSystems.readInput();            
+        gameSystems.clearConsole();
+        CODEC.codecEnd();
         gameplayChoices.firstPlayerChoice();
-
     }
     
-    public static void codecCall_3() {
-        System.out.println("option 3");
+    public static void codecCall_3() { // mei ling
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
 
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("What happened to Mei Ling?\n\n", 40);
+        gameSystems.pauseText(1500);   
+        
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Hee!", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" She got mad and went offline.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("What did you do?\n\n", 40);
+        gameSystems.pauseText(1500);   
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Nothing!", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" Now don't we need to get back to\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("the mission?", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay(" So much to do, so little time", 40);
+        gameSystems.printWithDelay("...\n", 400);
+        gameSystems.pauseText(500);
+
+        codecBottomBorder();
         gameSystems.readInput();            
+        gameSystems.clearConsole();
+        CODEC.codecEnd();
         gameplayChoices.firstPlayerChoice();
-
     }
 }
