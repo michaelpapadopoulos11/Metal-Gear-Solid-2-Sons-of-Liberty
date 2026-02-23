@@ -1,6 +1,7 @@
 public class gameplayChoices {
 
     static Player player = new Player();  // Create a player
+    static boolean hasGatheredIntel = false;
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -15,8 +16,8 @@ public class gameplayChoices {
         System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
 
         System.out.println("\033[0;37m   [1] More Reconnaissance");
-        System.out.println("   [2] Approach the guard watching over the waters"); // Sneak Left"); // sneak left
-        System.out.println("   [3] ..."); // sneak right
+        System.out.println("   [2] Approach the guard watching over the waters\n"); // Sneak Left"); // sneak left
+        System.out.println("   [3] [View Soliton Radar]"); // sneak right
         System.out.println("   [4] [View image of the unknown Russian Leader]\033[0m\n");
 
         System.out.println("   [5] CODEC OTACON\n");
@@ -38,24 +39,31 @@ public class gameplayChoices {
         case 1: // option : more recon
             gameSystems.clearConsole();
             Cutscene.topHeader();
-            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n\n", 40);
+            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 40);
+            hasGatheredIntel = true;
+
+            gameSystems.pauseText(500);
+            gameSystems.printWithDelay("\n  [Snake's map has been updated]\n", 40);
             gameSystems.pauseText(1000);
 
             Cutscene.bottomHeader();
             firstPlayerChoice();
 
         case 2: // option : approach the guard
-        gameSystems.clearConsole();
-        Enemy guard = new Enemy("Russian Guard");
-        Combat.startCombat(player, guard);
+            gameSystems.clearConsole();
+            Enemy guard = new Enemy("Russian Guard");
+            Combat.startCombat(player, guard);
         break;
 
         case 3:
-        gameSystems.clearConsole();
-        System.out.println("Work in progress");
-        System.out.println("\n          Press [ENTER] to return\n");
-        gameSystems.readInput();  // Correctly wait for user input
-        firstPlayerChoice();
+            gameSystems.clearConsole();
+            Cutscene.topHeader();
+
+                asciiArt.displaySolitonRadar(hasGatheredIntel);
+
+            Cutscene.bottomHeader();
+            firstPlayerChoice();
+        break;
 
         case 4:
             gameSystems.clearConsole();
@@ -64,11 +72,11 @@ public class gameplayChoices {
                 firstPlayerChoice();
 
         case 5:
-                gameSystems.clearConsole();
-                System.out.println("Work in progress");
-                System.out.println("\nPress [ENTER] to return\n");
-                gameSystems.readInput();  // Correctly wait for user input    
-                firstPlayerChoice();
+            gameSystems.clearConsole();
+            System.out.println("Work in progress");
+            System.out.println("\nPress [ENTER] to return\n");
+            gameSystems.readInput();  // Correctly wait for user input    
+            firstPlayerChoice();
         }
     }
 

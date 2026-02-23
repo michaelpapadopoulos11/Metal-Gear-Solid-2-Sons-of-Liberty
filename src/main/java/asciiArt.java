@@ -87,4 +87,42 @@ public class asciiArt {
         }
     // public static void posterOne() {} // lewd poster moment
 
+
+    public static void displaySolitonRadar() { // screen 1 mini maps 
+            System.out.println("\033[1;36m"); // Cyan color
+            gameSystems.printWithDelay("                      [ SOLITON RADAR SYSTEM : ACTIVE ]", 10);
+            gameSystems.pauseText(1000);
+            gameSystems.printWithDelay("\n                                                       \n", 1);
+            gameSystems.printWithDelay("                            ^   [UPPER DECK]           \n", 1);
+            gameSystems.printWithDelay("                .-----|---------.                    \n", 1);
+            gameSystems.printWithDelay("                |     |         |                    \n", 2);
+            gameSystems.printWithDelay("                |     |         |                    \n", 2);
+            gameSystems.printWithDelay("                |     |         |                    \n", 2);
+            gameSystems.printWithDelay("                |  ^  '---------|                    \n", 2);
+            gameSystems.printWithDelay("                | [SNAKE]       |                    \n", 2);
+            gameSystems.printWithDelay("                '---------------'                    \n", 2);
+            gameSystems.printWithDelay("\n\033[0;90m    [!] Signals blocked. Perform Recon to identify targets.\n\033[0m", 4);
+            gameSystems.pauseText(1000);
+        }
+
+        // Version 2: The "Intel" Radar (Shows enemies)
+        public static void displaySolitonRadar(boolean hasIntel) {
+            if (!hasIntel) {
+                displaySolitonRadar(); // If false, just show the blind one
+                return;
+            }
+
+            System.out.println("\033[1;36m"); // Cyan color
+            System.out.println("                      [ SOLITON RADAR SYSTEM : ACTIVE ]");
+            System.out.println("                                                       ");
+            System.out.println("                            ^   [UPPER DECK]           ");
+            System.out.println("                .-------|---------.                    ");
+            System.out.println("                |       |     (X) |  <-- Target 02     ");
+            System.out.println("                |       |         |                    ");
+            System.out.println("                |   (X) |         |  <-- Target 01     ");
+            System.out.println("                |    ^  '---------|                    ");
+            System.out.println("                |  [SNAKE]        |                    ");
+            System.out.println("                '-----------------'                    ");
+            System.out.println("\033[0m");
+        }
 }
