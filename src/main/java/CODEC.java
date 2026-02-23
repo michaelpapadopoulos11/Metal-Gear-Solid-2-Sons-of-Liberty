@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class CODEC {
 
@@ -360,4 +361,43 @@ public class CODEC {
     // public static void otaconRNG() {}
     // chinese proverb lines .......
     // need an RNG codec function where the player can randomly call otacon and have a bunch of different call options.
+    public static void callOtaconSCREENONE() {
+    Random rand = new Random();
+    int choice = rand.nextInt(3); 
+
+    switch (choice) {
+        case 0:
+            codecCall_1();
+            break;
+        case 1:
+            codecCall_2();
+            break;
+        case 2:
+            codecCall_3();
+            break;
+    }
+}
+
+    public static void codecCall_1() {
+        System.out.println("option 1");
+    
+        gameSystems.readInput();            
+        gameplayChoices.firstPlayerChoice();
+    }
+    
+    public static void codecCall_2() {
+        System.out.println("option 2");
+
+        gameSystems.readInput();            
+        gameplayChoices.firstPlayerChoice();
+
+    }
+    
+    public static void codecCall_3() {
+        System.out.println("option 3");
+
+        gameSystems.readInput();            
+        gameplayChoices.firstPlayerChoice();
+
+    }
 }

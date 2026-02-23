@@ -13,7 +13,7 @@ public class gameplayChoices {
 
         // inventory / health
         // System.out.println("\033[32m[0] Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
-        System.out.println("\033[32m[0] Access Inventory\033[0m                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
+        System.out.println("\033[32m[0] Access Inventory\033[0m                              \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
         System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
 
         System.out.println("\033[0;37m   [1] More Reconnaissance");
@@ -69,10 +69,8 @@ public class gameplayChoices {
 
         case 5:
             gameSystems.clearConsole();
-            System.out.println("Work in progress");
-            System.out.println("\nPress [ENTER] to return\n");
-            gameSystems.readInput();  // Correctly wait for user input    
-            firstPlayerChoice();
+            CODEC.callOtaconSCREENONE();
+        break;
         }
     }
 
