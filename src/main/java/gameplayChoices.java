@@ -29,16 +29,16 @@ public class gameplayChoices {
             System.out.println("   [2] Approach the guard watching over the waters\n");
             System.out.println("   [3] View Soliton Radar");
             System.out.println("   [4] View image of the unknown Russian Leader\n");
-            System.out.println("   [5] CODEC OTACON\033[0m\n");
+            System.out.println("   [C] CODEC OTACON\033[0m\n");
 
             System.out.println("\033[1;30m====================================================================================================\033[0m");
 
             System.out.print("\033[0;90m   Choice : \033[0m");
 
-        int choice = Integer.parseInt(gameSystems.readInput());  // Read the entire line as input
+        String choice = gameSystems.readInput().trim().toUpperCase();
 
             switch (choice) {
-                case 0:
+                case "0":
                     player.displayInventory();
                     
                     System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
@@ -46,7 +46,7 @@ public class gameplayChoices {
                     firstPlayerChoice();
                 break;
 
-            case 1: // option : more recon
+            case "1": // option : more recon
                 gameSystems.clearConsole();
                 Cutscene.topHeader();
                 gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 30);
@@ -59,7 +59,7 @@ public class gameplayChoices {
                 Cutscene.bottomHeader();
                 firstPlayerChoice();
 
-            case 2: // option : approach the guard
+            case "2": // option : approach the guard
                 gameSystems.clearConsole();
 
                 Cutscene.topHeader();
@@ -101,18 +101,18 @@ public class gameplayChoices {
                 secondPlayerChoice();
             break;
 
-            case 3:
+            case "3":
                 gameSystems.clearConsole();
                 asciiArt.displaySolitonRadarSCREENONE(hasGatheredIntel);
                 firstPlayerChoice();
             break;
 
-            case 4:
+            case "4":
                 gameSystems.clearConsole();
                 asciiArt.imageRussianLeader();
             break;
 
-            case 5:
+            case "C":
                 gameSystems.clearConsole();
                 CODEC.callOtaconSCREENONE();
             break;
@@ -142,7 +142,7 @@ public class gameplayChoices {
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
 
             System.out.println("\033[0;37m   [1] [Peek around the corner]");
-            System.out.println("   [2] Slip through the doorway\n");
+            System.out.println("   [2] ...\n");
             System.out.println("   [3] ...");
             System.out.println("   [4] [View Soliton Radar]\n");
             System.out.println("   [5] ...\033[0m\n");
@@ -151,24 +151,24 @@ public class gameplayChoices {
 
             System.out.print("\033[0;90m   Choice : \033[0m");
 
-            int choice = Integer.parseInt(gameSystems.readInput());
+        String choice = gameSystems.readInput().trim().toUpperCase();
 
     switch (choice) {
-        case 0:
+        case "0":
             player.displayInventory();
             System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
             gameSystems.readInput();
             secondPlayerChoice();
         break;
 
-        case 1: // peek around the corner
+        case "1": // peek around the corner
             gameSystems.clearConsole();
             Cutscene.topHeader();
             gameSystems.printWithDelay("\n  Snake leans out, just enough to study the passage ahead.\n\n", 40);
             gameSystems.pauseText(1000);
-            gameSystems.printWithDelay("  A lone guard moves up and down the hallway in a slow, steady rhythm, his\n", 40);
+            gameSystems.printWithDelay("  An armed guard moves up and down the hallway in a slow and steady rhythm, his\n", 40);
             gameSystems.printWithDelay("  footsteps echoing off the metal.\n\n", 40);
-            gameSystems.pauseText(1500);
+            gameSystems.pauseText(2000);
 
             gameSystems.printWithDelay("  Past the bend, a door sits slightly open - close enough to reach, but only\n", 40);
             gameSystems.printWithDelay("  when the guard turns his back.\n", 40);
@@ -180,7 +180,7 @@ public class gameplayChoices {
             secondPlayerChoice();
         break;
 
-        case 2:
+        case "2":
             gameSystems.clearConsole();
             Cutscene.topHeader();
 
@@ -189,21 +189,21 @@ public class gameplayChoices {
             // Next screen or next gameplay state goes here
         break;
 
-        case 3:
+        case "3":
             gameSystems.clearConsole();
             System.out.println("option");
             secondPlayerChoice();
         break;
 
-        case 4:
+        case "4":
             gameSystems.clearConsole();
             asciiArt.displaySolitonRadarSCREENTWO(hasGatheredIntel);
             secondPlayerChoice();
         break;
 
-        case 5:
+        case "C": // codec otacon option
             gameSystems.clearConsole();
-            gameSystems.printWithDelay("\n  Nothing here yet...\n", 30);
+            gameSystems.printWithDelay("\n  calls otacon\n", 30);
             secondPlayerChoice();
         break;
 
