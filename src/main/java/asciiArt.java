@@ -231,9 +231,9 @@ public static void displaySolitonRadarSCREENTWO() {
             gameSystems.printWithDelay("\033[1;90m                                      [DECK-A HALLWAY]                         \n\033[0m", 2);
             gameSystems.printWithDelay("\033[1;90m                    .----|---------.                                     \n\033[0m", 2);
             gameSystems.printWithDelay("\033[1;90m                    |    |         |           \033[0;36mO\033[1;90m = SNAKE\n\033[0m\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                    |    |         |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |   [?]   |                                     \n\033[0m", 2);
             gameSystems.printWithDelay("\033[1;90m                    |    |         |           \033[0;31mX\033[1;90m = RUSSIAN SOLDIER                                   \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                    |  \033[0;36mO \033[1;90m|_________|                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |  \033[0;36mO \033[1;90m|_/ ______|                                     \n\033[0m", 2);
             gameSystems.printWithDelay("\033[1;90m                    |           \033[0;31mX\033[1;90m  |                                     \n\033[0m", 2);
             gameSystems.printWithDelay("\033[1;90m                    '--------------'                                     \033[0m\n", 2);
 

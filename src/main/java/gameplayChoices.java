@@ -2,7 +2,7 @@ public class gameplayChoices {
 
     static Player player = new Player();  // Create a player
     static boolean hasGatheredIntel = false;
-    static boolean hasKnocked = false;
+    static boolean hasPeeked = false;
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -28,8 +28,8 @@ public class gameplayChoices {
 
             System.out.println("\033[0;37m   [1] More Reconnaissance");
             System.out.println("   [2] Approach the guard watching over the waters\n");
-            System.out.println("   [3] View Soliton Radar");
-            System.out.println("   [4] View image of the unknown Russian Leader\n");
+            System.out.println("   [3] [View image of the unknown Russian Leader]\n");
+            System.out.println("   [R] [View Soliton Radar]");
             System.out.println("   [C] CODEC OTACON\033[0m\n");
 
             System.out.println("\033[1;30m====================================================================================================\033[0m");
@@ -102,13 +102,13 @@ public class gameplayChoices {
                 secondPlayerChoice();
             break;
 
-            case "3":
+            case "R":
                 gameSystems.clearConsole();
                 asciiArt.displaySolitonRadarSCREENONE(hasGatheredIntel);
                 firstPlayerChoice();
             break;
 
-            case "4":
+            case "3":
                 gameSystems.clearConsole();
                 asciiArt.imageRussianLeader();
             break;
@@ -121,7 +121,6 @@ public class gameplayChoices {
         }
 
     public static void secondPlayerChoice() {
-
         gameSystems.clearConsole();
 
             System.out.println("\n\033[1;30m====================================================================================================\033[0m");
@@ -144,14 +143,21 @@ public class gameplayChoices {
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
 
             System.out.println("\033[0;37m   [1] Peek around the corner");
-            System.out.println("   [2] ...\n");
-            if (hasKnocked) {
-                System.out.println("   [3] [Knock on the wall]\n");
+
+            if (hasPeeked) {
+            System.out.println("");
+            } else {
+                System.out.println("\n   [2] Sneak into the open doorway\n");
+            }
+
+            if (hasPeeked) {
+                System.out.println("   [2] [Distract the Guard]\n");
             } else {
                 System.out.print("");
             }
-            System.out.println("   [4] [View Soliton Radar]\n");
-            System.out.println("   [5] ...\033[0m\n");
+
+            System.out.println("   [R] [View Soliton Radar]");
+            System.out.println("   [C] ...\033[0m\n");
 
             System.out.println("\033[1;30m====================================================================================================\033[0m");
 
@@ -173,7 +179,7 @@ public class gameplayChoices {
             gameSystems.printWithDelay("\n  Snake leans out, just enough to study the passage ahead.\n\n", 40);
             gameSystems.pauseText(1000);
             gameSystems.printWithDelay("  An armed guard moves up and down the hallway in a slow and steady rhythm, his\n", 40);
-            gameSystems.printWithDelay("  footsteps echoing off the metal.\n\n", 40);
+            gameSystems.printWithDelay("  footsteps echoing off the metal flooring.\n\n", 40);
             gameSystems.pauseText(2000);
 
             gameSystems.printWithDelay("  Past the bend, a door sits slightly open - close enough to reach, but only\n", 40);
@@ -181,42 +187,69 @@ public class gameplayChoices {
             gameSystems.pauseText(2000);
 
             hasGatheredIntel = true; // updates radar map
-            hasKnocked = true;
+            hasPeeked = true;
             gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 0);
             gameSystems.pauseText(1500);
             Cutscene.bottomHeader();
             secondPlayerChoice();
         break;
 
-        case "2":
+        case "2": // slip through the door
+            if (hasPeeked) {
+                // SUCCESSFUL STEALTH
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                gameSystems.printWithDelay("\n  snake knocks on the wall to distract the guard....\n", 40);
+                gameSystems.printWithDelay("  d.\n", 40);
+                Cutscene.bottomHeader();
+                // next screen
+            } else {
+                // FAILED STEALTH → COMBAT
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                gameSystems.printWithDelay("\n  Snake steps into the doorway—only to come face-to-face with the guard.\n", 40);
+                gameSystems.printWithDelay("  The guard reacts instantly.\n\n", 40);
+                Cutscene.bottomHeader();
+
+                Enemy guard = new Enemy("Russian Guard");
+                Combat.startCombat(player, guard);
+
+                secondPlayerChoice();
+            }
+        break;
+        
+        case "3":
             gameSystems.clearConsole();
             Cutscene.topHeader();
 
+            System.out.println("option 3");
 
             Cutscene.bottomHeader();
-            // Next screen or next gameplay state goes here
+            secondPlayerChoice();
         break;
 
-        case "3":
-            if (hasKnocked) {
+
+        case "4":
+            if (hasPeeked) {
                 gameSystems.clearConsole();
-                System.out.println("   [3] Knock on the wall");
+                System.out.println("   [4] Knock on the wall");
                 secondPlayerChoice();
                 } else {
                     secondPlayerChoice(); // or show "You don't know enough yet"
                 }
         break;
 
-        case "4":
+        case "R":
             gameSystems.clearConsole();
             asciiArt.displaySolitonRadarSCREENTWO(hasGatheredIntel);
             secondPlayerChoice();
         break;
 
         case "C": // codec otacon option
-            gameSystems.clearConsole();
-            gameSystems.printWithDelay("\n  calls otacon\n", 30);
-            secondPlayerChoice();
+        gameSystems.clearConsole();
+        System.out.println("calls otacon");
+        Cutscene.bottomHeader();
+        secondPlayerChoice();
         break;
 
         default:
