@@ -32,58 +32,74 @@ public class gameplayChoices {
         System.out.print("\033[0;90mChoice : \033[0m");
         int choice = Integer.parseInt(gameSystems.readInput());  // Read the entire line as input
 
-        switch (choice) {
-            case 0:
-                player.displayInventory();
-                
-                System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
-                gameSystems.readInput();  // Correctly wait for user input
+            switch (choice) {
+                case 0:
+                    player.displayInventory();
+                    
+                    System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
+                    gameSystems.readInput();  // Correctly wait for user input
+                    firstPlayerChoice();
+                break;
+
+            case 1: // option : more recon
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 30);
+                hasGatheredIntel = true;
+
+                gameSystems.pauseText(500);
+                gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 30);
+                gameSystems.pauseText(1000);
+
+                Cutscene.bottomHeader();
+                firstPlayerChoice();
+
+            case 2: // option : approach the guard
+                gameSystems.clearConsole();
+                Enemy guard = new Enemy("Russian Guard");
+                Combat.startCombat(player, guard);
+                gameSystems.pauseText(500);
+
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                gameSystems.printWithDelay("\n\033[1;36m  [Snake drags the unconscious body across the rain-soaked deck.]\033[0m\n\n", 30);
+                    gameSystems.pauseText(1000);
+                    gameSystems.printWithDelay("\033[1;36m  [With a swift motion, he throws the guard overboard-]\033[0m\n\n", 30);
+                    gameSystems.pauseText(500);
+                    gameSystems.printWithDelay("\033[1;36m  [the splash is completely masked by the pounding rain.]\033[0m\n\n", 30);
+                    gameSystems.pauseText(1000);
+                    gameSystems.printWithDelay("\033[1;36m  [Snake turns toward the nearest hatch and slips inside the tanker.]\033[0m\n", 30);
+                    gameSystems.pauseText(2000);
+                Cutscene.bottomHeader();
+
+                secondPlayerChoice();
+            break;
+
+            case 3:
+                gameSystems.clearConsole();
+                    asciiArt.displaySolitonRadar(hasGatheredIntel);
                 firstPlayerChoice();
             break;
 
-        case 1: // option : more recon
-            gameSystems.clearConsole();
-            Cutscene.topHeader();
-            gameSystems.printWithDelay("\n  [Using his binoculars, Snake observes the ship's layout. On the lower left \n  deck, a guard silently watches over the dark waters. Above, on the upper \n  deck, another guard admires the distant New York City skyline].\n", 30);
-            hasGatheredIntel = true;
+            case 4:
+                gameSystems.clearConsole();
+                asciiArt.imageRussianLeader();
+            break;
 
-            gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 30);
-            gameSystems.pauseText(1000);
-
-            Cutscene.bottomHeader();
-            firstPlayerChoice();
-
-        case 2: // option : approach the guard
-            gameSystems.clearConsole();
-            Enemy guard = new Enemy("Russian Guard");
-            Combat.startCombat(player, guard);
-            secondPlayerChoice();
-        break;
-
-        case 3:
-            gameSystems.clearConsole();
-                asciiArt.displaySolitonRadar(hasGatheredIntel);
-            firstPlayerChoice();
-        break;
-
-        case 4:
-            gameSystems.clearConsole();
-            asciiArt.imageRussianLeader();
-        break;
-
-        case 5:
-            gameSystems.clearConsole();
-            CODEC.callOtaconSCREENONE();
-        break;
+            case 5:
+                gameSystems.clearConsole();
+                CODEC.callOtaconSCREENONE();
+            break;
+            }
         }
-    }
 
     public static void secondPlayerChoice() {
         gameSystems.clearConsole();
 
         System.out.println("\n\033[1;30m" + "=================================================================================" + "\033[0m"); // Bold gray for top border
         System.out.println("\033[1;37m\nContext: \033[0;37msnake sneakily enters the ship through");
+        System.out.println("         Tanker, behind the ship's anchor connector points.\n\n" + "\033[0m");
+        System.out.println("\033[1;37m\nLocation: \033[0;37mDeck-A, crew's quarters, port");
         System.out.println("         Tanker, behind the ship's anchor connector points.\n" + "\033[0m");
         System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
     }

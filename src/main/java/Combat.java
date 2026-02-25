@@ -220,14 +220,6 @@ public class Combat {
 
         gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + ", rendering him unconscious]\033[0m\n\n", 30);
         gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("\033[1;36m  [He drags the unconscious body across the rain-soaked deck.]\033[0m\n\n", 30);
-        gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("\033[1;36m  [With a swift motion, he throws the guard overboard-]\033[0m\n\n", 30);
-        gameSystems.pauseText(500);
-        gameSystems.printWithDelay("\033[1;36m  [the splash is completely masked by the pounding rain.]\033[0m\n\n", 30);
-        gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("\033[1;36m  [Snake turns toward the nearest hatch and slips inside the tanker.]\033[0m\n", 30);
-        gameSystems.pauseText(2000);
 
         Cutscene.bottomHeader();
         gameSystems.clearConsole();

@@ -30,3 +30,25 @@
 - cool chemical compound symbols on the main menu vibe / animate it ??
 
 - ASCII gifs of Snake taking out guards (could potentially be better looking than ASCII images??)
+
+25/02/2026
+- *knocking on the wall* to divert the guards attention
+- a gameplay mechanic where snake sneaks past a security camera that sweeps left to right??
+
+Gameplay Screen 2:
+============================================
+
+   Context: snake is inside the ship, crouched behind a corner, he can hear a guard patrolling the hallway
+
+  location: crew-A ...... (*jap text too?*)
+
+============================================
+ [0] Access Inventory
+============================================
+ [1] More Recon
+ [2] Slip away into a nearby room
+
+ [3] View Soliton Radar
+ [4] ???
+
+ [5] CODEC OTACON

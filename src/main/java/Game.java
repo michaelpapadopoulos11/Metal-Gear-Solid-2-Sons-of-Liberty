@@ -9,7 +9,7 @@ public class Game {
         // gameIntro(input); // game menu function
         // gameSystems.gameDifficulty(input);
 
-        // // // game contents:
+        // // game contents:
         // Cutscene.gameLoading(); // fake intro
 
         // Cutscene.hudsonRiverIntro(); // testing the first cutscene
@@ -26,7 +26,6 @@ public class Game {
         gameSystems.clearConsole();
         System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
     
-        // Print "Mike presents..." centered with delay
         String introText = "       Mike presents...";
         int padding = (80 - introText.length()) / 2; // calculate padding
         String paddedIntro = String.format("%" + padding + "s%s", "", introText); // apply padding
