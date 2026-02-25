@@ -65,13 +65,22 @@ public class gameplayChoices {
                 Cutscene.topHeader();
                 gameSystems.printWithDelay("\n  The storm drowns out Snake's footsteps as he closes in.\n", 30);
                 gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\n  The guard stands by the railing, watching the lights of Manhattan \n  shimmer through the rain.\n", 30);
+                gameSystems.printWithDelay("\n  The guard stands by the railing, watching the lights of Manhattan shimmer\n  through the rain.\n", 30);
                 gameSystems.pauseText(1000);
                 gameSystems.printWithDelay("\n  The guard shifts-instinctively,", 30);
-                gameSystems.pauseText(500);
-                gameSystems.printWithDelay(" sensing movement behind him.", 30);
+                gameSystems.pauseText(00);
+                gameSystems.printWithDelay(" sensing movement behind him.\n\n\n", 30);
+                gameSystems.pauseText(1000);
+
+                    System.out.println("\033[0;90m  ----------------------------------------------------------------------------  \033[0m");
+                    System.out.println("\033[0;90m   ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~   \033[0m");
+                    System.out.println("\033[0;90m\033[0m                                                       \033[31m!\033[0m                                         \033[0;90m\033[0m");
+                    System.out.println("\033[0;90m\033[0m                                           \033[36m   O\033[0m        O                                         \033[0;90m\033[0m");
+                    System.out.println("\033[0;90m\033[0m                                          \033[36m   /|\\\033[0m      /|\\                                        \033[0;90m\033[0m");
+                    System.out.println("\033[0;90m\033[0m                                          \033[36m   / \\\033[0m      / \\                                        \033[0;90m\033[0m");
+                    System.out.println("\033[0;90m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \033[0m");
                 gameSystems.pauseText(1500);
-                System.out.println();
+
                 Cutscene.bottomHeader();
 
                 Enemy guard = new Enemy("Russian Guard");
