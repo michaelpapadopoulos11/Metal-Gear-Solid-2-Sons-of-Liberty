@@ -2,6 +2,7 @@ public class gameplayChoices {
 
     static Player player = new Player();  // Create a player
     static boolean hasGatheredIntel = false;
+    static boolean hasKnocked = false;
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -120,6 +121,7 @@ public class gameplayChoices {
         }
 
     public static void secondPlayerChoice() {
+
         gameSystems.clearConsole();
 
             System.out.println("\n\033[1;30m====================================================================================================\033[0m");
@@ -141,9 +143,13 @@ public class gameplayChoices {
 
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
 
-            System.out.println("\033[0;37m   [1] [Peek around the corner]");
+            System.out.println("\033[0;37m   [1] Peek around the corner");
             System.out.println("   [2] ...\n");
-            System.out.println("   [3] ...");
+            if (hasKnocked) {
+                System.out.println("   [3] [Knock on the wall]\n");
+            } else {
+                System.out.print("");
+            }
             System.out.println("   [4] [View Soliton Radar]\n");
             System.out.println("   [5] ...\033[0m\n");
 
@@ -174,8 +180,10 @@ public class gameplayChoices {
             gameSystems.printWithDelay("  when the guard turns his back.\n", 40);
             gameSystems.pauseText(2000);
 
-            hasGatheredIntel = true;
+            hasGatheredIntel = true; // updates radar map
+            hasKnocked = true;
             gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 0);
+            gameSystems.pauseText(1500);
             Cutscene.bottomHeader();
             secondPlayerChoice();
         break;
@@ -190,9 +198,13 @@ public class gameplayChoices {
         break;
 
         case "3":
-            gameSystems.clearConsole();
-            System.out.println("option");
-            secondPlayerChoice();
+            if (hasKnocked) {
+                gameSystems.clearConsole();
+                System.out.println("   [3] Knock on the wall");
+                secondPlayerChoice();
+                } else {
+                    secondPlayerChoice(); // or show "You don't know enough yet"
+                }
         break;
 
         case "4":
@@ -210,6 +222,6 @@ public class gameplayChoices {
         default:
             secondPlayerChoice();
         break;
-    }
+        }
     }
 }
