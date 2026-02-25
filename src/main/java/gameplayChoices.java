@@ -54,7 +54,7 @@ public class gameplayChoices {
 
                 gameSystems.pauseText(500);
                 gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 30);
-                gameSystems.pauseText(1000);
+                gameSystems.pauseText(600);
 
                 Cutscene.bottomHeader();
                 firstPlayerChoice();
@@ -72,13 +72,13 @@ public class gameplayChoices {
                 gameSystems.printWithDelay(" sensing movement behind him.\n\n\n", 30);
                 gameSystems.pauseText(1000);
 
-                    System.out.println("\033[0;90m  ----------------------------------------------------------------------------  \033[0m");
-                    System.out.println("\033[0;90m   ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~   \033[0m");
-                    System.out.println("\033[0;90m\033[0m                                                       \033[31m!\033[0m                                         \033[0;90m\033[0m");
-                    System.out.println("\033[0;90m\033[0m                                           \033[36m   O\033[0m        O                                         \033[0;90m\033[0m");
-                    System.out.println("\033[0;90m\033[0m                                          \033[36m   /|\\\033[0m      /|\\                                        \033[0;90m\033[0m");
-                    System.out.println("\033[0;90m\033[0m                                          \033[36m   / \\\033[0m      / \\                                        \033[0;90m\033[0m");
-                    System.out.println("\033[0;90m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \033[0m");
+                System.out.println("\033[0;90m  ----------------------------------------------------------------------------  \033[0m");
+                System.out.println("\033[0;90m   ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~   \033[0m");
+                System.out.println("\033[0;90m\033[0m                                                       \033[31m!\033[0m                                         \033[0;90m\033[0m");
+                System.out.println("\033[0;90m\033[0m                                           \033[36m   O\033[0m        O                                         \033[0;90m\033[0m");
+                System.out.println("\033[0;90m\033[0m                                          \033[36m   /|\\\033[0m      /|\\                                        \033[0;90m\033[0m");
+                System.out.println("\033[0;90m\033[0m                                          \033[36m   / \\\033[0m      / \\                                        \033[0;90m\033[0m");
+                System.out.println("\033[0;90m  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  \033[0m");
                 gameSystems.pauseText(1500);
 
                 Cutscene.bottomHeader();
@@ -91,20 +91,19 @@ public class gameplayChoices {
                 Cutscene.topHeader();
                 gameSystems.printWithDelay("\n\033[1;36m  [Snake drags the unconscious body across the rain-soaked deck.]\033[0m\n\n", 30);
                     gameSystems.pauseText(1000);
-                    gameSystems.printWithDelay("\033[1;36m  [With a swift motion, he throws the guard overboard-]\033[0m\n\n", 30);
+                    gameSystems.printWithDelay("\033[1;36m  [With a swift motion, he throws the guard overboard]\033[0m\n\n", 30);
                     gameSystems.pauseText(500);
                     gameSystems.printWithDelay("\033[1;36m  [the splash is completely masked by the pounding rain.]\033[0m\n\n", 30);
                     gameSystems.pauseText(1000);
                     gameSystems.printWithDelay("\033[1;36m  [Snake turns toward the nearest hatch and slips inside the tanker.]\033[0m\n", 30);
                     gameSystems.pauseText(2000);
                 Cutscene.bottomHeader();
-
                 secondPlayerChoice();
             break;
 
             case 3:
                 gameSystems.clearConsole();
-                    asciiArt.displaySolitonRadar(hasGatheredIntel);
+                asciiArt.displaySolitonRadarSCREENONE(hasGatheredIntel);
                 firstPlayerChoice();
             break;
 
@@ -123,11 +122,90 @@ public class gameplayChoices {
     public static void secondPlayerChoice() {
         gameSystems.clearConsole();
 
-        System.out.println("\n\033[1;30m" + "=================================================================================" + "\033[0m"); // Bold gray for top border
-        System.out.println("\033[1;37m\nContext: \033[0;37msnake sneakily enters the ship through");
-        System.out.println("         Tanker, behind the ship's anchor connector points.\n\n" + "\033[0m");
-        System.out.println("\033[1;37m\nLocation: \033[0;37mDeck-A, crew's quarters, port");
-        System.out.println("         Tanker, behind the ship's anchor connector points.\n" + "\033[0m");
-        System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
+            System.out.println("\n\033[1;30m====================================================================================================\033[0m");
+
+            System.out.println(
+                "\033[1;37m LOCATION : \033[0;37mUSS Discovery - Deck-A crew's quarters, port"
+            + "\033[0;90m | WX: HEAVY RAIN | | HR 65 BPM | ALERT : 0\033[0m");
+
+            System.out.println("\033[1;30m====================================================================================================\033[0m\n");
+
+                System.out.print("\033[1;37m CONTEXT: \033[0m");
+                System.out.println(" Snake is inside the Tanker now, crouched behind a corner. A guard patrols a long");
+                System.out.println("           hallway ahead, and just past the bend sits a door he might slip through when the");
+                System.out.println("           guard's back is turned.\n");
+
+            System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m");
+
+            System.out.println("\033[32m [0] Access Inventory\033[0m"+ "\033[0;90m | SYS: STABLE |                | TEMP: 10°C | \033[0m" + "\033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
+
+            System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
+
+            System.out.println("\033[0;37m   [1] [Peek around the corner]");
+            System.out.println("   [2] ...\n");
+            System.out.println("   [3] ...");
+            System.out.println("   [4] [View Soliton Radar]\n");
+            System.out.println("   [5] ...\033[0m\n");
+
+            System.out.println("\033[1;30m====================================================================================================\033[0m");
+
+            System.out.print("\033[0;90m   Choice : \033[0m");
+
+            int choice = Integer.parseInt(gameSystems.readInput());
+
+    switch (choice) {
+        case 0:
+            player.displayInventory();
+            System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
+            gameSystems.readInput();
+            secondPlayerChoice();
+        break;
+
+        case 1: // peek around the corner
+            gameSystems.clearConsole();
+            Cutscene.topHeader();
+            gameSystems.printWithDelay("\n  Snake leans out just enough to study the guard's patrol patterns", 20);
+            gameSystems.printWithDelay("...", 700);
+            System.out.print("\n");
+            gameSystems.pauseText(650);
+            hasGatheredIntel = true;
+            gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 30);
+            Cutscene.bottomHeader();
+            secondPlayerChoice();
+        break;
+
+        case 2:
+            gameSystems.clearConsole();
+            Cutscene.topHeader();
+            gameSystems.printWithDelay("\n  Snake waits for the guard to turn, then slips quietly toward the door...\n", 30);
+            gameSystems.pauseText(800);
+            gameSystems.printWithDelay("\n  Snake waits for the guard to turn, then slips quietly toward the door...\n", 30);
+
+            Cutscene.bottomHeader();
+            // Next screen or next gameplay state goes here
+        break;
+
+        case 3:
+            gameSystems.clearConsole();
+            System.out.println("option");
+            secondPlayerChoice();
+        break;
+
+        case 4:
+            gameSystems.clearConsole();
+            asciiArt.displaySolitonRadarSCREENTWO(hasGatheredIntel);
+            secondPlayerChoice();
+        break;
+
+        case 5:
+            gameSystems.clearConsole();
+            gameSystems.printWithDelay("\n  Nothing here yet...\n", 30);
+            secondPlayerChoice();
+        break;
+
+        default:
+            secondPlayerChoice();
+        break;
+    }
     }
 }

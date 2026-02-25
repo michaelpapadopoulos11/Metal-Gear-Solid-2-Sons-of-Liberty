@@ -116,21 +116,21 @@ public class asciiArt {
     // public static void posterOne() {} // lewd poster moment
 
 
-public static void displaySolitonRadar() { 
+public static void displaySolitonRadarSCREENONE() { 
     solitonRadarTopHeader();
-            gameSystems.printWithDelay("\n                                                                 \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
+            gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
             gameSystems.pauseText(1000);
 
             gameSystems.printWithDelay("\033[1;90m\n\n\033[0m", 2);
 
-            gameSystems.printWithDelay("\033[1;90m                                       ^   [UPPER DECK]                         \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            .----|---------.                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            |    |         |                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            |    |         |                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            |    |         |                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            |  ^ '---------|                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            |\033[0;36m[SNAKE]\033[1;90m       |                                     \n\033[0m", 2);
-            gameSystems.printWithDelay("\033[1;90m                            '--------------'                                     \033[0m\n", 2);
+            gameSystems.printWithDelay("\033[1;90m                                            ^   [UPPER DECK]                    \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            .-------------.                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            |_________    |            \033[0;36mO\033[1;90m = SNAKE\n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            |         |   |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            |         |___|                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            |             |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            |           \033[0;36mO\033[1;90m |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                            '-------------'                                     \033[0m\n", 2);
 
             gameSystems.printWithDelay(
                 "\n\033[0;90m                     [!] Signals blocked. Perform Recon to identify targets.\n\033[0m",
@@ -142,9 +142,9 @@ public static void displaySolitonRadar() {
         }
 
         // Version 2: The "Intel" Radar (Shows enemies)
-        public static void displaySolitonRadar(boolean hasIntel) {
-    if (!hasIntel) {
-        displaySolitonRadar(); // Show blind radar
+        public static void displaySolitonRadarSCREENONE(boolean hasIntelTWO) {
+    if (!hasIntelTWO) {
+        displaySolitonRadarSCREENONE(); // Show blind radar
         return;
     }
 
@@ -152,19 +152,19 @@ public static void displaySolitonRadar() {
 
     System.out.println("\033[1;36m"); 
 
-    gameSystems.printWithDelay("\n                                                                 \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
+            gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
     gameSystems.pauseText(1000);
 
     gameSystems.printWithDelay("\033[1;90m\n\n\033[0m", 2);
 
-    gameSystems.printWithDelay("\033[1;90m                                       ^   [UPPER DECK]                         \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            .----|---------.                                     \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            |    |     (\033[0;31mX\033[1;90m) |   <-- Russian Soldier              \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            |    |         |                                     \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            | (\033[0;31mX\033[1;90m)|         |   <-- Russian Soldier              \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            |  ^ '---------|                                     \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            |\033[0;36m[SNAKE]\033[1;90m       |                                     \n\033[0m", 2);
-    gameSystems.printWithDelay("\033[1;90m                            '--------------'                                     \033[0m\n", 2);
+        gameSystems.printWithDelay("\033[1;90m                                            ^   [UPPER DECK]                    \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            .-------------.                                     \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            |__________ \033[0;31mX\033[1;90m |           \033[0;36mO\033[1;90m = SNAKE\n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            | \033[0;31mX\033[1;90m       |   |                                     \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            |         |___|           \033[0;31mX\033[1;90m = RUSSIAN SOLDIER        \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            |             |                                     \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            |           \033[0;36mO\033[1;90m |                                     \n\033[0m", 2);
+        gameSystems.printWithDelay("\033[1;90m                            '-------------'                                     \033[0m\n", 2);
 
     gameSystems.printWithDelay(
         "\n\033[1;96m                     [!] Intel acquired. Targets identified.\n\033[0m",
@@ -177,16 +177,72 @@ public static void displaySolitonRadar() {
 
 
     public static void solitonRadarTopHeader() {
-        System.out.println("\n\033[1;90m====================================================================================================\033[0m");
-        System.out.println("\033[1;90m [ SOLITON RADAR SYSTEM ]                                  PWR STATUS: 86% | Signal: 82% | LAT 12ms\033[0m");
-        System.out.println("\033[1;90m====================================================================================================\033[0m");
+        System.out.println("\n\033[1;90m==========================================================================================\033[0m");
+        System.out.println("\033[1;90m [ SOLITON RADAR SYSTEM ]                        PWR STATUS: 86% | Signal: 82% | LAT 12ms\033[0m");
+        System.out.println("\033[1;90m==========================================================================================\033[0m");
     }
 
 
 public static void solitonRadarBottomHeader() {
-    System.out.println("\n\033[1;90m====================================================================================================\033[0m");
-    System.out.println("\033[1;90m Soliton Feed Stable                                                     Press \033[0;32m[ENTER]\033[1;90m to return\033[0m");
-    System.out.println("\033[1;90m====================================================================================================\033[0m");
+    System.out.println("\n\033[1;90m==========================================================================================\033[0m");
+    System.out.println("\033[1;90m Soliton Feed Stable                                              Press \033[0;32m[ENTER]\033[1;90m to return\033[0m");
+    System.out.println("\033[1;90m==========================================================================================\033[0m");
     gameSystems.readInput();
     }
+
+
+public static void displaySolitonRadarSCREENTWO() { 
+    solitonRadarTopHeader();
+            gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
+            gameSystems.pauseText(1000);
+
+            gameSystems.printWithDelay("\033[1;90m\n\n\033[0m", 2);
+
+            gameSystems.printWithDelay("\033[1;90m                                      [DECK-A HALLWAY]                         \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    .----|---------.                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |           \033[0;36mO\033[1;90m = SNAKE\n\033[0m\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |  \033[0;36mO \033[1;90m|_________|                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |              |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    '--------------'                                     \033[0m\n", 2);
+
+            gameSystems.printWithDelay(
+                "\n\033[0;90m                [!] Signals weak. Interior bulkheads reduce scan clarity.\n\033[0m",
+                4
+            );
+            gameSystems.pauseText(1000);
+
+        solitonRadarBottomHeader();
+        }
+
+    public static void displaySolitonRadarSCREENTWO(boolean hasIntelTWO) {
+        if (!hasIntelTWO) {
+            displaySolitonRadarSCREENTWO(); // Show blind radar
+            return;
+        }
+        
+        solitonRadarTopHeader();
+            gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
+            gameSystems.pauseText(1000);
+
+            gameSystems.printWithDelay("\033[1;90m\n\n\033[0m", 2);
+
+            gameSystems.printWithDelay("\033[1;90m                                      [DECK-A HALLWAY]                         \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    .----|---------.                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |           \033[0;36mO\033[1;90m = SNAKE\n\033[0m\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |    |         |           \033[0;31mX\033[1;90m = RUSSIAN SOLDIER                                   \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |  \033[0;36mO \033[1;90m|_________|                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |           \033[0;31mX\033[1;90m  |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    '--------------'                                     \033[0m\n", 2);
+
+            gameSystems.printWithDelay(
+                "\n\033[0;90m                     [!] Signals weak. Interior bulkheads reduce scan clarity.\n\033[0m",
+                4
+            );
+        gameSystems.pauseText(1000);
+
+        solitonRadarBottomHeader();
+        }
 }
