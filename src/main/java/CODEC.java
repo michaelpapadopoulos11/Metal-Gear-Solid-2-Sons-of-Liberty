@@ -415,7 +415,7 @@ public class CODEC {
         gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("...\n", 20);
+        gameSystems.printWithDelay("...\n", 400);
         gameSystems.pauseText(1000);    
 
         codecBottomBorder();

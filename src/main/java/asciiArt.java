@@ -11,6 +11,21 @@ public class asciiArt {
         System.out.println("" + "\033[1;30m" + " TIME: 12:48 | BATTERY: \033[1;32m84%\033[1;30m |                                  | SYSTEM: ONLINE | CONTINUE: " + "\033[0;32m[ENTER]\033[0m");
         System.out.println("" + "\033[1;30m" + "====================================================================================================" + "\033[0m");
     }
+    
+        public static void combatIntroAnimation() { 
+        for (int i = 0; i < 2; i++) {
+            gameSystems.clearConsole();
+            System.out.println("\n");
+            System.out.println("   ┌────────────────────────────────────────────┐");
+            System.out.println("   │                                            │");
+            System.out.println("   │               COMBAT ENCOUNTER             │");
+            System.out.println("   │                                            │");
+            System.out.println("   └────────────────────────────────────────────┘");
+            gameSystems.pauseText(500);
+            gameSystems.clearConsole();
+            gameSystems.pauseText(500);
+        }
+    }
 
     public static void imageRussianLeader() {
 

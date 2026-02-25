@@ -6,22 +6,27 @@ public class gameplayChoices {
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
 
-        System.out.println("\n\033[1;30m" + "=================================================================================" + "\033[0m"); // Bold gray for top border
-        System.out.println("\033[1;37m\nContext: \033[0;37mSnake is stealthily crouched at the rear end of the USS Discovery");
-        System.out.println("         Tanker, behind the ship's anchor connector points.\n" + "\033[0m");
-        System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
+            System.out.println("\n\033[1;30m====================================================================================================\033[0m");
 
-        // inventory / health
-        System.out.println("\033[32m[0] Access Inventory\033[0m                              \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
-        System.out.println("\033[1;30m" + "=================================================================================\n" + "\033[0m");
+            System.out.println("\033[1;37m\n      Context: \033[0;37mSnake is stealthily crouched at the rear end of the USS Discovery Tanker,");
+            System.out.println("               behind the ship's anchor connector points.\n\033[0m");
 
-        System.out.println("\033[0;37m   [1] More Reconnaissance");
-        System.out.println("   [2] Approach the guard watching over the waters\n"); // Sneak Left"); // sneak left
-        System.out.println("   [3] [View Soliton Radar]"); // sneak right
-        System.out.println("   [4] [View image of the unknown Russian Leader]\033[0m\n");
+            System.out.println("\033[1;30m====================================================================================================\033[0m");
 
-        System.out.println("   [5] CODEC OTACON\n");
-        System.out.println("\033[1;30m" + "=================================================================================" + "\033[0m");
+            // Inventory / Health Row
+            System.out.println("\033[32m [0] Access Inventory\033[0m                                               \033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
+
+            System.out.println("\033[1;30m====================================================================================================\n\033[0m");
+
+            // Options
+            System.out.println("\033[0;37m   [1] More Reconnaissance");
+            System.out.println("   [2] Approach the guard watching over the waters\n");
+            System.out.println("   [3] [View Soliton Radar]");
+            System.out.println("   [4] [View image of the unknown Russian Leader]\n");
+
+            System.out.println("   [5] CODEC OTACON\n\033[0m");
+
+            System.out.println("\033[1;30m====================================================================================================\033[0m");
 
         // Choice prompt
         System.out.print("\033[0;90mChoice : \033[0m");
@@ -53,6 +58,7 @@ public class gameplayChoices {
             gameSystems.clearConsole();
             Enemy guard = new Enemy("Russian Guard");
             Combat.startCombat(player, guard);
+            secondPlayerChoice();
         break;
 
         case 3:

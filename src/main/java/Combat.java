@@ -9,8 +9,7 @@ public class Combat {
         enemy = e;
         combatTurn = 1;
 
-        // combatIntroAnimation();
-        
+        // asciiArt.combatIntroAnimation();
         // gameSystems.pauseText(800);
         Cutscene.topHeader();
         gameSystems.printWithDelay("\n\033[1;36m  [The storm drowns out Snake's footsteps as he closes in...]\033[0m\n", 30);
@@ -22,22 +21,6 @@ public class Combat {
         
         Cutscene.bottomHeader();
         combatTurn();
-    }
-
-    // Displays the flashing intro box
-    public static void combatIntroAnimation() { 
-        for (int i = 0; i < 2; i++) {
-            gameSystems.clearConsole();
-            System.out.println("\n");
-            System.out.println("   ┌────────────────────────────────────────────┐");
-            System.out.println("   │                                            │");
-            System.out.println("   │               COMBAT ENCOUNTER             │");
-            System.out.println("   │                                            │");
-            System.out.println("   └────────────────────────────────────────────┘");
-            gameSystems.pauseText(500);
-            gameSystems.clearConsole();
-            gameSystems.pauseText(500);
-        }
     }
 
     // Main combat loop logic
@@ -200,7 +183,7 @@ public class Combat {
             gameSystems.printWithDelay("\n\033[1;32m  Snake evades the guard and retreats!\033[0m\n", 20);
             gameSystems.pauseText(1000);
             Cutscene.bottomHeader();
-            gameplayChoices.secondPlayerChoice();
+            // gameplayChoices.secondPlayerChoice();
         } else {
             System.out.print("\n\n\033[1;31m  [FAILED ESCAPE!]\033[0m\n\n");
             gameSystems.pauseText(1000);
@@ -247,9 +230,7 @@ public class Combat {
         gameSystems.pauseText(2000);
 
         Cutscene.bottomHeader();
-
         gameSystems.clearConsole();
-        // gameplayChoices.secondPlayerChoice();
     }
 
     private static void playerDefeat() {
@@ -265,6 +246,8 @@ public class Combat {
         gameSystems.readInput();
 
         gameSystems.clearConsole();
-        System.out.println("\033[1;31mReturning to main menu...\033[0m");
+        gameSystems.printWithDelay("\033[1;31mReturning to main menu...\033[0m", 20);
+        gameSystems.pauseText(2000);
+        Game.main(null); 
     }
 }
