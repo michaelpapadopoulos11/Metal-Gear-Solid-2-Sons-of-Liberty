@@ -11,15 +11,6 @@ public class Combat {
 
         // asciiArt.combatIntroAnimation();
         // gameSystems.pauseText(800);
-        Cutscene.topHeader();
-        gameSystems.printWithDelay("\n\033[1;36m  [The storm drowns out Snake's footsteps as he closes in...]\033[0m\n", 30);
-        gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("\n\033[1;36m  [The guard stands by the railing, watching the lights of Manhattan \n  shimmer through the rain.]\033[0m", 30);
-        gameSystems.pauseText(1000);
-
-        System.out.println();
-        
-        Cutscene.bottomHeader();
         combatTurn();
     }
 
