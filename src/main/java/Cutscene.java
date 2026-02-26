@@ -225,8 +225,8 @@ public class Cutscene {
             gameSystems.pauseText(1000);
             gameSystems.printWithDelay("\n  [A faint blend of oil, metal, and damp fabric settles over the room]\n", 30);
             gameSystems.pauseText(1000);
-        gameplayChoices.lockerRoomChoice();
         Cutscene.bottomHeader();
-        }
+        gameplayChoices.lockerRoomChoice();
+    }
 
     }

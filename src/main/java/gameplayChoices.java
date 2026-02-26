@@ -219,6 +219,8 @@ public class gameplayChoices {
                 gameSystems.printWithDelay("\033[0;32m\n  [Item Obtained: Pack of Cigarettes]\033[0m\n", 0);
                 player.addItem("Pack of Cigarettes");
                 Cutscene.bottomHeader();
+
+                Cutscene.lockerRoom();
                 secondPlayerChoice();
             } else {
                 // FAILED STEALTH → COMBAT
