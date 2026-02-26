@@ -4,7 +4,8 @@ public class gameplayChoices {
     static boolean hasGatheredIntel = false;
     static boolean hasPeeked = false;
     static boolean lockerOneChecked = false;
-    static boolean lockerFourChecked = false;
+    static boolean lockerThreeChecked = false;
+    static boolean lockerProgress = false;
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -160,7 +161,6 @@ public class gameplayChoices {
                 System.out.print("");
             }
 
-
             System.out.println("   [R] [View Soliton Radar]");
             System.out.println("   [C] ...\033[0m\n");
 
@@ -232,8 +232,8 @@ public class gameplayChoices {
                 gameSystems.pauseText(1000);
                 Cutscene.bottomHeader();
 
-                // Enemy guard = new Enemy("Russian Guard");
-                // Combat.startCombat(player, guard);
+                Enemy guard = new Enemy("Russian Guard");
+                Combat.startCombat(player, guard);
                 Cutscene.lockerRoom();
                 secondPlayerChoice();
             }
@@ -320,20 +320,27 @@ public class gameplayChoices {
 
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
 
-            if (lockerOneChecked) {
+            if (lockerOneChecked) { // LOCKED
                     System.out.println("\033[0;37m   [1] Open Locker #1 - Locked\033[0m");
                 } else {
                     System.out.println("\033[0;37m   [1] Open Locker #1\033[0m");
                 }
 
-            System.out.println("   [2] Open Locker #2");
-            System.out.println("   [3] Open Locker #3");
-            
-            if (lockerFourChecked) {
-                    System.out.println("\033[0;37m   [4] Open Locker #4 - Locked\033[0m");
+            System.out.println("   [2] Open Locker #2"); // GET CHAFF NADE
+
+
+
+            if (lockerThreeChecked) { // LOCKED
+                    System.out.println("\033[0;37m   [3] Open Locker #3 - Locked\033[0m");
                 } else {
-                    System.out.println("\033[0;37m   [4] Open Locker #4\033[0m");
+                    System.out.println("\033[0;37m   [3] Open Locker #3\033[0m");
                 }
+
+            if (lockerProgress) {
+                System.out.println("\033[0;37m   [4] Open Locker #4\n\n   [P] Proceed\033[0m");
+            } else {
+            System.out.println("   [4] Open Locker #4");
+            }
 
             System.out.println("\n   [R] [View Soliton Radar]");
             System.out.println("   [C] CODEC OTACON\033[0m\n");
@@ -366,22 +373,43 @@ public class gameplayChoices {
                 break;
 
                 case "2":
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                    gameSystems.printWithDelay("\n  Snake opens the locker and rummages through it.\n", 40);
+                    gameSystems.pauseText(1000);
+                    gameSystems.printWithDelay("\033[0;32m\n  [Item Obtained: Chaff Grenade]\033[0m\n", 0);
+
+                    player.addItem("Chaff Grenade");
+                    gameSystems.pauseText(1500);
+
+                Cutscene.bottomHeader();
+                lockerRoomChoice();
                 break;
 
                 case "3":
-                break;
-
-                case "4":
                     gameSystems.clearConsole();
                     Cutscene.topHeader();
 
                         gameSystems.printWithDelay("\n  [This locker is locked]\n", 40);
-                        lockerFourChecked = true;
+                        lockerThreeChecked = true;
                         gameSystems.pauseText(1000);
 
                     Cutscene.bottomHeader();
                     lockerRoomChoice();
+                break;
 
+
+                case "4":
+                gameSystems.clearConsole();
+                Cutscene.topHeader();
+                    lockerProgress = true;
+
+                System.out.println("\nshows porn poster");
+                Cutscene.bottomHeader();
+                lockerRoomChoice();
+                break;
+
+                case "P":
                 break;
 
 

@@ -209,7 +209,7 @@ public class Combat {
         System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
 
-        gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + ", rendering him unconscious]\033[0m\n\n", 30);
+        gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + ", rendering him unconscious]\033[0m\n", 30);
         gameSystems.pauseText(1000);
 
         Cutscene.bottomHeader();
