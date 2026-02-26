@@ -119,9 +119,21 @@ public class gameplayChoices {
             case "C":
                 gameSystems.clearConsole();
                 CODEC.callOtaconSCREENONE();
+                firstPlayerChoice();
             break;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
 
     public static void secondPlayerChoice() {
         gameSystems.clearConsole();
@@ -147,22 +159,22 @@ public class gameplayChoices {
 
             System.out.println("\033[0;37m   [1] Peek around the corner");
 
-            System.out.println("   [2] ...");
+            System.out.println("   [2] Steady your stance");
 
             if (hasPeeked) {
             System.out.println("");
             } else {
-                System.out.println("   [3] Sneak into the open doorway\n");
+                System.out.println("\n   [3] Move forward quietly\n");
             }
 
             if (hasPeeked) {
-                System.out.println("   [3] [Distract the Guard]\n");
+                System.out.println("   \033[32m[3] [Distract the Guard]\033[0m\n");
             } else {
                 System.out.print("");
             }
 
             System.out.println("   [R] [View Soliton Radar]");
-            System.out.println("   [C] ...\033[0m\n");
+            System.out.println("   [C] CODEC OTACON\033[0m\n");
 
             System.out.println("\033[1;30m====================================================================================================\033[0m");
 
@@ -187,14 +199,28 @@ public class gameplayChoices {
             gameSystems.printWithDelay("  footsteps echoing off the metal flooring.\n\n", 40);
             gameSystems.pauseText(2000);
 
-            gameSystems.printWithDelay("  Past the bend, a door sits slightly open - close enough to reach, but only\n", 40);
-            gameSystems.printWithDelay("  when the guard turns his back.\n", 40);
+            gameSystems.printWithDelay("  Past the bend, a door sits slightly open - but the guard blocks any chance of\n", 40);
+            gameSystems.printWithDelay("  slipping through unnoticed.\n", 40);
             gameSystems.pauseText(2000);
 
             hasGatheredIntel = true; // updates radar map
             hasPeeked = true;
             gameSystems.printWithDelay("\033[0;32m\n  [Snake's Soliton Radar has been updated]\033[0m\n", 0);
             gameSystems.pauseText(1500);
+            Cutscene.bottomHeader();
+            secondPlayerChoice();
+        break;
+        
+        case "2":
+            gameSystems.clearConsole();
+            Cutscene.topHeader();
+
+            gameSystems.printWithDelay("\n  Snake presses himself tighter against the cold steel wall, steadying his\n", 40);
+            gameSystems.printWithDelay("  stance and lowering his profile.\n", 40);
+            gameSystems.pauseText(900);
+
+            gameSystems.printWithDelay("\n  [He keeps his breathing controlled, ready for whatever waits beyond the \n  corner]\n", 30);
+
             Cutscene.bottomHeader();
             secondPlayerChoice();
         break;
@@ -218,13 +244,14 @@ public class gameplayChoices {
                 gameSystems.pauseText(1000);
                 gameSystems.printWithDelay("\033[0;32m\n  [Item Obtained: Pack of Cigarettes]\033[0m\n", 0);
                 player.addItem("Pack of Cigarettes");
+                gameSystems.pauseText(1000);
                 Cutscene.bottomHeader();
-                secondPlayerChoice();
+                Cutscene.lockerRoom();
             } else {
                 // FAILED STEALTH → COMBAT
                 gameSystems.clearConsole();
                 Cutscene.topHeader();
-                gameSystems.printWithDelay("\n  Snake moves for the open door, keeping low and silent...\n", 40);
+                gameSystems.printWithDelay("\n  Snake slowly moves from the corner, keeping low and silent...\n", 40);
                 gameSystems.pauseText(1000);
                 gameSystems.printWithDelay("  But the guard suddenly breaks his patrol pattern, locking eyes onto Snake.\n", 40);
                 gameSystems.pauseText(1000);
@@ -238,17 +265,6 @@ public class gameplayChoices {
                 secondPlayerChoice();
             }
         break;
-        
-        case "2":
-            gameSystems.clearConsole();
-            Cutscene.topHeader();
-
-            System.out.println("option 2");
-
-            Cutscene.bottomHeader();
-            secondPlayerChoice();
-        break;
-
 
         case "4":
             if (hasPeeked) {
@@ -266,11 +282,10 @@ public class gameplayChoices {
             secondPlayerChoice();
         break;
 
-        case "C": // codec otacon option
-        gameSystems.clearConsole();
-        System.out.println("calls otacon");
-        Cutscene.bottomHeader();
-        secondPlayerChoice();
+        case "C":
+            gameSystems.clearConsole();
+            CODEC.callOtaconSCREENONE();
+            secondPlayerChoice();
         break;
 
         default:
@@ -310,9 +325,8 @@ public class gameplayChoices {
             System.out.println("\033[1;30m====================================================================================================\033[0m\n");
 
                 System.out.print("\033[1;37m CONTEXT: \033[0m");
-                System.out.println(" //");
-                System.out.println("           //");
-                System.out.println("           //\n");
+                System.out.println(" Inside the locker room, Snake hears no guards, just the distant sound of rain,");
+                System.out.println("           dulled by the tankers thick steel walls.\n");
 
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m");
 
@@ -400,16 +414,32 @@ public class gameplayChoices {
 
 
                 case "4":
-                gameSystems.clearConsole();
-                Cutscene.topHeader();
+                    gameSystems.clearConsole();
+                    Cutscene.topHeader();
                     lockerProgress = true;
 
-                System.out.println("\nshows porn poster");
-                Cutscene.bottomHeader();
-                lockerRoomChoice();
-                break;
+                    gameSystems.printWithDelay("\n  Snake opens the locker and rummages through the clutter.", 40);
+                    gameSystems.pauseText(700);
+                    gameSystems.printWithDelay(" A pair of boots, a \n", 40);
+                    System.out.print("  ");
+                    gameSystems.printWithDelay("folded jacket… nothing useful.\n", 40);
+
+                    gameSystems.pauseText(800);
+
+                    gameSystems.printWithDelay("\n  As he pushes the door closed, a brightly coloured poster catches his eye.\n", 40);
+                    gameSystems.pauseText(900);
+
+                    System.out.println("\n   poster");
+
+                    gameSystems.pauseText(1200);
+
+                    Cutscene.bottomHeader();
+                    CODEC.codecPornPoster();
+                    break;
 
                 case "P":
+                    gameSystems.clearConsole();                    
+                    Cutscene.preOlgaFight();
                 break;
 
 

@@ -51,7 +51,7 @@ public class CODEC {
     }
 
     public static void codecTopBorder() {
-        System.out.println("\033[1;30m" + " ======================================================" + "\033[1;30m"); 
+        System.out.println("\n\033[1;30m" + " ======================================================" + "\033[1;30m"); 
         System.out.println("\033[1;30m" + "  CODEC  |                |  FREQ: 140.85  |  < TUNE > \033[1;30m");
         System.out.println("\033[1;30m" + " ======================================================" + "\033[1;30m\n");
             }
@@ -367,18 +367,18 @@ public class CODEC {
 
     switch (choice) {
         case 0:
-            codecCall_1();
+            codecCallSCREENONE_1();
             break;
         case 1:
-            codecCall_2();
+            codecCallSCREENONE_2();
             break;
         case 2:
-            codecCall_3();
+            codecCallSCREENONE_3();
             break;
     }
 }
 
-    public static void codecCall_1() { // bird gluttony call
+    public static void codecCallSCREENONE_1() { // bird gluttony call
         codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
@@ -422,10 +422,9 @@ public class CODEC {
         gameSystems.readInput();            
         gameSystems.clearConsole();
         CODEC.codecEnd();
-        gameplayChoices.firstPlayerChoice();
     }
     
-    public static void codecCall_2() { // cows and UFOs
+    public static void codecCallSCREENONE_2() { // cows and UFOs
         codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
@@ -483,10 +482,9 @@ public class CODEC {
         gameSystems.readInput();            
         gameSystems.clearConsole();
         CODEC.codecEnd();
-        gameplayChoices.firstPlayerChoice();
     }
     
-    public static void codecCall_3() { // mei ling
+    public static void codecCallSCREENONE_3() { // mei ling
         codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
@@ -520,6 +518,74 @@ public class CODEC {
         gameSystems.readInput();            
         gameSystems.clearConsole();
         CODEC.codecEnd();
-        gameplayChoices.firstPlayerChoice();
+    }
+    public static void codecPornPoster() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " What do you think you're doing. Snake? You\n", 40);
+        gameSystems.printWithDelay("         don't have enough to keep yourself busy?\n", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay("\n         Try to remember the mission. If you can.\n", 40);
+        gameSystems.pauseText(500);
+
+        System.out.print("\n\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("...\n", 400);
+        gameSystems.pauseText(1500);   
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        gameplayChoices.lockerRoomChoice();
+    }
+
+    public static void shipPath() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Snake, did you find out where that ship is \n         headed?\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("I'm looking at it -- 35 degrees longitude, \n         latitude around 58.\n\n", 40);
+        gameSystems.pauseText(1200);   
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " More than 500 miles off the coast of the \n         Bermudas, out in the middle of the Atlantic", 40);
+        gameSystems.printWithDelay( "...\n\n", 0);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( "         So the prototype is ready for solo testing -- \n         it's basically combat-worthy.", 40);
+        gameSystems.pauseText(1500);
+
+        gameSystems.printWithDelay( "\n\n         That area is outside the Fleet's operational \n         range, too.\n", 40);
+        gameSystems.pauseText(1500);
+
+        gameSystems.printWithDelay( "\n         It must be a standalone Marine Corps project \n         -- which means this prototype Metal Gear must \n         be designed for independent deployment, without \n         any Naval assistance...\n", 40);
+        gameSystems.pauseText(1500);
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Anyways, analysis can wait till later.\n\n", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( "         Snake, you need to go down to the holds and \n         locate the actual Metal...\n\n", 40);
+
+        System.out.println("         [Creaking noises from the ship's hull]\n");
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("!?\n", 40);
+        gameSystems.pauseText(2000);   
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+        Cutscene.preOlgaFightCutscene();
     }
 }

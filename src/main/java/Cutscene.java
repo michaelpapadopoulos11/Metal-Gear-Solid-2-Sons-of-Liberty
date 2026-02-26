@@ -42,6 +42,13 @@ public class Cutscene {
         gameSystems.readInput();            
     }
 
+        public static void bottomHeaderOLGA() {
+        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+        System.out.println("\033[1;31m" + "\n         " + "Select [ENTER] to fight Olga." + "\033[0m");        
+        gameSystems.readInput();            
+    }
+
+
     public static void hudsonRiverIntro() {
         String indent = "\n         ";
 
@@ -225,8 +232,52 @@ public class Cutscene {
             gameSystems.pauseText(1000);
             gameSystems.printWithDelay("\n  [A faint blend of oil, metal, and damp fabric settles over the room]\n", 30);
             gameSystems.pauseText(1000);
-        gameplayChoices.lockerRoomChoice();
         Cutscene.bottomHeader();
+        gameplayChoices.lockerRoomChoice();
         }
 
+        public static void preOlgaFight() {
+            Cutscene.topHeader();
+                gameSystems.printWithDelay("\n  Rain lashes against the USS Discovery as Snake pushes deeper into the hull. \n  He moves like a phantom, ghosting past security cameras and neutralising \n  Russian Soldiers with silent, clinical precision. The smell of oil gives \n  way to the sterile chill of the upper decks.\n", 30);
+                gameSystems.pauseText(2000);
+                gameSystems.printWithDelay("\n  Reaching the Navigation Bridge, Snake transitions into a combat stance, \n  back pressed firmly against the rain-slicked glass. Through the gloom, the \n  horror reveals itself: the ship's original crew lies scattered across the \n  floor, slaughtered where they stood.\n", 30);
+                gameSystems.pauseText(2000);
+                gameSystems.printWithDelay("\n  Moving past the wreckage, Snake approaches one of the ship's commanding \n  computers and observes its current flight path.\n",30);
+                gameSystems.pauseText(2000);      
+            Cutscene.bottomHeader();
+
+            CODEC.shipPath();
+        }
+    
+        public static void preOlgaFightCutscene() {
+            Cutscene.topHeader();
+                gameSystems.printWithDelay("\n  [Snake heads outside to investigate the noise]\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("\n  Rain slams against the tanker deck, wind howling across the metal surface. \n  He moves carefully along the upper railing, staying low, scanning through the \n  storm. Ahead, he spots a commander speaking quietly over a radio - the same \n  one he'd photographed earlier.\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  Snake creeps closer, straining to hear the call over the pounding New York \n  rain.\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  '...have you planted the explosives yet Olga?'\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("\n  'Yes, they've been planted.'\n", 40);
+                gameSystems.pauseText(1500);
+
+                    Cutscene.bottomHeader();
+                    gameSystems.clearConsole();
+                    Cutscene.topHeader();
+
+                gameSystems.printWithDelay("\n  The commander ends the call. Moments later, she signals to a nearby \n  helicopter, waving it off. The chopper pulls away into the storm.\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  Snake hurries out from cover, weapon raised, 'Freeze! Hands up - and slowly \n  throw your gun overboard!'\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  She complies, dropping the weapon into the ocean below. Lightning flashes - \n  Snake pauses, surprised.\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  '...A woman?", 40);
+                gameSystems.pauseText(500);
+                gameSystems.printWithDelay(" Throw the knife too!'\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n  She slowly tosses it — then spins suddenly and fires. Snake barely dodges as \n  the shot tears past him. She dives into cover. Snake retreats to cover as \n  well, rain hammering the deck around them.\n", 40);
+                gameSystems.pauseText(2000);
+            bottomHeaderOLGA();
+        }
     }

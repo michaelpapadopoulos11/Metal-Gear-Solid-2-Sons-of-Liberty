@@ -19,7 +19,8 @@ public class Game {
         // CODEC.otaconImageID();
         // gameplayChoices.firstPlayerChoice();
         // gameplayChoices.secondPlayerChoice();
-        gameplayChoices.lockerRoomChoice();
+        gameSystems.clearConsole();
+        Cutscene.preOlgaFightCutscene();
 
         input.close();  // Close the scanner once all input operations are done
     }
