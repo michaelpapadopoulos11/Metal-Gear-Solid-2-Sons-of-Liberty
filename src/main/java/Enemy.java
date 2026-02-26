@@ -13,15 +13,24 @@ public class Enemy {
     }
 
     private void initializeEnemy() {
-        if (enemyType.toLowerCase().contains("guard")) {
+        String type = enemyType.toLowerCase();
+
+        if (type.contains("guard")) {
             this.maxHealth = 50;
             this.enemyHealth = 50;
             this.attackPower = 8;
-        } else if (enemyType.toLowerCase().contains("commander")) {
+
+        } else if (type.contains("commander")) {
             this.maxHealth = 80;
             this.enemyHealth = 80;
             this.attackPower = 12;
         }
+        
+        else if (enemyType.toLowerCase().contains("olga")) {
+            this.maxHealth = 120;
+            this.enemyHealth = 120;
+            this.attackPower = 15;
+        }    
     }
 
     public int getHealth() {

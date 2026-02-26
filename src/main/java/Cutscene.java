@@ -250,17 +250,17 @@ public class Cutscene {
         }
     
         public static void preOlgaFightCutscene() {
-            Cutscene.topHeader();
-                gameSystems.printWithDelay("\n  [Snake heads outside to investigate the noise]\n", 40);
-                gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\n  Rain slams against the tanker deck, wind howling across the metal surface. \n  He moves carefully along the upper railing, staying low, scanning through the \n  storm. Ahead, he spots a commander speaking quietly over a radio - the same \n  one he'd photographed earlier.\n", 40);
-                gameSystems.pauseText(1500);
-                gameSystems.printWithDelay("\n  Snake creeps closer, straining to hear the call over the pounding New York \n  rain.\n", 40);
-                gameSystems.pauseText(1500);
-                gameSystems.printWithDelay("\n  '...have you planted the explosives yet Olga?'\n", 40);
-                gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\n  'Yes, they've been planted.'\n", 40);
-                gameSystems.pauseText(1500);
+            // Cutscene.topHeader();
+            //     gameSystems.printWithDelay("\n  [Snake heads outside to investigate the noise]\n", 40);
+            //     gameSystems.pauseText(1000);
+            //     gameSystems.printWithDelay("\n  Rain slams against the tanker deck, wind howling across the metal surface. \n  He moves carefully along the upper railing, staying low, scanning through the \n  storm. Ahead, he spots a commander speaking quietly over a radio - the same \n  one he'd photographed earlier.\n", 40);
+            //     gameSystems.pauseText(1500);
+            //     gameSystems.printWithDelay("\n  Snake creeps closer, straining to hear the call over the pounding New York \n  rain.\n", 40);
+            //     gameSystems.pauseText(1500);
+            //     gameSystems.printWithDelay("\n  '...have you planted the explosives yet Olga?'\n", 40);
+            //     gameSystems.pauseText(1000);
+            //     gameSystems.printWithDelay("\n  'Yes, they've been planted.'\n", 40);
+            //     gameSystems.pauseText(1500);
 
                     Cutscene.bottomHeader();
                     gameSystems.clearConsole();
@@ -279,5 +279,7 @@ public class Cutscene {
                 gameSystems.printWithDelay("\n  She slowly tosses it — then spins suddenly and fires. Snake barely dodges as \n  the shot tears past him. She dives into cover. Snake retreats to cover as \n  well, rain hammering the deck around them.\n", 40);
                 gameSystems.pauseText(2000);
             bottomHeaderOLGA();
+            gameSystems.clearConsole();
+            Combat.startCombat(new Player(), new Enemy("Olga Gurlukovich"));
         }
     }
