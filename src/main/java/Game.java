@@ -18,7 +18,8 @@ public class Game {
 
         // CODEC.otaconImageID();
         // gameplayChoices.firstPlayerChoice();
-        gameplayChoices.secondPlayerChoice();
+        // gameplayChoices.secondPlayerChoice();
+        gameplayChoices.lockerRoomChoice();
 
         input.close();  // Close the scanner once all input operations are done
     }

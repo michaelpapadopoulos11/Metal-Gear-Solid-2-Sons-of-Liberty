@@ -215,4 +215,18 @@ public class Cutscene {
         System.out.println("\033[0;32m" + indent + "Upload successful. Data packet secured.\n\033[0m");
         gameSystems.pauseText(2000);
         }
+
+        public static void lockerRoom() {
+        gameSystems.clearConsole();
+        Cutscene.topHeader();
+            gameSystems.printWithDelay("\n  Snake slips through the open door and finds himself in the Tanker's Crew-A \n  locker room.\n", 30);
+            gameSystems.pauseText(1000);
+            gameSystems.printWithDelay("\n  [In front on Snake are four ship crew member lockers]\n", 30);
+            gameSystems.pauseText(1000);
+            gameSystems.printWithDelay("\n  [A faint blend of oil, metal, and damp fabric settles over the room]\n", 30);
+            gameSystems.pauseText(1000);
+        gameplayChoices.lockerRoomChoice();
+        Cutscene.bottomHeader();
+        }
+
     }

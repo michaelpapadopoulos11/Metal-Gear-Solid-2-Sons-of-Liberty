@@ -92,7 +92,7 @@ public class Combat {
         gameSystems.clearConsole();
         Cutscene.combatTopHeader();
 
-        gameSystems.printWithDelay("\n\033[0;37m  [Snake carefully aims the M9 and fires...]\033[0m\n\n", 30);
+        gameSystems.printWithDelay("\n\033[0;37m  [Snake carefully aims the M9 and fires...]\033[0m\n\n", 20);
         gameSystems.pauseText(1000);
 
         int hitChance = (int) (Math.random() * 100);
@@ -102,13 +102,13 @@ public class Combat {
 
             System.out.println("\033[0;32m  [HIT!]\033[0m\n");
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[1;32m  The dart strikes the guard, dealing " + damage + " damage!\033[0m\n", 20);
+            gameSystems.printWithDelay("\033[1;32m  The dart strikes the guard, dealing " + damage + " damage!\033[0m\n", 10);
             // asciiArt.playShootAnimation();
             gameSystems.pauseText(700);
         } else {
             gameSystems.printWithDelay("\033[1;31m  [MISS!]\033[0m\n\n", 0);
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[1;33m  The tranquilizer dart goes wide!\033[0m\n", 20);
+            gameSystems.printWithDelay("\033[1;33m  The tranquilizer dart goes wide!\033[0m\n", 10);
             gameSystems.pauseText(700);
         }
         Cutscene.bottomHeader(); // has a delay when pressing enter here not sure why ??
@@ -118,7 +118,7 @@ public class Combat {
         gameSystems.clearConsole();
         Cutscene.combatTopHeader();
 
-        gameSystems.printWithDelay("\n\033[0;37m  [Snake closes in on the guard and engages a CQC attack!]\033[0m\n", 20);
+        gameSystems.printWithDelay("\n\033[0;37m  [Snake closes in on the guard and engages a CQC attack!]\033[0m\n", 10);
         gameSystems.pauseText(1000);
 
         int hitChance = (int) (Math.random() * 100);
@@ -127,12 +127,12 @@ public class Combat {
             enemy.takeDamage(damage);
             System.out.println("\n\033[0;32m  [HIT!]\033[0m\n");
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[1;32m  A swift CQC attack deals " + damage + " damage!\033[0m\n", 20);
+            gameSystems.printWithDelay("\033[1;32m  A swift CQC attack deals " + damage + " damage!\033[0m\n", 10);
             gameSystems.pauseText(700);
         } else {
             gameSystems.printWithDelay("\n\033[1;31m  [MISS!]\033[0m\n\n", 0);
             gameSystems.pauseText(500);
-            gameSystems.printWithDelay("\033[1;33m  [The guard avoids the attack!]\033[0m\n", 20);
+            gameSystems.printWithDelay("\033[1;33m  [The guard avoids the attack!]\033[0m\n", 10);
             gameSystems.pauseText(700);
         }
         Cutscene.bottomHeader();
@@ -141,7 +141,7 @@ public class Combat {
     private static void playerUseRation() {
         gameSystems.clearConsole();
         Cutscene.combatTopHeader();
-        gameSystems.printWithDelay("\n\033[0;37m  [Snake takes a moment to eat a ration...]\033[0m\n\n\n", 20);
+        gameSystems.printWithDelay("\n\033[0;37m  [Snake takes a moment to eat a ration...]\033[0m\n\n\n", 10);
             gameSystems.pauseText(800);
             System.out.println("                              ( >_<) ");
             gameSystems.pauseText(1000); 
@@ -155,7 +155,7 @@ public class Combat {
         int oldHealth = player.getHealth();
         player.healDamage(20);
         int healAmount = player.getHealth() - oldHealth;
-        gameSystems.printWithDelay("\n\033[0;37m  Snake recovered " + "\033[0;32m[" + healAmount +  "]\033[0m" + " health!\033[0m\n", 20);
+        gameSystems.printWithDelay("\n\033[0;37m  Snake recovered " + "\033[0;32m[" + healAmount +  "]\033[0m" + " health!\033[0m\n", 10);
         gameSystems.pauseText(500);
         Cutscene.bottomHeader();
     }
@@ -164,21 +164,21 @@ public class Combat {
         gameSystems.clearConsole();
         Cutscene.combatTopHeader();
 
-        gameSystems.printWithDelay("\n\033[0;37m  [Snake attempts to disengage and flee...]\033[0m", 20);
+        gameSystems.printWithDelay("\n\033[0;37m  [Snake attempts to disengage and flee...]\033[0m", 10);
         gameSystems.pauseText(1000);
 
         int fleeChance = (int) (Math.random() * 100);
         if (fleeChance > 50) {
             System.out.print("\n\n\033[0;32m  [SUCCESSFULLY ESCAPED!]\033[0m\n");
             gameSystems.pauseText(1000);
-            gameSystems.printWithDelay("\n\033[1;32m  Snake evades the guard and retreats!\033[0m\n", 20);
+            gameSystems.printWithDelay("\n\033[1;32m  Snake evades the guard and retreats!\033[0m\n", 10);
             gameSystems.pauseText(1000);
             Cutscene.bottomHeader();
             // gameplayChoices.secondPlayerChoice();
         } else {
             System.out.print("\n\n\033[1;31m  [FAILED ESCAPE!]\033[0m\n\n");
             gameSystems.pauseText(1000);
-            gameSystems.printWithDelay("\033[1;33m  [The guard blocks your escape route!]\033[0m\n", 20 );
+            gameSystems.printWithDelay("\033[1;33m  [The guard blocks your escape route!]\033[0m\n", 10 );
             gameSystems.pauseText(1000);
             Cutscene.bottomHeader();
             enemyTurn(); // Guard gets a free hit if you fail to flee

@@ -3,6 +3,8 @@ public class gameplayChoices {
     static Player player = new Player();  // Create a player
     static boolean hasGatheredIntel = false;
     static boolean hasPeeked = false;
+    static boolean lockerOneChecked = false;
+    static boolean lockerFourChecked = false;
 
     public static void firstPlayerChoice() {
         gameSystems.clearConsole();
@@ -18,7 +20,7 @@ public class gameplayChoices {
                 System.out.print("\033[1;37m CONTEXT: \033[0m");
                 System.out.println(" Snake remains low behind the anchor connector points, keeping his profile hidden.");
                 System.out.println("           Rain pounds on the deck, masking his movement beneath the constant noise.");
-                System.out.println("           A guard watches the waters ahead, unaware of Snake’s silent approach.\n");
+                System.out.println("           A guard watches the waters ahead, unaware of Snake's silent approach.\n");
 
             System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m");
 
@@ -144,17 +146,20 @@ public class gameplayChoices {
 
             System.out.println("\033[0;37m   [1] Peek around the corner");
 
+            System.out.println("   [2] ...");
+
             if (hasPeeked) {
             System.out.println("");
             } else {
-                System.out.println("\n   [2] Sneak into the open doorway\n");
+                System.out.println("   [3] Sneak into the open doorway\n");
             }
 
             if (hasPeeked) {
-                System.out.println("   [2] [Distract the Guard]\n");
+                System.out.println("   [3] [Distract the Guard]\n");
             } else {
                 System.out.print("");
             }
+
 
             System.out.println("   [R] [View Soliton Radar]");
             System.out.println("   [C] ...\033[0m\n");
@@ -194,35 +199,51 @@ public class gameplayChoices {
             secondPlayerChoice();
         break;
 
-        case "2": // slip through the door
+        case "3": // slip through the door
             if (hasPeeked) {
                 // SUCCESSFUL STEALTH
                 gameSystems.clearConsole();
                 Cutscene.topHeader();
-                gameSystems.printWithDelay("\n  snake knocks on the wall to distract the guard....\n", 40);
-                gameSystems.printWithDelay("  d.\n", 40);
+                gameSystems.printWithDelay("\n  Snake taps the wall - two sharp knocks.\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("  The guard mutters, stepping slowly, curiosity pulling him closer.\n\n", 40);
+                gameSystems.pauseText(1000);
+
+                gameSystems.printWithDelay("  As he leans past the corner, Snake hooks an arm around his neck and drags\n", 40);
+                gameSystems.printWithDelay("  him back into a tight, controlled hold. The guard struggles briefly, \n", 40);
+                gameSystems.printWithDelay("  his breathing slowing as he loses consciousness.\n\n", 40);
+                gameSystems.pauseText(1500);
+
+                gameSystems.printWithDelay("  Snake lowers him gently and searches the guard for supplies.\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("\033[0;32m\n  [Item Obtained: Pack of Cigarettes]\033[0m\n", 0);
+                player.addItem("Pack of Cigarettes");
                 Cutscene.bottomHeader();
-                // next screen
+                secondPlayerChoice();
             } else {
                 // FAILED STEALTH → COMBAT
                 gameSystems.clearConsole();
                 Cutscene.topHeader();
-                gameSystems.printWithDelay("\n  Snake steps into the doorway—only to come face-to-face with the guard.\n", 40);
-                gameSystems.printWithDelay("  The guard reacts instantly.\n\n", 40);
+                gameSystems.printWithDelay("\n  Snake moves for the open door, keeping low and silent...\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("  But the guard suddenly breaks his patrol pattern, locking eyes onto Snake.\n", 40);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("\n  There's no slipping away now!\n", 40);
+                gameSystems.pauseText(1000);
                 Cutscene.bottomHeader();
 
-                Enemy guard = new Enemy("Russian Guard");
-                Combat.startCombat(player, guard);
-
+                // Enemy guard = new Enemy("Russian Guard");
+                // Combat.startCombat(player, guard);
+                Cutscene.lockerRoom();
                 secondPlayerChoice();
             }
         break;
         
-        case "3":
+        case "2":
             gameSystems.clearConsole();
             Cutscene.topHeader();
 
-            System.out.println("option 3");
+            System.out.println("option 2");
 
             Cutscene.bottomHeader();
             secondPlayerChoice();
@@ -257,4 +278,120 @@ public class gameplayChoices {
         break;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void lockerRoomChoice() {
+        gameSystems.clearConsole();
+
+            System.out.println("\n\033[1;30m====================================================================================================\033[0m");
+
+            System.out.println(
+                "\033[1;37m LOCATION : \033[0;37mUSS Discovery - Deck-A crew's Locker Room"
+            + "\033[0;90m | WX: RN / VIS LOW | HR 66 BPM  | ALERT : <20\033[0m");
+
+            System.out.println("\033[1;30m====================================================================================================\033[0m\n");
+
+                System.out.print("\033[1;37m CONTEXT: \033[0m");
+                System.out.println(" //");
+                System.out.println("           //");
+                System.out.println("           //\n");
+
+            System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m");
+
+            System.out.println("\033[32m [0] Access Inventory\033[0m"+ "\033[0;90m | SYS: STABLE |                | TEMP: 11°C | \033[0m" + "\033[1;32mLIFE (100%):\033[0;32m ██████████████████\033[0m");
+
+            System.out.println("\033[1;30m----------------------------------------------------------------------------------------------------\033[0m\n");
+
+            if (lockerOneChecked) {
+                    System.out.println("\033[0;37m   [1] Open Locker #1 - Locked\033[0m");
+                } else {
+                    System.out.println("\033[0;37m   [1] Open Locker #1\033[0m");
+                }
+
+            System.out.println("   [2] Open Locker #2");
+            System.out.println("   [3] Open Locker #3");
+            
+            if (lockerFourChecked) {
+                    System.out.println("\033[0;37m   [4] Open Locker #4 - Locked\033[0m");
+                } else {
+                    System.out.println("\033[0;37m   [4] Open Locker #4\033[0m");
+                }
+
+            System.out.println("\n   [R] [View Soliton Radar]");
+            System.out.println("   [C] CODEC OTACON\033[0m\n");
+
+            System.out.println("\033[1;30m====================================================================================================\033[0m");
+
+            System.out.print("\033[0;90m   Choice : \033[0m");
+
+        String choice = gameSystems.readInput().trim().toUpperCase();
+
+            switch (choice) {
+                case "0":
+                    player.displayInventory();
+                    
+                    System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
+                    gameSystems.readInput();  // Correctly wait for user input
+                    firstPlayerChoice();
+                break;
+
+                case "1":
+                    gameSystems.clearConsole();
+                    Cutscene.topHeader();
+
+                        gameSystems.printWithDelay("\n  [This locker is locked]\n", 40);
+                        lockerOneChecked = true;
+                        gameSystems.pauseText(1000);
+
+                    Cutscene.bottomHeader();
+                    lockerRoomChoice();
+                break;
+
+                case "2":
+                break;
+
+                case "3":
+                break;
+
+                case "4":
+                    gameSystems.clearConsole();
+                    Cutscene.topHeader();
+
+                        gameSystems.printWithDelay("\n  [This locker is locked]\n", 40);
+                        lockerFourChecked = true;
+                        gameSystems.pauseText(1000);
+
+                    Cutscene.bottomHeader();
+                    lockerRoomChoice();
+
+                break;
+
+
+                case "R":
+                break;
+
+                case "C":
+                break;
+            }
+        }
 }
+
+

@@ -42,11 +42,14 @@ public class Player {
     public void initializeInventory() {
         snakeInventory.add("M9 Tranquilizer (12/12)");
         snakeInventory.add("Ration (3/5)");
-        snakeInventory.add("Cigs");
         snakeInventory.add("Digital Camera");
         snakeInventory.add("Dog Tags (0/?)");
 
         // snakeInventory.add("Chaff Grenades");
+    }
+
+    public void addItem(String item) {
+    snakeInventory.add(item);
     }
 
     public int getHealth() {
