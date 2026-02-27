@@ -1,6 +1,5 @@
 
-"Metal Gear Solid 2: Sons of Liberty - The Text Adventure!" Read Me
-
+"Metal Gear Solid 2: Sons of Liberty - The Text Adventure!" Instructions
 
 BEFORE STARTING THE APPLICATION :
 
@@ -12,21 +11,16 @@ Navigate to: Bottom left of VS Code --> Select the Gear Icon --> Themes --> Colo
 - (*On VS Code*) Navigate to: File --> Preferences --> Settings --> In the search bar type "terminal font" --> In the 'Font Family' box enter 
   "Anonymous Pro".
 
+- I am also running Java JDKSE-18 in VS Code -- You can check by pressing Ctrl + Shift + P, selecting 'Java Runtime Configuration' from
+                                                the search bar and selecting the JDK Runtime tab.
+                                                
 ------------------------------------------------------------------------------
 
   How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
 
   - For optimal and intended purposes, run this program in VS Code IDE.
-  - To start the game : Run the program from the 'Game.java' file.
+  - To start the game.
 
   If you're running the game in another IDE (namely Intellij):
   - The 'clearConsole' function may not work (due to differences in in-built IDE terminals).
   - The 'printwithDelay' function will not display as smoothly as intended.
-
-
-
-                            METAL GEAR FINAL ROOM  
-
-- PLAYER SWITCHES PERSPECTIVE TO OTACON!!
-- YOU NEED TO FIND THE PASSWORD HIDDEN SOMEWHERE TO HACK INTO THE TERMINAL
-- THE PASSWORD WILL BE HIDDEN ON A WEBSITE?? IN THE GAMES CODE TEXT FILES????

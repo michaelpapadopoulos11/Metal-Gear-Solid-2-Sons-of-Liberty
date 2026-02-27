@@ -51,4 +51,13 @@ Gameplay Screen 2:
  [3] View Soliton Radar
  [4] ???
 
- [5] CODEC OTACON
+ [5] CODEC OTACON 
+
+                            METAL GEAR FINAL ROOM  
+
+- PLAYER SWITCHES PERSPECTIVE TO OTACON!!
+- YOU NEED TO FIND THE PASSWORD HIDDEN SOMEWHERE TO HACK INTO THE TERMINAL
+- THE PASSWORD WILL BE HIDDEN ON A WEBSITE?? IN THE GAMES CODE TEXT FILES????
+
+
+- meta ending as snake -- having some way to upload pics to the project and that would be the last task before the game ends
