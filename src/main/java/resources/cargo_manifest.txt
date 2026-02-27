@@ -1,0 +1,31 @@
+================================================================================
+                    U.S.S. DISCOVERY - CARGO MANIFEST
+                            [CLASSIFICATION: CONFIDENTIAL]
+================================================================================
+
+VESSEL: U.S.S. DISCOVERY (TANKER)
+DATE: 2026-02-27
+PORT_OF_ORIGIN: NORFOLK_NAVY_YARD
+
+--------------------------------------------------------------------------------
+CONTAINER ID | CONTENTS                | WEIGHT (MT) | DESTINATION
+--------------------------------------------------------------------------------
+DIS-001-A    | DRY RATIONS (U.S.N)     | 15.5        | DECK A STORAGE
+DIS-001-B    | DRY RATIONS (U.S.N)     | 15.5        | DECK A STORAGE
+DIS-002-C    | FUEL ADDITIVE (TYPE-B)  | 20.0        | ENGINE ROOM 1
+DIS-003-A    | SPARE PARTS (T-7-ALPHA) | 05.2        | MAINTENANCE BAY
+DIS-004-D    | MEDICAL SUPPLIES        | 02.1        | MEDICAL BAY
+DIS-005-B    | MARINE EQUIPMENT (MECH) | 10.8        | DOCK 4 - HOLD 2
+DIS-006-A    | MARINE EQUIPMENT (ARM)  | 12.3        | DOCK 4 - HOLD 2
+DIS-007-C    | CLEANING AGENTS (IND)   | 08.0        | GALLEY 1
+DIS-008-D    | OFFICE SUPPLIES         | 01.5        | ADMIN BLOCK
+DIS-009-A    | ENGINE OIL (HEAVY)      | 25.0        | ENGINE ROOM 2
+--------------------------------------------------------------------------------
+
+[LOGISTICS]: All containers secured for transit.
+[LOGISTICS]: Loading completed 05:45 local time.
+[LOGISTICS]: Final cargo check verified by Chief Logistics Officer Barnes.
+
+================================================================================
+END OF MANIFEST
+================================================================================

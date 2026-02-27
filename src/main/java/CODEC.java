@@ -874,38 +874,59 @@ public class CODEC {
     private static void otaconEnding() {
         gameSystems.clearConsole();
         Cutscene.topHeader();
-        gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Hmm, the terminal is locked, but I can browse the filesystem...\n", 40);
-        gameSystems.pauseText(1500);
-        gameSystems.printWithDelay("          Let me check the documentation folder in the source directory... \n", 40);
-        gameSystems.pauseText(2000);
-        gameSystems.printWithDelay("          Nothing here but source code and a 'resources' folder...\n", 40);
-        gameSystems.pauseText(2000);
+        gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Hmm, the terminal is locked, but I can browse the filesystem...\n", 0);
+        // gameSystems.pauseText(1500);
+        gameSystems.printWithDelay("          Let me check the documentation folder in the source directory... \n", 0);
+        // gameSystems.pauseText(2000);
+        gameSystems.printWithDelay("          Hmmm, Nothing here but useless java files...\n", 0);
+        // gameSystems.pauseText(2000);
 
-        gameSystems.printWithDelay("                              \033[0;33m\n", 10);
-        gameSystems.printWithDelay("                                /project\n", 10);
-        gameSystems.printWithDelay("                                |-- /src\n", 10);
-        gameSystems.printWithDelay("                                |   |-- /main\n", 10);
-        gameSystems.printWithDelay("                                |   |   |-- /java\n", 10);
-        gameSystems.printWithDelay("                                |   |   |-- /resources\n", 10);
-        gameSystems.printWithDelay("                                |-- /target\n", 10);
-        System.out.println("                              \033[0m");
-        gameSystems.pauseText(2500);
+        gameSystems.printWithDelay("          That 'resources' folder in the project directory might give me some \n          clues?\n", 0);
+        // gameSystems.pauseText(1000);
 
-        gameSystems.printWithDelay("\033[0;36m[OTACON]: \033[0mLet me check out that 'target' folder for any possible clues...", 40);
-
+        gameSystems.printWithDelay("                              \033[0;33m\n", 5);
+        gameSystems.printWithDelay("                                /project\n", 5);
+        gameSystems.printWithDelay("                                |-- /src\n", 5);
+        gameSystems.printWithDelay("                                |   |-- /main\n", 5);
+        gameSystems.printWithDelay("                                |   |   |-- /java\n", 5);
+        gameSystems.printWithDelay("                                |   |   |-- /resources\n", 5);
+        gameSystems.printWithDelay("                                |-- /target\n",5);
         gameSystems.pauseText(1000);
-        System.out.println("\n\033[0;32m");
-        System.out.println("              __________________________________________________________");
-        System.out.println("             |  SECURE TERMINAL ACCESS - TANKER BLOCK 2                |");
-        System.out.println("             |  Encryption: AES-256                                    |");
-        System.out.println("             |  Status: Awaiting Password...                           |");
-        System.out.println("             |_________________________________________________________|");
-        System.out.print("\033[0m\n");
+        
+        Cutscene.bottomHeader();
+        gameSystems.clearConsole();
+        Cutscene.topHeader();
+
+        System.out.println(
+            "\n\033[0;32m    _________________________________________________\033[0m" +
+            "   \033[0;33m/project\033[0m"
+        );
+        System.out.println(
+            "\033[0;32m   |  SECURE TERMINAL ACCESS - TANKER BLOCK 2        |\033[0m" +
+            "   \033[0;33m|-- /src\033[0m"
+        );
+        System.out.println(
+            "\033[0;32m   |  Encryption: AES-256                            |\033[0m" +
+            "   \033[0;33m|   |-- /main\033[0m"
+        );
+        System.out.println(
+            "\033[0;32m   |  Status: Awaiting Password...                   |\033[0m" +
+            "   \033[0;33m|   |   |-- /java\033[0m"
+        );
+        System.out.println(
+            "\033[0;32m   |_________________________________________________|\033[0m" +
+            "   \033[0;33m|   |   |-- /resources\033[0m"
+        );
+        System.out.println(
+            "                                                         " +
+            "\033[0;33m|-- /target\033[0m"
+        );
+
         gameSystems.pauseText(1000);
 
         boolean hacked = false;
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        String correctPassword = "NAVAL_STRIKE_2005"; 
+        String correctPassword = "konami_tears"; 
 
         while (!hacked) {
             System.out.print("\033[0;32m  Enter Password > \033[0m");
@@ -914,7 +935,7 @@ public class CODEC {
             if (playerInput.equalsIgnoreCase(correctPassword)) {
                 gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Password accepted. Installing encryption utility...\033[0m\n", 0);
                 gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\033[0;36m[OTACON]: \033[0mYes! It's in. Securely transmitting images back to base now.\n", 40);
+                gameSystems.printWithDelay("\n\033[0;36m[OTACON]: \033[0mYes! It's in. Securely transmitting images back to base now.\n", 40);
                 hacked = true;
             } else {
                 gameSystems.clearConsole();

@@ -371,7 +371,8 @@ public class gameplayChoices {
                     
                     System.out.println("\033[0;90m\n     Press [ENTER] to return\n\033[0m");
                     gameSystems.readInput();  // Correctly wait for user input
-                    firstPlayerChoice();
+                    // return to same menu rather than defaulting to first screen
+                    lockerRoomChoice();
                 break;
 
                 case "1":
