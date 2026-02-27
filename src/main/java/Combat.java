@@ -72,8 +72,7 @@ public class Combat {
             System.out.println("\033[0;37m   [4] Attempt to Flee\033[0m\n");
         }
         if (canShootLights && !lightsOut) {
-            System.out.println("\033[0;37m   [5] Shoot out the overhead lights - reduces Olga accuracy\033[0m\n");
-        }
+        System.out.println("\033[0;33m   [5] Shoot out the overhead lights - reduces Olga accuracy\033[0m\n");        }
         System.out.println("\033[0;37m   [C] Call CODEC\033[0m\n");
 
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
@@ -186,7 +185,8 @@ public class Combat {
                 CODEC.olgaFightThree();
                 break;
         }
-        gameSystems.readInput();
+        // the codec routines handle their own input at the end,
+        // avoid an extra read that forces a second ENTER press.
     }
 
     private static void playerShootAction() {
@@ -321,7 +321,7 @@ public class Combat {
         System.out.print("\n                               ");
         gameSystems.printWithDelay("\033[0;90m>>> SNAKE'S TURN <<<\033[0m\n", 20);
         gameSystems.pauseText(350);
-        
+
         gameSystems.printWithDelay("\n\033[0;37m  [Snake fires at the overhead lights...]\033[0m\n", 20);
         gameSystems.pauseText(1000);
         gameSystems.printWithDelay("\n\033[0;32m  [Lights shattered! Olga's visibility suffers.]\033[0m\n", 20);
