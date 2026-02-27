@@ -451,10 +451,20 @@ public class Combat {
 
         if (wasBoss) {
                 System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m\n");
-                System.out.println("\033[1;35m" + "              *** CONGRATULATIONS! YOU BEAT OLGA GURLUKOVICH ***" + "\033[0m\n");
-                System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
-                gameSystems.printWithDelay("  [Snake overcomes Olga Gurlukovich and the mission continues...]\n", 30);
+                System.out.println("" + "              *** CONGRATULATIONS! YOU BEAT OLGA GURLUKOVICH ***" + "\033[0m\n");
+                System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
+                
+                gameSystems.printWithDelay("\n\033[0;90m  [Olga collapses onto the wet deck, defeated.]\033[0m\n", 40);                
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n\033[0;90m  [Snake takes a deep breath to steady his nerves, then quickly searches Olga \n  for any useful gear.]\033[0m\n", 40);
+                gameSystems.pauseText(1500);
+                gameSystems.printWithDelay("\n\033[0;32m  [Item Obtained: Tactical Light-equipped USP]\033[0m\n", 40);
+                gameSystems.pauseText(500);
+                gameSystems.printWithDelay("\033[0;32m  [Item Obtained: Olga Gurlukovich's Dog Tag]\033[0m\n", 40);
+                gameSystems.pauseText(500);
+                Cutscene.bottomHeader();
                 gameSystems.readInput();
+                CODEC.postOlgaCall();
         } else {
             System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
             System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");

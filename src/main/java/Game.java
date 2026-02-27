@@ -20,7 +20,8 @@ public class Game {
         // gameplayChoices.firstPlayerChoice();
         // gameplayChoices.secondPlayerChoice();
         // gameplayChoices.lockerRoomChoice();
-        Cutscene.preOlgaFightCutscene();
+        // Cutscene.preOlgaFightCutscene();
+        CODEC.postOlgaCall();
 
         input.close();  
     }
