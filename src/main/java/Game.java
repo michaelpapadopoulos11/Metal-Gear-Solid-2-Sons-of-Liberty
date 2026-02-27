@@ -21,6 +21,7 @@ public class Game {
         // gameplayChoices.secondPlayerChoice();
         // gameplayChoices.lockerRoomChoice();
         // Cutscene.preOlgaFightCutscene();
+        // CODEC.postOlgaCall();
         CODEC.postOlgaCall();
 
         input.close();  

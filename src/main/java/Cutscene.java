@@ -262,6 +262,7 @@ public class Cutscene {
         }
     
         public static void preOlgaFightCutscene() {
+            gameSystems.clearConsole();
             Cutscene.topHeader();
                 gameSystems.printWithDelay("\n  [Snake heads outside to investigate the noise]\n", 40);
                 gameSystems.pauseText(1000);

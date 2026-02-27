@@ -638,7 +638,7 @@ public class CODEC {
     }
 
     public static void olgaFightThree() {
-        // codecCalling();
+        codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
 
@@ -653,67 +653,66 @@ public class CODEC {
         codecEnd();
     }
     public static void postOlgaCall() {
-        // codecCalling();
+        codecCalling();
         gameSystems.clearConsole();
-        // codecTopBorder();
+        codecTopBorder();
 
-        // System.out.print("\033[0;32mOTACON: \033[0m");
-        // gameSystems.printWithDelay( " Snake.", 40);
-        // // gameSystems.pauseText(400);
-        // gameSystems.printWithDelay( " I've ID'd the Russian Commander, it \n         appears to be Sergei Gurlukovich.\n\n", 40);
-        // // gameSystems.pauseText(1500);
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Snake.", 40);
+        gameSystems.pauseText(400);
+        gameSystems.printWithDelay( " I've ID'd the Russian Commander, it \n         appears to be Sergei Gurlukovich.\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32m SNAKE:  \033[0m");
-        // gameSystems.printWithDelay("Gurlukovich..!", 40);
-        // // gameSystems.pauseText(400);
-        // gameSystems.printWithDelay(" One of Ocelot's allies?\n\n", 40);
-        // // gameSystems.pauseText(1500);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Gurlukovich..!", 40);
+        gameSystems.pauseText(400);
+        gameSystems.printWithDelay(" One of Ocelot's allies?\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32mOTACON: \033[0m");
-        // gameSystems.printWithDelay( " Yeah...", 40);
-        // // gameSystems.pauseText(400);
-        // gameSystems.printWithDelay( " He's the one Ocelot was supposed to \n         meet up with after Shadow Moses.\n\n", 40);
-        // // gameSystems.pauseText(1500);
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Yeah...", 40);
+        gameSystems.pauseText(400);
+        gameSystems.printWithDelay( " He's the one Ocelot was supposed to \n         meet up with after Shadow Moses.\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32m SNAKE:  \033[0m");
-        // gameSystems.printWithDelay("They're after Metal Gear...\n\n", 40);
-        // // gameSystems.pauseText(400);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("They're after Metal Gear...\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32mOTACON: \033[0m");
-        // gameSystems.printWithDelay( " Everything's changed, this is not going to be \n         as simple as we thought.\n\n", 40);
-        // // gameSystems.pauseText(400);
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Everything's changed, this is not going to be \n         as simple as we thought.\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32m SNAKE:  \033[0m");
-        // gameSystems.printWithDelay("You could say that.", 40);
-        // // gameSystems.pauseText(400);
-        // gameSystems.printWithDelay(" I saw a surveillance \n         remote just now. It looked like Cypher\n\n", 40);
-        // // gameSystems.pauseText(400);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("You could say that.", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" I saw a surveillance \n         remote just now. It looked like Cypher\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32mOTACON: \033[0m");
-        // gameSystems.printWithDelay( " A marine Cypher-T?\n\n", 40);
-        // // gameSystems.pauseText(400);
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " A marine Cypher-T?\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        // System.out.print("\033[0;32m SNAKE:  \033[0m");
-        // gameSystems.printWithDelay("No, Army.\n", 40);
-        // // gameSystems.pauseText(400);
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("No, Army.\n", 40);
+        gameSystems.pauseText(1000);
 
-        // codecBottomContinueBorder();
-        // gameSystems.readInput();
-
-        // gameSystems.clearConsole();
-        // codecTopBorder();
-
-        // System.out.print("\033[0;32mOTACON: \033[0m");
-        // gameSystems.printWithDelay( " First the Marines, then the Russians -- now \n         the Army...?\n\n", 0);
-        // // gameSystems.pauseText(400);
-
-        // System.out.print("\033[0;32m SNAKE:  \033[0m");
-        // gameSystems.printWithDelay("You're right, this isn't going to be simple.\n", 0);
-        // // gameSystems.pauseText(400);
-
-        // codecBottomBorder();
+        codecBottomContinueBorder();
         gameSystems.readInput();
-        // codecEnd();
-    }
 
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " First the Marines, then the Russians -- now \n         the Army...?\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("You're right, this isn't going to be simple.\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+    }
 }

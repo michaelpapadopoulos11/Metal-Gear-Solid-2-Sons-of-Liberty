@@ -463,7 +463,6 @@ public class Combat {
                 gameSystems.printWithDelay("\033[0;32m  [Item Obtained: Olga Gurlukovich's Dog Tag]\033[0m\n", 40);
                 gameSystems.pauseText(500);
                 Cutscene.bottomHeader();
-                gameSystems.readInput();
                 CODEC.postOlgaCall();
         } else {
             System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
