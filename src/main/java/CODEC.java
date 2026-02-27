@@ -935,7 +935,8 @@ public class CODEC {
             if (playerInput.equalsIgnoreCase(correctPassword)) {
                 gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Password accepted. Installing encryption utility...\033[0m\n", 0);
                 gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\n\033[0;36m[OTACON]: \033[0mYes! It's in. Securely transmitting images back to base now.\n", 40);
+                gameSystems.printWithDelay("\n\033[0;36m[OTACON]: \033[0mYes! I'm in. Now all I need to do is remote-install that program of mine.\n", 40);
+                Cutscene.bottomHeader();
                 hacked = true;
             } else {
                 gameSystems.clearConsole();
@@ -943,8 +944,68 @@ public class CODEC {
                 gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Come on, think... check the logs again!\n", 40);
             }
         }
-        
-        gameSystems.pauseText(2000);
-        gameSystems.printWithDelay("\n[Otacon path continues...]\n", 40);
+        // After password accepted, before Otacon speaks:
+        gameSystems.clearConsole();
+        Cutscene.topHeader();
+
+        // Green terminal boot‑loader style
+        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Initializing Otacon uplink module...\033[0m\n", 10);
+        gameSystems.pauseText(400);
+
+        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Allocating memory blocks [ 4096 KB ]\033[0m\n", 5);
+        gameSystems.pauseText(300);
+
+        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Establishing encrypted channel (AES-256)...\033[0m\n", 5);
+        gameSystems.pauseText(500);
+
+        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Handshake OK. Beginning upload...\033[0m\n\n", 10);
+        gameSystems.pauseText(300);
+
+        // Progress bar animation
+        String[] bars = {
+            "[==========                                        ] 20%",
+            "[====================                              ] 40%",
+            "[==============================                    ] 60%",
+            "[========================================          ] 80%",
+            "[==================================================] 100%"
+        };
+
+        for (String b : bars) {
+            gameSystems.printWithDelay("\033[0;32m" + b + "\033[0m\n", 3);
+            gameSystems.pauseText(200);
+        }
+
+        gameSystems.pauseText(300);
+
+        // System verification lines
+        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Verifying payload integrity...\033[0m\n", 10);
+        gameSystems.pauseText(400);
+
+        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: CRC32 Checksum: OK\033[0m\n", 5);
+        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Digital Signature: VALID\033[0m\n", 5);
+        gameSystems.pauseText(400);
+
+        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: SOFTWARE SUCCESSFULLY INSTALLED\033[0m\n", 5);
+        gameSystems.pauseText(400);
+
+        // Final banner
+        gameSystems.printWithDelay(
+            "\n\033[1;32m================================================================================\n" +
+            "                            OTACON UPLINK INSTALLED\n" +
+            "\033[1;32m================================================================================\n", 2);
+    }
+
+    public static void snakeUploadingPics() {
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("I'm at the comptuter terminal, ready to upload.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Perfect, I've just \n         for sending those photos, just in case.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
         }
     }
