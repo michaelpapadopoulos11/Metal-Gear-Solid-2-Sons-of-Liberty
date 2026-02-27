@@ -435,13 +435,12 @@ public class gameplayChoices {
 
                     Cutscene.bottomHeader();
                     CODEC.codecPornPoster();
-                    break;
+                break;
 
                 case "P":
                     gameSystems.clearConsole();                    
                     Cutscene.preOlgaFight();
                 break;
-
 
                 case "R":
                 gameSystems.clearConsole();
@@ -450,6 +449,9 @@ public class gameplayChoices {
                 break;
 
                 case "C":
+                gameSystems.clearConsole();
+                    CODEC.otaconLockerRoomCODEC();
+                lockerRoomChoice();
                 break;
             }
         }

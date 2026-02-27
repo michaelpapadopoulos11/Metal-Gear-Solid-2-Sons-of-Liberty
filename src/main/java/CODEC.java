@@ -375,8 +375,8 @@ public class CODEC {
         case 2:
             codecCallSCREENONE_3();
             break;
+        }
     }
-}
 
     public static void codecCallSCREENONE_1() { // bird gluttony call
         codecCalling();
@@ -519,6 +519,30 @@ public class CODEC {
         gameSystems.clearConsole();
         CODEC.codecEnd();
     }
+
+    public static void otaconLockerRoomCODEC() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay("Snake, you're in the ship crews locker room.\n", 40);
+        System.out.print("         ");
+        gameSystems.printWithDelay("Maybe you can take a look through the lockers \n         and find some useful equipment?\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Good call.", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" Better to be prepared.\n", 40);
+        gameSystems.pauseText(1500);
+
+        codecBottomBorder();
+        gameSystems.readInput();            
+        gameSystems.clearConsole();
+        CODEC.codecEnd();
+    }
+
     public static void codecPornPoster() {
         codecCalling();
         gameSystems.clearConsole();
