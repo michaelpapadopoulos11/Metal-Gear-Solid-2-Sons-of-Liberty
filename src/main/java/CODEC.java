@@ -588,4 +588,69 @@ public class CODEC {
         codecEnd();
         Cutscene.preOlgaFightCutscene();
     }
+
+    public static void olgaFightOne() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("These overhead lights are blinding me.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Then try shooting them out, Snake!\n\n", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( "         They'll reduce her visibility on you if you \n         leave them on. Without the lights, you'll\n         have the advantage in this storm.\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+        // now the option to shoot the lights becomes available
+        Combat.enableLightShot();
+    }
+
+    public static void olgaFightTwo() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("She's tough.", 40);
+        gameSystems.pauseText(400);
+        gameSystems.printWithDelay(" Stronger than she looks.\n\n", 40);
+        gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " That's Olga Gurlukovich.", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( " She was born in a \n         military camp.", 40);
+        gameSystems.pauseText(500);
+
+        gameSystems.printWithDelay( " To her, this isn't just a \n         mission", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( "-it's her life. Don't underestimate \n         her, Snake!\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+    }
+
+    public static void olgaFightThree() {
+        // codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " She's hiding behind those crates!", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( " Wait for\n         her to reload, then strike!\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+    }
 }

@@ -65,14 +65,14 @@ public class Enemy {
         if (isBoss) {
             int roll = random.nextInt(100);
             if (bossPhase == 1) {
-                if (roll < 20) { // knife throw
+                if (roll < 20) { 
                     gameSystems.printWithDelay("\033[1;33m  [Olga hurls a knife at you!]\033[0m", 20);
                     gameSystems.pauseText(500);
                     return attackPower + 6; // even smaller bonus
                 }
             } else if (bossPhase == 2) {
-                if (roll < 30) { // enraged flurry
-                    gameSystems.printWithDelay("\n\033[1;33m  [Olga unleashes a furious flurry of strikes!]\033[0m", 20);
+                if (roll < 30) { 
+                    gameSystems.printWithDelay("\n\033[1;33m  [Olga unleashes a furious flurry of strikes!]\033[0m\n", 20);
                     gameSystems.pauseText(500);
                     return attackPower + 8;
                 }
@@ -116,7 +116,6 @@ public class Enemy {
             healthBar = "[█         ]";
         }
         
-        // use purple for boss health bar otherwise red
     String color = isBoss ? "\033[1;35m" : "\033[1;31m";
     String line = color + enemyType + " Health - " + healthBar + " " + healthPercent + "%" + "\033[0m";
         if (isBoss) {
@@ -125,7 +124,6 @@ public class Enemy {
     System.out.println(line);
     }
 
-    // boss utility
     private void checkPhaseChange() {
         if (!isBoss) return;
         int percent = (enemyHealth * 100) / maxHealth;

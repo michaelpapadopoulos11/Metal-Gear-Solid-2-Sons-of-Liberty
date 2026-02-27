@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Combat {
     private static Player player;
     private static Enemy enemy;
@@ -7,6 +9,10 @@ public class Combat {
     private static boolean bossBattle = false;
     private static boolean chaffUsed = false;
     private static boolean bossStunned = false;
+    
+    // light mechanics (after codec hint)
+    private static boolean lightsOut = false;           // once shot, Olga accuracy drops
+    private static boolean canShootLights = false;      // becomes available after olgaFightOne
 
     // getters for header
     public static int getCombatTurn() {
@@ -21,7 +27,6 @@ public class Combat {
         return bossBattle;
     }
 
-    // Entry point for starting a fight
     public static void startCombat(Player p, Enemy e) {
         player = p;
         enemy = e;
@@ -29,6 +34,8 @@ public class Combat {
         bossBattle = e.getEnemyType().toLowerCase().contains("olga");
         chaffUsed = false;
         bossStunned = false;
+        lightsOut = false;
+        canShootLights = false;
 
         // asciiArt.combatIntroAnimation();
         // gameSystems.pauseText(800);
@@ -60,22 +67,42 @@ public class Combat {
         System.out.println("\033[0;37m   [2] CQC Attack\033[0m");
         System.out.println("\033[0;37m   [3] \033[0;32mUSE RATION - Recover 30% HP\033[0m\n");
         if (bossBattle && !chaffUsed) {
-            System.out.println("\033[0;37m   [4] Throw a CHAFF Grenade (stuns Olga for one turn)\033[0m\n");
-            // do not offer flee during boss fight
+            System.out.println("\033[0;37m   [4] Throw a CHAFF Grenade - stuns Olga for one turn\033[0m\n");
         } else {
             System.out.println("\033[0;37m   [4] Attempt to Flee\033[0m\n");
         }
+        if (canShootLights && !lightsOut) {
+            System.out.println("\033[0;37m   [5] Shoot out the overhead lights - reduces Olga accuracy\033[0m\n");
+        }
+        System.out.println("\033[0;37m   [C] Call CODEC\033[0m\n");
 
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
-        if (bossBattle && !chaffUsed) {
-            System.out.print("\033[0;90mChoose your action [1 - 4]: \033[0m"); // no flee option
-        } else {
-            System.out.print("\033[0;90mChoose your action [1 - 4]: \033[0m");
+        int maxChoice = 4;
+        if (canShootLights && !lightsOut) {
+            maxChoice = 5;
         }
+        System.out.print("\033[0;90m  Choose your action [1 - " + maxChoice + "]: \033[0m");
 
         try {
-            String input = gameSystems.readInput();
-            int choice = Integer.parseInt(input);
+            String input = gameSystems.readInput().trim().toUpperCase();
+
+            // codec call takes priority
+            if (input.equals("C")) {
+                playerCallCodec();
+                // free action
+                combatTurn();
+                return;
+            }
+
+            int choice;
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException nfe) {
+                System.out.println("\033[1;31mInvalid choice. Try again.\033[0m");
+                gameSystems.pauseText(800);
+                combatTurn();
+                return;
+            }
 
             switch (choice) {
                 case 1:
@@ -96,8 +123,11 @@ public class Combat {
                     }
                     break;
                 case 5:
-                    // normally unreachable when bossBattle; treat as invalid
-                    break;
+                    if (canShootLights && !lightsOut) {
+                        playerShootLights();
+                        break;
+                    }
+                    // fall through to invalid
                 default:
                     System.out.println("\033[1;31mInvalid choice. Try again.\033[0m");
                     gameSystems.pauseText(800);
@@ -114,7 +144,6 @@ public class Combat {
             gameSystems.pauseText(1500);
             if (bossStunned) {
                 gameSystems.clearConsole();
-                // unique boss header when stunned
                 Cutscene.combatHeaderOlga();
                     gameSystems.printWithDelay("\n\033[0;90m  [Olga is blinded by the chaff and cannot move this turn!]\033[0m\n", 20);                
                     gameSystems.pauseText(500);
@@ -136,10 +165,28 @@ public class Combat {
             combatTurn();
 
         } catch (NumberFormatException e) {
-            System.out.println("\033[1;31mInvalid input. Please enter a number between 1-4.\033[0m");
+            System.out.println("\033[1;31m  Invalid input. Please enter a number between 1 - 4.\033[0m");
             gameSystems.pauseText(800);
             combatTurn();
         }
+    }
+
+    public static void playerCallCodec() {
+        gameSystems.clearConsole();
+        Random rand = new Random();
+        int choice = rand.nextInt(3); // 0,1 or 2
+        switch (choice) {
+            case 0:
+                CODEC.olgaFightOne();
+                break;
+            case 1:
+                CODEC.olgaFightTwo();
+                break;
+            case 2:
+                CODEC.olgaFightThree();
+                break;
+        }
+        gameSystems.readInput();
     }
 
     private static void playerShootAction() {
@@ -261,6 +308,29 @@ public class Combat {
         Cutscene.bottomHeader();
     }
 
+    // light shooting utility, unlocked by codec hint
+    public static void enableLightShot() {
+        canShootLights = true;
+    }
+
+    private static void playerShootLights() {
+        gameSystems.clearConsole();
+        if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
+
+        gameSystems.pauseText(350);
+        System.out.print("\n                               ");
+        gameSystems.printWithDelay("\033[0;90m>>> SNAKE'S TURN <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
+        
+        gameSystems.printWithDelay("\n\033[0;37m  [Snake fires at the overhead lights...]\033[0m\n", 20);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("\n\033[0;32m  [Lights shattered! Olga's visibility suffers.]\033[0m\n", 20);
+        gameSystems.pauseText(500);
+        lightsOut = true;
+        canShootLights = false;
+        Cutscene.bottomHeader();
+    }
+
     private static void playerFlee() {
         gameSystems.clearConsole();
         if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
@@ -299,7 +369,7 @@ public class Combat {
             gameSystems.printWithDelay("\033[1;33m  [The guard blocks your escape route!]\033[0m\n", 10 );
             gameSystems.pauseText(1000);
             Cutscene.bottomHeader();
-            enemyTurn(); // Guard gets a free hit if you fail to flee
+            enemyTurn();
             combatTurn++;
             combatTurn();
         }
@@ -311,6 +381,17 @@ public class Combat {
             Cutscene.combatHeaderOlga();
         } else {
             Cutscene.combatTopHeader();
+        }
+
+        // if lights have been shot out, Olga has a chance to miss
+        if (bossBattle && lightsOut) {
+            int missRoll = (int) (Math.random() * 100);
+            if (missRoll < 30) { // 30% chance to whiff
+                gameSystems.printWithDelay("\n\033[1;90m  [Olga fires wildly in the dark and misses!]\033[0m\n", 20);
+                gameSystems.pauseText(500);
+                Cutscene.bottomHeader();
+                return;
+            }
         }
 
         if (bossBattle) {
@@ -369,11 +450,11 @@ public class Combat {
         gameSystems.clearConsole();
 
         if (wasBoss) {
-            // special Olga screen
-            System.out.println("\n" + "\033[1;35m" + "================================================================================" + "\033[0m");
-            System.out.println("\033[1;35m" + "                       *** OLGA BATTLE WINNER ***" + "\033[0m");
-            System.out.println("\033[1;35m" + "================================================================================" + "\033[0m\n");
-            gameSystems.printWithDelay("\033[1;35m  [Snake overcomes Olga Gurlukovich! Mission continues...]\033[0m\n", 30);
+                System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m\n");
+                System.out.println("\033[1;35m" + "              *** CONGRATULATIONS! YOU BEAT OLGA GURLUKOVICH ***" + "\033[0m\n");
+                System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
+                gameSystems.printWithDelay("  [Snake overcomes Olga Gurlukovich and the mission continues...]\n", 30);
+                gameSystems.readInput();
         } else {
             System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
             System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");

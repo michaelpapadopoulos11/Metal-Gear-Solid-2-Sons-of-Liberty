@@ -56,7 +56,7 @@ public class Cutscene {
 
         public static void bottomHeaderOLGA() {
         System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
-        System.out.println("\033[1;31m" + "\n         " + "Select [ENTER] to fight Olga." + "\033[0m");        
+        System.out.println("\033[1;35m" + "\n         " + "Select [ENTER] to fight Olga." + "\033[0m");
         gameSystems.readInput();            
     }
 
@@ -207,7 +207,6 @@ public class Cutscene {
         gameSystems.printWithDelay(indent + "Snake suspects this man could be the groups leader, judging by his\n", 40);
         gameSystems.printWithDelay(indent + "firm command over the men.\n\n", 40);
         
-        // Simulating the capture of the photo
         gameSystems.printWithDelay("        [Snake captures an image of the unknown Russian leader].\n", 40);
         gameSystems.pauseText(1000);
     
@@ -215,7 +214,6 @@ public class Cutscene {
         System.out.println("\n" + "\033[0;32m" + indent + "Press [ENTER] to transmit the image to Otacon.\033[0m");
         gameSystems.readInput();        
     
-        // image upload art
         gameSystems.clearConsole();
         topHeader();
         gameSystems.printWithDelay("\n" + indent + "Initiating secure upload protocol...\n", 30);
@@ -292,7 +290,7 @@ public class Cutscene {
                 // gameSystems.pauseText(1500);
                 // gameSystems.printWithDelay("\n  She slowly tosses it - then spins suddenly and fires. Snake barely dodges as \n  the shot tears past him. She dives into cover. Snake retreats to cover as \n  well, rain hammering the deck around them.\n", 40);
                 // gameSystems.pauseText(2000);
-            bottomHeaderOLGA();
+            // bottomHeaderOLGA();
             gameSystems.clearConsole();
             Combat.startCombat(new Player(), new Enemy("Olga Gurlukovich"));
         }
