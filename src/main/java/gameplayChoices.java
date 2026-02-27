@@ -430,10 +430,29 @@ public class gameplayChoices {
                     gameSystems.printWithDelay("\n  As he pushes the door closed, a brightly coloured poster catches his eye.\n", 40);
                     gameSystems.pauseText(900);
 
-                    System.out.println("\n   poster");
-
-                    gameSystems.pauseText(1200);
-
+                        System.out.println("\033[1;30m"); // Dark Gray / Bold Black
+                        System.out.println("                                                         %%%+                     ");
+                        System.out.println("                                                       %%* . %-                   ");
+                        System.out.println("                                                      +%      :                   ");
+                        System.out.println("                                                      #%                          ");
+                        System.out.println("                                                     %%%      #                   ");
+                        System.out.println("                                                     %%%* *%+                    ");
+                        System.out.println("                                %%%%                #%%%%%   %%%%.                ");
+                        System.out.println("                                    +%               %%%%    *%%%                 ");
+                        System.out.println("                                     +%%           -%%%%                          ");
+                        System.out.println("                                      %%%:         %%%%%                          ");
+                        System.out.println("                      %%%%%            +%%+       .%%%%%   -%%=                   ");
+                        System.out.println("                        %%%%%%=         #%%       *%%%%%%%%%%%%                   ");
+                        System.out.println("                         *%%%%#          +%%%%%%%%%%%%%%%%%%%%                    ");
+                        System.out.println("                           *%%%             %%%%%%%%%%%%%%      %%%               ");
+                        System.out.println("                             %%%%    +%%#    :%%%%%%%%%%        %%%               ");
+                        System.out.println("                              =%%%%-*%%%%%%   %%%%%%%%%         %%%               ");
+                        System.out.println("                               %%%%%%%%%%%%:  %%%%%%%%          -%%               ");
+                        System.out.println("                                %%%%%%%%%%%      %%%%            *%               ");
+                        System.out.println("             -       +%%%%%%%%%%%%%%%%%%%%%%     +.               %#              ");
+                        System.out.println("        .%%%%%%%%%%%%%%%%%%%%%%%:     +%%%+                                       ");
+                        System.out.println("        *%%%%=                                                                    ");
+                        System.out.print("\033[0m"); // Reset color
                     Cutscene.bottomHeader();
                     CODEC.codecPornPoster();
                 break;

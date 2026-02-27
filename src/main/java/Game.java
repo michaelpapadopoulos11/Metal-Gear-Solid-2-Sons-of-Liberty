@@ -19,7 +19,7 @@ public class Game {
         // CODEC.otaconImageID();
         // gameplayChoices.firstPlayerChoice();
         // gameplayChoices.secondPlayerChoice();
-        // gameplayChoices.lockerRoomChoice();
+        gameplayChoices.lockerRoomChoice();
         // Cutscene.preOlgaFightCutscene();
         // CODEC.postOlgaCall();
         // CODEC.preMetalGearRoomCODEC();
@@ -27,8 +27,7 @@ public class Game {
         // CODEC.preMetalGearRoomCODEC();
         // gameplayChoices.choosePostPreMetalGearRole();
         // CODEC.snakeUploadingPics();
-            Cutscene.finalGameCutscene();
-
+        // Cutscene.finalGameCutscene();
         input.close();  
     }
 
