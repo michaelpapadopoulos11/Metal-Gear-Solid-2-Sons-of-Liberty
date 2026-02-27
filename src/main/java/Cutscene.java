@@ -4,18 +4,16 @@
 
 public class Cutscene {
 
-            // this file is for all the context and storytelling text moments in the game
-
     public static void runGame() {
 
-        // gameLoading();                         
+        gameLoading();                         
 
-        // hudsonRiverIntro();              
-        // CODEC.otaconIntro();
-        // hudsonRiverPostIntro();
+        hudsonRiverIntro();              
+        CODEC.otaconIntro();
+        hudsonRiverPostIntro();
 
-        // CODEC.otaconImageID();                
-        // gameplayChoices.firstPlayerChoice();
+        CODEC.otaconImageID();                
+        gameplayChoices.firstPlayerChoice();
         gameplayChoices.secondPlayerChoice();
         lockerRoom();                         
 
@@ -29,7 +27,8 @@ public class Cutscene {
         gameplayChoices.choosePostPreMetalGearRole();
         CODEC.snakeUploadingPics();
 
-        finalGameCutscene();                 
+        finalGameCutscene();
+        System.exit(0);
     }
 
     public static void gameLoading() {
