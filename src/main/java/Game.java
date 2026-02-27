@@ -23,7 +23,9 @@ public class Game {
         // Cutscene.preOlgaFightCutscene();
         // CODEC.postOlgaCall();
         // CODEC.postOlgaCall();
-        Cutscene.preMetalGearRoomContext();
+        // CODEC.preMetalGearRoomCODEC();
+
+        CODEC.choosePostPreMetalGearRole();
 
         input.close();  
     }

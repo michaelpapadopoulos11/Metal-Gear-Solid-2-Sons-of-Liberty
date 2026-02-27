@@ -718,14 +718,144 @@ public class CODEC {
     }
 
     public static void preMetalGearRoomCODEC() {
-        codecCalling();
+        // codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
 
-        System.out.println("codec call where otacon explain snake needing to take MG pics and hacking into the terminal");
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("I've made it to the Marine Corps speech.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Can you see Metal Gear?\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("No,", 0);
+        // gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" I'll have to go around to the bow.\n\n", 0);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("         They have some serious defenses here though...\n\n", 0);
+        // gameSystems.pauseText(1500);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Let's go over this one more time.\n\n", 0);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( "         You need to use your camera to take photographic\n         evidence of the Metal Gear prototype. Now do \n         your thing and take pictures that speak louder \n         than the government's plausible denials.\n", 0);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( "\n         We need four shots: Metal Gear from the front, \n         front-right, front-left, and a close-up of the\n         Marine Corps logo.\n", 0);
+        // gameSystems.pauseText(1000);
+
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();
+
+        gameSystems.clearConsole();
+        codecTopBorder();
+        
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " There's actually one more little thing...\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Just spit it out, I'm used to things going \n         wrong.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " It looks like someone is monitoring our \n         transmission.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Who?\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " I don't have a clue. All they're doing is \n         watching", 0);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " - it would creep me out less if they \n         tried to interfere with our communications.\n\n", 0);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Could it have something to do with that \n         Cypher we saw?\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Maybe.", 0);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " I've switched the encryption protocol \n         for our burst transmission for now.\n", 0);
+        // gameSystems.pauseText(1000);
+
+        codecBottomContinueBorder();
+        gameSystems.readInput();
+
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " What I want to do is use a different method \n         for sending those photos, just in case.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Instead of using a CODEC?\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Exactly, there's a workstation in the \n         southeast corner of the block where the Metal \n         Gear is likely located.\n\n", 0);
+        // gameSystems.pauseText(1000);
+
+        gameSystems.printWithDelay("         It'll take me a bit of time but I can hack\n         into that terminal where I can then remote-\n         install a little app that I wrote.\n\n", 0);        // gameSystems.pauseText(1000);
+        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("         From there, the image data will be encrypted \n         and can then be sent securely to me.\n", 0);
+        // gameSystems.pauseText(1000);
 
         codecBottomBorder();
         gameSystems.readInput();
         codecEnd();
+    }
+
+    public static void choosePostPreMetalGearRole() {
+        gameSystems.clearConsole();
+        // Cutscene.topHeader();
+        System.out.println("\n\033[1;33m================================================================================\033[0m\n");
+        System.out.println("\033[1;33m                   Choose your role to carry out this mission:");
+        System.out.println("\n\033[1;33m================================================================================\033[0m\n");
+
+        System.out.println("  [1] Play as Snake - Take the pictures of Metal Gear\n");
+        System.out.println("  [2] Play as Otacon - Hack the computer terminal\n");
+        System.out.println("\033[1;33m--------------------------------------------------------------------------------\033[0m");
+        System.out.print("\n\033[1;33m  Choice: ");
+        String choice = gameSystems.readInput().trim();
+        switch (choice) {
+            case "1":
+                snakeEnding();
+                break;
+            case "2":
+                otaconEnding();
+                break;
+            default:
+                choosePostPreMetalGearRole();
+                break;
+        }
+    }
+
+    private static void snakeEnding() {
+        gameSystems.clearConsole();
+        gameSystems.printWithDelay("You decide to carry out the photo reconnaissance yourself.\n", 40);
+        gameSystems.printWithDelay("With camera in hand you sneak toward the bow to get the shots.\n", 40);
+        gameSystems.printWithDelay("Your objective: four clear photos of Metal Gear to expose the project.\n", 40);
+        gameSystems.pauseText(1500);
+        // additional snake-specific logic could go here
+        gameSystems.printWithDelay("[Snake path continues...]\n", 40);
+        gameSystems.pauseText(1000);
+    }
+
+    private static void otaconEnding() {
+        gameSystems.clearConsole();
+        gameSystems.printWithDelay("You opt to stay behind the console and hack the terminal.\n", 40);
+        gameSystems.printWithDelay("Otacon begins writing and deploying his custom encryption utility.\n", 40);
+        gameSystems.printWithDelay("Once installed, it will securely transmit the images back to him.\n", 40);
+        gameSystems.pauseText(1500);
+        // additional otacon-specific logic could go here
+        gameSystems.printWithDelay("[Otacon path continues...]\n", 40);
+        gameSystems.pauseText(1000);
     }
 }

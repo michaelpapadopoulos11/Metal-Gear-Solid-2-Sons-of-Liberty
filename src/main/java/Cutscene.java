@@ -300,22 +300,21 @@ public class Cutscene {
         gameSystems.clearConsole();
         Cutscene.topHeader();
 
-            gameSystems.printWithDelay("\n  [Following the intense confrontation on the deck, Snake moves quickly into \n  the bowels of the ship. He meticulously navigates the narrow corridors, by\n  passing automated security cameras and avoiding roaming guard patrols, all\n  while searching for any signs of the Metal Gear's containment area].\033[0m\n", 0);
+            gameSystems.printWithDelay("\n  [Following the intense confrontation on the deck, Snake moves quickly into \n  the bowels of the ship. He meticulously navigates the narrow corridors, by\n  passing automated security cameras and avoiding roaming guard patrols, all\n  while searching for any signs of the Metal Gear's containment area].\033[0m\n", 40);
             gameSystems.pauseText(2000);
 
-            gameSystems.printWithDelay("\n  [Reaching the dimly lit Deck-2 port hallway, Snake pauses to check his radar.\n  Suddenly, the ship's loudspeaker system crackles to life, broadcasting a \n  frantic announcement: 'Verrezano Bridge checkpoint passed, all non-essential\n  personnel report to the holds in 10 mins time for scheduled briefing with the \n  commandant'].\033[0m\033[0m\n", 0);
+            gameSystems.printWithDelay("\n  [Reaching the dimly lit Deck-2 port hallway, Snake pauses to check his radar.\n  Suddenly, the ship's loudspeaker system crackles to life, broadcasting a \n  frantic announcement: 'Verrezano Bridge checkpoint passed, all non-essential\n  personnel report to the holds in 10 mins time for scheduled briefing with the \n  commandant'].\033[0m\033[0m\n", 40);
             gameSystems.pauseText(2000);
             Cutscene.bottomHeader();
 
             gameSystems.clearConsole();
 
             Cutscene.topHeader();
-            gameSystems.printWithDelay("\n  [Recognizing the briefing as a potential lead to the Metal Gear's location, \n  Snake heads towards the holds. He knows he must remain undetected, as any \n  guard spotting him means immediate failure. He adjusts his sneaking suit and \n  prepares for high-risk infiltration].\033[0m\n", 0);
+            gameSystems.printWithDelay("\n  [Recognizing the briefing as a potential lead to the Metal Gear's location, \n  Snake heads towards the holds. He knows he must remain undetected, as any \n  guard spotting him means immediate failure. He adjusts his sneaking suit and \n  prepares for high-risk infiltration].\033[0m\n", 40);
             gameSystems.pauseText(2000);
 
-            gameSystems.printWithDelay("\n  [Snake slips quietly into the upper rafters of the massive cargo hold. From \n  this vantage point, he overlooks two interconnected rooms. In the room ahead, \n  the Army Commandant is giving a stern speech to a massive formation of \n  soldiers. This presentation is being broadcast over loudspeakers to the entire \n  area, filling both chambers with his voice. Snake must remain perfectly hidden, \n  as any guard looking up will spot him instantly].\033[0m\n", 0);
+            gameSystems.printWithDelay("\n  [Snake slips quietly into the upper rafters of the massive cargo hold. From \n  this vantage point, he overlooks three interconnected rooms. In the room \n  ahead, the Marines Commandant is giving a stern speech to a massive formation \n  of soldiers. This presentation is being broadcast over loudspeakers to the \n  entire area, filling both chambers with his voice. Snake must remain perfectly \n  hidden, as any guard looking up will spot him instantly].\033[0m\n", 40);
             gameSystems.pauseText(2000);
-            
 
         Cutscene.bottomHeader();
         CODEC.preMetalGearRoomCODEC();
