@@ -843,19 +843,63 @@ public class CODEC {
         gameSystems.printWithDelay("With camera in hand you sneak toward the bow to get the shots.\n", 40);
         gameSystems.printWithDelay("Your objective: four clear photos of Metal Gear to expose the project.\n", 40);
         gameSystems.pauseText(1500);
-        // additional snake-specific logic could go here
         gameSystems.printWithDelay("[Snake path continues...]\n", 40);
         gameSystems.pauseText(1000);
     }
 
     private static void otaconEnding() {
         gameSystems.clearConsole();
-        gameSystems.printWithDelay("You opt to stay behind the console and hack the terminal.\n", 40);
-        gameSystems.printWithDelay("Otacon begins writing and deploying his custom encryption utility.\n", 40);
-        gameSystems.printWithDelay("Once installed, it will securely transmit the images back to him.\n", 40);
+        Cutscene.topHeader();
+        gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Hmm, the terminal is locked, but I can browse the filesystem...\n", 40);
         gameSystems.pauseText(1500);
-        // additional otacon-specific logic could go here
-        gameSystems.printWithDelay("[Otacon path continues...]\n", 40);
+        gameSystems.printWithDelay("          Let me check the documentation folder in the source directory... \n", 40);
+        gameSystems.pauseText(2000);
+        gameSystems.printWithDelay("          Nothing here but source code and a 'resources' folder...\n", 40);
+        gameSystems.pauseText(2000);
+
+        gameSystems.printWithDelay("                              \033[0;33m\n", 10);
+        gameSystems.printWithDelay("                                /project\n", 10);
+        gameSystems.printWithDelay("                                |-- /src\n", 10);
+        gameSystems.printWithDelay("                                |   |-- /main\n", 10);
+        gameSystems.printWithDelay("                                |   |   |-- /java\n", 10);
+        gameSystems.printWithDelay("                                |   |   |-- /resources\n", 10);
+        gameSystems.printWithDelay("                                |-- /target\n", 10);
+        System.out.println("                              \033[0m");
+        gameSystems.pauseText(2500);
+
+        gameSystems.printWithDelay("\033[0;36m[OTACON]: \033[0mLet me check out that 'target' folder for any possible clues...", 40);
+
         gameSystems.pauseText(1000);
+        System.out.println("\n\033[0;32m");
+        System.out.println("              __________________________________________________________");
+        System.out.println("             |  SECURE TERMINAL ACCESS - TANKER BLOCK 2                |");
+        System.out.println("             |  Encryption: AES-256                                    |");
+        System.out.println("             |  Status: Awaiting Password...                           |");
+        System.out.println("             |_________________________________________________________|");
+        System.out.print("\033[0m\n");
+        gameSystems.pauseText(1000);
+
+        boolean hacked = false;
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        String correctPassword = "NAVAL_STRIKE_2005"; 
+
+        while (!hacked) {
+            System.out.print("\033[0;32m  Enter Password > \033[0m"); // Green prompt
+            String playerInput = scanner.nextLine().trim();
+
+            if (playerInput.equalsIgnoreCase(correctPassword)) {
+                gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Password accepted. Installing encryption utility...\033[0m\n", 0);
+                gameSystems.pauseText(1000);
+                gameSystems.printWithDelay("\033[0;36m[OTACON]: \033[0mYes! It's in. Securely transmitting images back to base now.\n", 40);
+                hacked = true;
+            } else {
+                gameSystems.clearConsole();
+                gameSystems.printWithDelay("\n\033[0;31m[SYSTEM]: Access Denied. Password incorrect.\033[0m\n", 0);
+                gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Come on, think... check the logs again!\n", 40);
+            }
+        }
+        
+        gameSystems.pauseText(2000);
+        gameSystems.printWithDelay("\n[Otacon path continues...]\n", 40);
+        }
     }
-}
