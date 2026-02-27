@@ -14,11 +14,19 @@ Navigate to: Bottom left of VS Code --> Select the Gear Icon --> Themes --> Colo
 
 ------------------------------------------------------------------------------
 
-How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
+  How to run "Metal Gear Solid 2: Sons of Liberty - The Text Adventure!"
 
-- For optimal and intended purposes, run this program in VS Code IDE.
-- To start the game : Run the program from the 'Game.java' file.
+  - For optimal and intended purposes, run this program in VS Code IDE.
+  - To start the game : Run the program from the 'Game.java' file.
 
-If you're running the game in other IDEs (namely Intellij):
-- The 'clearConsole' function will not work at all (due to IntelliJ's built-in terminal).
-- The 'printwithDelay' function will not display as smoothly as intended.
+  If you're running the game in another IDE (namely Intellij):
+  - The 'clearConsole' function may not work (due to differences in in-built IDE terminals).
+  - The 'printwithDelay' function will not display as smoothly as intended.
+
+
+
+                            METAL GEAR FINAL ROOM  
+
+- PLAYER SWITCHES PERSPECTIVE TO OTACON!!
+- YOU NEED TO FIND THE PASSWORD HIDDEN SOMEWHERE TO HACK INTO THE TERMINAL
+- THE PASSWORD WILL BE HIDDEN ON A WEBSITE?? IN THE GAMES CODE TEXT FILES????
