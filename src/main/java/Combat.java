@@ -144,6 +144,8 @@ public class Combat {
             if (bossStunned) {
                 gameSystems.clearConsole();
                 Cutscene.combatHeaderOlga();
+                    gameSystems.printWithDelay("\033[1;33m>>> OLGA'S TURN <<<\033[0m\n", 20);
+                    gameSystems.pauseText(350);
                     gameSystems.printWithDelay("\n\033[0;90m  [Olga is blinded by the chaff and cannot move this turn!]\033[0m\n", 20);                
                     gameSystems.pauseText(500);
                 Cutscene.bottomHeader();

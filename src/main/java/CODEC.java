@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class CODEC {
 
+                // this file is for all the codec call dialogue moments in the game
+
     // CODEC FREQUENCIES :
     // OTACON - 140.85
 
@@ -742,33 +744,33 @@ public class CODEC {
     }
 
     public static void preMetalGearRoomCODEC() {
-        // codecCalling();
+        codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("I've made it to the Marine Corps speech.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("I've made it to the Marine Corps speech.\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " Can you see Metal Gear?\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " Can you see Metal Gear?\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("No,", 0);
-        // gameSystems.pauseText(500);
-        gameSystems.printWithDelay(" I'll have to go around to the bow.\n\n", 0);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("         They have some serious defenses here though...\n\n", 0);
-        // gameSystems.pauseText(1500);
+        gameSystems.printWithDelay("No,", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay(" I'll have to go around to the bow.\n\n", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("         They have some serious defenses here though...\n\n", 40);
+        gameSystems.pauseText(1500);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " Let's go over this one more time.\n\n", 0);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay( "         You need to use your camera to take photographic\n         evidence of the Metal Gear prototype. Now do \n         your thing and take pictures that speak louder \n         than the government's plausible denials.\n", 0);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay( "\n         We need four shots: Metal Gear from the front, \n         front-right, front-left, and a close-up of the\n         Marine Corps logo.\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " Let's go over this one more time.\n\n", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( "         You need to use your camera to take photographic\n         evidence of the Metal Gear prototype. Now do \n         your thing and take pictures that speak louder \n         than the government's plausible denials.\n", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( "\n         We need four shots: Metal Gear from the front, \n         front-right, front-left, and a close-up of the\n         Marine Corps logo.\n", 40);
+        gameSystems.pauseText(1000);
 
 
         codecBottomContinueBorder();
@@ -778,35 +780,35 @@ public class CODEC {
         codecTopBorder();
         
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " There's actually one more little thing...\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " There's actually one more little thing...\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("Just spit it out, I'm used to things going \n         wrong.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("Just spit it out, I'm used to things going \n         wrong.\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " It looks like someone is monitoring our \n         transmission.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " It looks like someone is monitoring our \n         transmission.\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("Who?\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("Who?\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " I don't have a clue. All they're doing is \n         watching", 0);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay( " - it would creep me out less if they \n         tried to interfere with our communications.\n\n", 0);
+        gameSystems.printWithDelay( " I don't have a clue. All they're doing is \n         watching", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " - it would creep me out less if they \n         tried to interfere with our communications.\n\n", 40);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("Could it have something to do with that \n         Cypher we saw?\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("Could it have something to do with that \n         Cypher we saw?\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " Maybe.", 0);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay( " I've switched the encryption protocol \n         for our burst transmission for now.\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " Maybe.", 40);
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " I've switched the encryption protocol \n         for our burst transmission for now.\n", 40);
+        gameSystems.pauseText(1000);
 
         codecBottomContinueBorder();
         gameSystems.readInput();
@@ -815,21 +817,25 @@ public class CODEC {
         codecTopBorder();
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " What I want to do is use a different method \n         for sending those photos, just in case.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " What I want to do is use a different method \n         for sending those photos, just in case.\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("Instead of using a CODEC?\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("Instead of using a CODEC?\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " Exactly, there's a workstation in the \n         southeast corner of the block where the Metal \n         Gear is likely located.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " Exactly, there's a workstation in the \n         southeast corner of the block where the Metal \n         Gear is likely located.\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        gameSystems.printWithDelay("         It'll take me a bit of time but I can hack\n         into that terminal where I can then remote-\n         install a little app that I wrote.\n\n", 0);        // gameSystems.pauseText(1000);
-        // gameSystems.pauseText(1000);
-        gameSystems.printWithDelay("         From there, the image data will be encrypted \n         and can then be sent securely to me.\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("         It'll take me a bit of time but I can hack\n         into that terminal where I can then remote-\n         install a little app that I wrote.\n\n", 40);        
+        gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("         From there, the image data will be encrypted \n         and can then be sent securely to me.\n\n", 40);
+        gameSystems.pauseText(1000);
+
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Sounds like a plan.\n", 40);
+        gameSystems.pauseText(1000);
 
         codecBottomBorder();
         gameSystems.readInput();

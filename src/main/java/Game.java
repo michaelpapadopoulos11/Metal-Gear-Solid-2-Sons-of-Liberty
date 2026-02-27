@@ -3,35 +3,31 @@
 import java.util.Scanner;
 
 public class Game {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        
-        // gameIntro(input); // game menu function
-        // gameSystems.gameDifficulty(input);
+    private final Scanner input;
 
-        // // game contents:
-        // Cutscene.gameLoading(); // fake intro
-
-        // Cutscene.hudsonRiverIntro(); // testing the first cutscene
-        // CODEC.otaconIntro();
-        // Cutscene.hudsonRiverPostIntro();
-
-        // CODEC.otaconImageID();
-        // gameplayChoices.firstPlayerChoice();
-        // gameplayChoices.secondPlayerChoice();
-        gameplayChoices.lockerRoomChoice();
-        // Cutscene.preOlgaFightCutscene();
-        // CODEC.postOlgaCall();
-        // CODEC.preMetalGearRoomCODEC();
-        // CODEC.postOlgaCall();
-        // CODEC.preMetalGearRoomCODEC();
-        // gameplayChoices.choosePostPreMetalGearRole();
-        // CODEC.snakeUploadingPics();
-        // Cutscene.finalGameCutscene();
-        input.close();  
+    public Game() {
+        this.input = new Scanner(System.in);
     }
 
-    public static void gameIntro(Scanner input) { 
+    public static void main(String[] args) {
+        Game game = new Game();                     
+        game.run();                                
+        game.shutdown();                           
+    }
+
+    public void run() {
+        gameIntro();                               
+        gameSystems.gameDifficulty(input);
+
+        Cutscene.runGame();
+    }
+
+    private void shutdown() {
+        input.close();                             
+        gameSystems.closeScanner();                
+    }
+
+    public void gameIntro() { 
         gameSystems.clearConsole();
         System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
     
@@ -62,10 +58,9 @@ public class Game {
         System.out.println("\033[1;32m\n                      ------- THE TANKER INCIDENT -------\033[0m");
         gameSystems.pauseText(2000);
     
-        // Continue with the game or exit option
         System.out.println("\033[32m\n\n\n\n\n\n\n                   Select [ENTER] to continue or [0] to exit\033[0m");
         System.out.println("\n" + "\033[1;30m" + "================================================================================\n" + "\033[0m");
         gameSystems.readInput();        
         gameSystems.clearConsole();
-        }
     }
+}

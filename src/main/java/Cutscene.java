@@ -4,7 +4,32 @@
 
 public class Cutscene {
 
+            // this file is for all the context and storytelling text moments in the game
+
     public static void runGame() {
+
+        // gameLoading();                         
+
+        // hudsonRiverIntro();              
+        // CODEC.otaconIntro();
+        // hudsonRiverPostIntro();
+
+        // CODEC.otaconImageID();                
+        // gameplayChoices.firstPlayerChoice();
+        gameplayChoices.secondPlayerChoice();
+        lockerRoom();                         
+
+        preOlgaFightCutscene();               
+
+        CODEC.postOlgaCall();
+        CODEC.preMetalGearRoomCODEC();
+        CODEC.postOlgaCall();                
+        CODEC.preMetalGearRoomCODEC();
+
+        gameplayChoices.choosePostPreMetalGearRole();
+        CODEC.snakeUploadingPics();
+
+        finalGameCutscene();                 
     }
 
     public static void gameLoading() {
@@ -177,7 +202,6 @@ public class Cutscene {
         gameSystems.pauseText(2500);
         bottomHeader();
 
-
         // NEED TO ADD THE OTACON: "HE'LL KNOW SOON ENOUGH" PART
 
         // gameSystems.printWithDelay(indent, 0);  
@@ -342,6 +366,6 @@ public static void finalGameCutscene() {
         Cutscene.bottomHeader();
         
         gameSystems.clearConsole();
-        System.out.println("\n  Thank you for playing this fan-made game!");        
+        System.out.println("\n\n  Thank you for playing this fan-made game!");        
     }    
 }

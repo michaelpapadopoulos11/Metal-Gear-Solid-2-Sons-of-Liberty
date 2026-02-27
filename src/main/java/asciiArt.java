@@ -191,7 +191,7 @@ public static void solitonRadarBottomHeader() {
     }
 
 
-public static void displaySolitonRadarSCREENTWO() { 
+public static void displaySolitonRadarSCREENTWOintel() { 
     solitonRadarTopHeader();
             gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
             gameSystems.pauseText(1000);
@@ -218,7 +218,7 @@ public static void displaySolitonRadarSCREENTWO() {
 
     public static void displaySolitonRadarSCREENTWO(boolean hasIntelTWO) {
         if (!hasIntelTWO) {
-            displaySolitonRadarSCREENTWO(); // Show blind radar
+            displaySolitonRadarSCREENTWOintel(); // Show blind radar
             return;
         }
         

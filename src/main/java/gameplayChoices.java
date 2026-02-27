@@ -217,9 +217,10 @@ public class gameplayChoices {
 
             gameSystems.printWithDelay("\n  Snake presses himself tighter against the cold steel wall, steadying his\n", 40);
             gameSystems.printWithDelay("  stance and lowering his profile.\n", 40);
-            gameSystems.pauseText(900);
+            gameSystems.pauseText(1000);
 
             gameSystems.printWithDelay("\n  [He keeps his breathing controlled, ready for whatever waits beyond the \n  corner]\n", 30);
+            gameSystems.pauseText(1000);
 
             Cutscene.bottomHeader();
             secondPlayerChoice();
@@ -430,7 +431,7 @@ public class gameplayChoices {
                     gameSystems.printWithDelay("\n  As he pushes the door closed, a brightly coloured poster catches his eye.\n", 40);
                     gameSystems.pauseText(900);
 
-                        System.out.println("\033[1;30m"); // Dark Gray / Bold Black
+                        System.out.println("\033[1;30m");
                         System.out.println("                                                         %%%+                     ");
                         System.out.println("                                                       %%* . %-                   ");
                         System.out.println("                                                      +%      :                   ");
