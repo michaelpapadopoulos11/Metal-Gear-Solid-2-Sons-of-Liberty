@@ -22,7 +22,8 @@ public class Game {
         // gameplayChoices.lockerRoomChoice();
         // Cutscene.preOlgaFightCutscene();
         // CODEC.postOlgaCall();
-        CODEC.postOlgaCall();
+        // CODEC.postOlgaCall();
+        Cutscene.preMetalGearRoomContext();
 
         input.close();  
     }

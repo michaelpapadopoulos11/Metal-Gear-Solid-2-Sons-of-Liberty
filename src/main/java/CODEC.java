@@ -714,5 +714,18 @@ public class CODEC {
         codecBottomBorder();
         gameSystems.readInput();
         codecEnd();
+        Cutscene.preMetalGearRoomContext();
+    }
+
+    public static void preMetalGearRoomCODEC() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        System.out.println("codec call where otacon explain snake needing to take MG pics and hacking into the terminal");
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
     }
 }
