@@ -319,4 +319,29 @@ public class Cutscene {
         Cutscene.bottomHeader();
         CODEC.preMetalGearRoomCODEC();
         }
-    }
+
+public static void finalGameCutscene() {
+    gameSystems.clearConsole();
+        topHeader();
+        
+        gameSystems.printWithDelay("\n  Snake watches from the shadows as the Commandant reveals the truth...\n", 40);
+        gameSystems.printWithDelay("  This is Metal Gear RAY, a weapon designed to hunt its own kind.\n\n", 40);
+        gameSystems.pauseText(2000);
+
+        gameSystems.printWithDelay("  Suddenly, Ocelot emerges. In a swift betrayal, he executes Gurlukovich.\n", 40);
+        gameSystems.printWithDelay("  The alliance is shattered. The Patriots have won.\n\n", 40);
+        gameSystems.pauseText(2000);
+
+        gameSystems.printWithDelay("  Explosions rock the tanker. The hull splits as water surges in.\n", 40);
+        gameSystems.printWithDelay("  Ocelot boards RAY and tears through the ship, escaping into the abyss.\n\n", 40);
+        gameSystems.pauseText(2000);
+
+        gameSystems.printWithDelay("  Snake is dragged down by the current. The mission ends in chaos.\n", 40);
+        gameSystems.printWithDelay("\n\n                      \033[0;37mOPERATIVE STATUS: MIA / PRESUMED DEAD\033[0m\n", 60);
+        gameSystems.pauseText(4000);
+        Cutscene.bottomHeader();
+        
+        gameSystems.clearConsole();
+        System.out.println("\n  Thank you for playing this fan-made game!");        
+    }    
+}

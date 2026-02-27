@@ -22,10 +22,12 @@ public class Game {
         // gameplayChoices.lockerRoomChoice();
         // Cutscene.preOlgaFightCutscene();
         // CODEC.postOlgaCall();
+        // CODEC.preMetalGearRoomCODEC();
         // CODEC.postOlgaCall();
         // CODEC.preMetalGearRoomCODEC();
-
-        CODEC.choosePostPreMetalGearRole();
+        // gameplayChoices.choosePostPreMetalGearRole();
+        // CODEC.snakeUploadingPics();
+            Cutscene.finalGameCutscene();
 
         input.close();  
     }

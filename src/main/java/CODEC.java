@@ -834,178 +834,34 @@ public class CODEC {
         codecBottomBorder();
         gameSystems.readInput();
         codecEnd();
-    }
-
-    public static void choosePostPreMetalGearRole() {
-        gameSystems.clearConsole();
-        // Cutscene.topHeader();
-        System.out.println("\n\033[1;33m================================================================================\033[0m\n");
-        System.out.println("\033[1;33m                   Choose your role to carry out this mission:");
-        System.out.println("\n\033[1;33m================================================================================\033[0m\n");
-
-        System.out.println("  [1] Play as Snake - Take the pictures of Metal Gear\n");
-        System.out.println("  [2] Play as Otacon - Hack the computer terminal\n");
-        System.out.println("\033[1;33m--------------------------------------------------------------------------------\033[0m");
-        System.out.print("\n\033[1;33m  Choice: ");
-        String choice = gameSystems.readInput().trim();
-        switch (choice) {
-            case "1":
-                snakeEnding();
-                break;
-            case "2":
-                otaconEnding();
-                break;
-            default:
-                choosePostPreMetalGearRole();
-                break;
-        }
-    }
-
-    private static void snakeEnding() {
-        gameSystems.clearConsole();
-        gameSystems.printWithDelay("You decide to carry out the photo reconnaissance yourself.\n", 40);
-        gameSystems.printWithDelay("With camera in hand you sneak toward the bow to get the shots.\n", 40);
-        gameSystems.printWithDelay("Your objective: four clear photos of Metal Gear to expose the project.\n", 40);
-        gameSystems.pauseText(1500);
-        gameSystems.printWithDelay("[Snake path continues...]\n", 40);
-        gameSystems.pauseText(1000);
-    }
-
-    private static void otaconEnding() {
-        gameSystems.clearConsole();
-        Cutscene.topHeader();
-        gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Hmm, the terminal is locked, but I can browse the filesystem...\n", 0);
-        // gameSystems.pauseText(1500);
-        gameSystems.printWithDelay("          Let me check the documentation folder in the source directory... \n", 0);
-        // gameSystems.pauseText(2000);
-        gameSystems.printWithDelay("          Hmmm, Nothing here but useless java files...\n", 0);
-        // gameSystems.pauseText(2000);
-
-        gameSystems.printWithDelay("          That 'resources' folder in the project directory might give me some \n          clues?\n", 0);
-        // gameSystems.pauseText(1000);
-
-        gameSystems.printWithDelay("                              \033[0;33m\n", 5);
-        gameSystems.printWithDelay("                                /project\n", 5);
-        gameSystems.printWithDelay("                                |-- /src\n", 5);
-        gameSystems.printWithDelay("                                |   |-- /main\n", 5);
-        gameSystems.printWithDelay("                                |   |   |-- /java\n", 5);
-        gameSystems.printWithDelay("                                |   |   |-- /resources\n", 5);
-        gameSystems.printWithDelay("                                |-- /target\n",5);
-        gameSystems.pauseText(1000);
-        
-        Cutscene.bottomHeader();
-        gameSystems.clearConsole();
-        Cutscene.topHeader();
-
-        System.out.println(
-            "\n\033[0;32m    _________________________________________________\033[0m" +
-            "   \033[0;33m/project\033[0m"
-        );
-        System.out.println(
-            "\033[0;32m   |  SECURE TERMINAL ACCESS - TANKER BLOCK 2        |\033[0m" +
-            "   \033[0;33m|-- /src\033[0m"
-        );
-        System.out.println(
-            "\033[0;32m   |  Encryption: AES-256                            |\033[0m" +
-            "   \033[0;33m|   |-- /main\033[0m"
-        );
-        System.out.println(
-            "\033[0;32m   |  Status: Awaiting Password...                   |\033[0m" +
-            "   \033[0;33m|   |   |-- /java\033[0m"
-        );
-        System.out.println(
-            "\033[0;32m   |_________________________________________________|\033[0m" +
-            "   \033[0;33m|   |   |-- /resources\033[0m"
-        );
-        System.out.println(
-            "                                                         " +
-            "\033[0;33m|-- /target\033[0m"
-        );
-
-        gameSystems.pauseText(1000);
-
-        boolean hacked = false;
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
-        String correctPassword = "konami_tears"; 
-
-        while (!hacked) {
-            System.out.print("\033[0;32m  Enter Password > \033[0m");
-            String playerInput = scanner.nextLine().trim();
-
-            if (playerInput.equalsIgnoreCase(correctPassword)) {
-                gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Password accepted. Installing encryption utility...\033[0m\n", 0);
-                gameSystems.pauseText(1000);
-                gameSystems.printWithDelay("\n\033[0;36m[OTACON]: \033[0mYes! I'm in. Now all I need to do is remote-install that program of mine.\n", 40);
-                Cutscene.bottomHeader();
-                hacked = true;
-            } else {
-                gameSystems.clearConsole();
-                gameSystems.printWithDelay("\n\033[0;31m[SYSTEM]: Access Denied. Password incorrect.\033[0m\n", 0);
-                gameSystems.printWithDelay("\n\033[0;36m[OTACON]:\033[0m Come on, think... check the logs again!\n", 40);
-            }
-        }
-        // After password accepted, before Otacon speaks:
-        gameSystems.clearConsole();
-        Cutscene.topHeader();
-
-        // Green terminal boot‑loader style
-        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Initializing Otacon uplink module...\033[0m\n", 10);
-        gameSystems.pauseText(400);
-
-        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Allocating memory blocks [ 4096 KB ]\033[0m\n", 5);
-        gameSystems.pauseText(300);
-
-        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Establishing encrypted channel (AES-256)...\033[0m\n", 5);
-        gameSystems.pauseText(500);
-
-        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Handshake OK. Beginning upload...\033[0m\n\n", 10);
-        gameSystems.pauseText(300);
-
-        // Progress bar animation
-        String[] bars = {
-            "[==========                                        ] 20%",
-            "[====================                              ] 40%",
-            "[==============================                    ] 60%",
-            "[========================================          ] 80%",
-            "[==================================================] 100%"
-        };
-
-        for (String b : bars) {
-            gameSystems.printWithDelay("\033[0;32m" + b + "\033[0m\n", 3);
-            gameSystems.pauseText(200);
-        }
-
-        gameSystems.pauseText(300);
-
-        // System verification lines
-        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: Verifying payload integrity...\033[0m\n", 10);
-        gameSystems.pauseText(400);
-
-        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: CRC32 Checksum: OK\033[0m\n", 5);
-        gameSystems.printWithDelay("\033[0;32m[SYSTEM]: Digital Signature: VALID\033[0m\n", 5);
-        gameSystems.pauseText(400);
-
-        gameSystems.printWithDelay("\n\033[0;32m[SYSTEM]: SOFTWARE SUCCESSFULLY INSTALLED\033[0m\n", 5);
-        gameSystems.pauseText(400);
-
-        // Final banner
-        gameSystems.printWithDelay(
-            "\n\033[1;32m================================================================================\n" +
-            "                            OTACON UPLINK INSTALLED\n" +
-            "\033[1;32m================================================================================\n", 2);
+        gameplayChoices.choosePostPreMetalGearRole();
     }
 
     public static void snakeUploadingPics() {
+        codecCalling();
         gameSystems.clearConsole();
         codecTopBorder();
 
         System.out.print("\033[0;32m SNAKE:  \033[0m");
-        gameSystems.printWithDelay("I'm at the comptuter terminal, ready to upload.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay("I'm at that computer terminal now, ready to \n         upload those Metal Gear pics.\n\n", 40);
+        gameSystems.pauseText(1000);
 
         System.out.print("\033[0;32mOTACON: \033[0m");
-        gameSystems.printWithDelay( " Perfect, I've just \n         for sending those photos, just in case.\n\n", 0);
-        // gameSystems.pauseText(1000);
+        gameSystems.printWithDelay( " Great, the station should be all setup for \n         you to easily upload those files.\n\n", 40);
+        gameSystems.pauseText(1000);
 
-        }
+        System.out.print("\033[0;32m SNAKE:  \033[0m");
+        gameSystems.printWithDelay("Ok, they're uploading now, how long will \n         this ta-\n\n", 40);
+
+        System.out.print("\033[0;32mOTACON: \033[0m");
+        gameSystems.printWithDelay( " Gottem now.", 40);
+        gameSystems.pauseText(500);
+        gameSystems.printWithDelay( " Excellent work Snake! \n\n         Now get the hell out of there before \n         anyone spots you!\n", 40);
+        gameSystems.pauseText(1000);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+        Cutscene.finalGameCutscene();
     }
+}
