@@ -678,6 +678,26 @@ public class CODEC {
         gameSystems.readInput();
         codecEnd();
     }
+    public static void genericCombatTip() {
+        codecCalling();
+        gameSystems.clearConsole();
+        codecTopBorder();
+
+        String[] tips = {
+            "...",
+            "Use CQC after the enemy misses, it leaves \n         them open.",
+            "Don't forget to heal when your health drops \n         below 50%."
+        };
+        String tip = tips[new Random().nextInt(tips.length)];
+
+        System.out.print("\033[0;32mOTACON:  \033[0m");
+        gameSystems.printWithDelay(tip + "\n\n", 50);
+        gameSystems.pauseText(1500);
+
+        codecBottomBorder();
+        gameSystems.readInput();
+        codecEnd();
+    }
     public static void postOlgaCall() {
         codecCalling();
         gameSystems.clearConsole();

@@ -73,7 +73,7 @@ public class Combat {
         }
         if (canShootLights && !lightsOut) {
         System.out.println("\033[0;33m   [5] Shoot out the overhead lights - reduces Olga accuracy\033[0m\n");        }
-        System.out.println("\033[0;37m   [C] Call CODEC\033[0m\n");
+        System.out.println("\033[0;37m   [C] CODEC OTACON\033[0m\n");
 
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
         int maxChoice = 4;
@@ -175,17 +175,22 @@ public class Combat {
     public static void playerCallCodec() {
         gameSystems.clearConsole();
         Random rand = new Random();
-        int choice = rand.nextInt(3); // 0,1 or 2
-        switch (choice) {
-            case 0:
-                CODEC.olgaFightOne();
-                break;
-            case 1:
-                CODEC.olgaFightTwo();
-                break;
-            case 2:
-                CODEC.olgaFightThree();
-                break;
+        if (bossBattle) {
+            int choice = rand.nextInt(3); // 0,1 or 2
+            switch (choice) {
+                case 0:
+                    CODEC.olgaFightOne();
+                    break;
+                case 1:
+                    CODEC.olgaFightTwo();
+                    break;
+                case 2:
+                    CODEC.olgaFightThree();
+                    break;
+            }
+        } else {
+            // normal enemies just get a random generic tip
+            CODEC.genericCombatTip();
         }
         // the codec routines handle their own input at the end,
         // avoid an extra read that forces a second ENTER press.
