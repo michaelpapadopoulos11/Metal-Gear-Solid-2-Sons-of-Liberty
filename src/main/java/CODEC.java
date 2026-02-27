@@ -884,7 +884,7 @@ public class CODEC {
         String correctPassword = "NAVAL_STRIKE_2005"; 
 
         while (!hacked) {
-            System.out.print("\033[0;32m  Enter Password > \033[0m"); // Green prompt
+            System.out.print("\033[0;32m  Enter Password > \033[0m");
             String playerInput = scanner.nextLine().trim();
 
             if (playerInput.equalsIgnoreCase(correctPassword)) {

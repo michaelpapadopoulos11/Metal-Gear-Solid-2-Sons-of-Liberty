@@ -444,6 +444,9 @@ public class gameplayChoices {
 
 
                 case "R":
+                gameSystems.clearConsole();
+                    asciiArt.lockerRoomRadar();
+                lockerRoomChoice();
                 break;
 
                 case "C":

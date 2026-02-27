@@ -245,4 +245,29 @@ public static void displaySolitonRadarSCREENTWO() {
 
         solitonRadarBottomHeader();
         }
+
+        public static void lockerRoomRadar() {
+    solitonRadarTopHeader();
+            gameSystems.printWithDelay("\n                                                       \033[1;90m[ SOLITON RADAR SYSTEM : \033[0m\033[0;32mACTIVE\033[0m\033[1;90m ]\033[0m", 10);
+            gameSystems.pauseText(1000);
+
+            gameSystems.printWithDelay("\033[1;90m\n\n\033[0m", 2);
+
+            gameSystems.printWithDelay("\033[1;90m                                          [ Crew-A LOCKER ROOM ]         \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                     _____________                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    | |   |___|___|           \033[0;36mO\033[1;90m = SNAKE\n\033[0m\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |_|           |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    | |           |     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |_|           |  \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |      \033[0;36mO\033[1;90m      |                                     \n\033[0m", 2);
+            gameSystems.printWithDelay("\033[1;90m                    |__/  ________|                                     \033[0m\n", 2);
+
+            gameSystems.printWithDelay(
+                "\n\033[0;90m                [!] Signals weak. Interior bulkheads reduce scan clarity.\n\033[0m",
+                4
+            );
+            gameSystems.pauseText(1000);
+
+        solitonRadarBottomHeader();
+        }
 }
