@@ -25,21 +25,26 @@ public class Cutscene {
     public static void topHeader() {
         System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
         System.out.println("" + "\033[1;30m" + "                                        Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
-        // System.out.println("" + "\033[1;30m" + "                     Metal Gear Solid 2: The Tanker Incident"                 + "\033[0m");
-        // System.out.println("" + "\033[1;30m" + " Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
     }
 
     public static void combatTopHeader() {
         System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
-        System.out.println("" + "\033[1;30m" + "[COMBAT VIEWER]                          Metal Gear Solid 2: The Tanker Incident" + "\033[0m");
+        String title = "  [COMBAT VIEWER] | TURN " + Combat.getCombatTurn();
+        String enemy = Combat.getEnemyType();
+        if (!enemy.isEmpty()) {
+            title += "  SNAKE VS " + enemy;
+            if (Combat.isBossBattle()) {
+                title += " (BOSS)";
+            }
+        }
+        System.out.println("\033[1;36m" + title + "\033[0m");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
     }
 
     public static void combatHeaderOlga() {
-        // special boss UI with red border and Olga name
         System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m\n");
-        System.out.println("" + "\033[1;35m" + "                !!! BOSS ENCOUNTER : OLGA GURLUKOVICH !!!" + "\033[0m\n");
+        System.out.println("" + "\033[1;35m" + "                    !!! BOSS ENCOUNTER : OLGA GURLUKOVICH !!!" + "\033[0m\n");
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
     }
 

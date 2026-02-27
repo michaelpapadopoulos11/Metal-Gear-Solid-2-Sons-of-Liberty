@@ -8,6 +8,19 @@ public class Combat {
     private static boolean chaffUsed = false;
     private static boolean bossStunned = false;
 
+    // getters for header
+    public static int getCombatTurn() {
+        return combatTurn;
+    }
+
+    public static String getEnemyType() {
+        return enemy != null ? enemy.getEnemyType() : "";
+    }
+
+    public static boolean isBossBattle() {
+        return bossBattle;
+    }
+
     // Entry point for starting a fight
     public static void startCombat(Player p, Enemy e) {
         player = p;
@@ -45,17 +58,17 @@ public class Combat {
 
         System.out.println("\033[0;37m   [1] Shoot with M9 Tranquilizer\033[0m");
         System.out.println("\033[0;37m   [2] CQC Attack\033[0m");
-        System.out.println("\033[0;37m   [3] \033[0;32mUSE RATION - Recover 20% HP\033[0m\n");
+        System.out.println("\033[0;37m   [3] \033[0;32mUSE RATION - Recover 30% HP\033[0m\n");
         if (bossBattle && !chaffUsed) {
             System.out.println("\033[0;37m   [4] Throw a CHAFF Grenade (stuns Olga for one turn)\033[0m\n");
-            System.out.println("\033[0;37m   [5] Attempt to Flee\033[0m\n");
+            // do not offer flee during boss fight
         } else {
             System.out.println("\033[0;37m   [4] Attempt to Flee\033[0m\n");
         }
 
         System.out.println("\033[1;30m" + "================================================================================" + "\033[0m");
         if (bossBattle && !chaffUsed) {
-            System.out.print("\033[0;90mChoose your action [1 - 5]: \033[0m");
+            System.out.print("\033[0;90mChoose your action [1 - 4]: \033[0m"); // no flee option
         } else {
             System.out.print("\033[0;90mChoose your action [1 - 4]: \033[0m");
         }
@@ -83,11 +96,8 @@ public class Combat {
                     }
                     break;
                 case 5:
-                    if (bossBattle && !chaffUsed) {
-                        playerFlee();
-                        return;
-                    }
-                    // fall through to invalid below
+                    // normally unreachable when bossBattle; treat as invalid
+                    break;
                 default:
                     System.out.println("\033[1;31mInvalid choice. Try again.\033[0m");
                     gameSystems.pauseText(800);
@@ -106,9 +116,9 @@ public class Combat {
                 gameSystems.clearConsole();
                 // unique boss header when stunned
                 Cutscene.combatHeaderOlga();
-                System.out.println("\n\033[0;37m  [Olga is blinded by the chaff and cannot move this turn!]\033[0m\n");
-                gameSystems.pauseText(500);
-                gameSystems.readInput();
+                    gameSystems.printWithDelay("\n\033[0;90m  [Olga is blinded by the chaff and cannot move this turn!]\033[0m\n", 20);                
+                    gameSystems.pauseText(500);
+                Cutscene.bottomHeader();
                 bossStunned = false;
             } else {
                 enemyTurn();
@@ -134,8 +144,17 @@ public class Combat {
 
     private static void playerShootAction() {
         gameSystems.clearConsole();
-        Cutscene.combatTopHeader();
 
+        if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
+        gameSystems.printWithDelay("  Snake's Health - ", 0);        
+        player.checkSnakeHealthBar();
+        gameSystems.printWithDelay("\033[0;90m================================================================================\033[0m\n", 0);
+        
+        gameSystems.pauseText(350);
+        System.out.print("\n                               ");
+        gameSystems.printWithDelay("\033[0;90m>>> SNAKE'S TURN <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
+        
         gameSystems.printWithDelay("\n\033[0;37m  [Snake carefully aims the M9 and fires...]\033[0m\n\n", 20);
         gameSystems.pauseText(1000);
 
@@ -160,7 +179,16 @@ public class Combat {
 
     private static void playerCQCAction() {
         gameSystems.clearConsole();
-        Cutscene.combatTopHeader();
+
+        if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
+        gameSystems.printWithDelay("  Snake's Health - ", 0);        
+        player.checkSnakeHealthBar();
+        gameSystems.printWithDelay("\033[0;90m================================================================================\033[0m\n", 0);
+
+        gameSystems.pauseText(350);
+        System.out.print("\n                               ");
+        gameSystems.printWithDelay("\033[0;90m>>> SNAKE'S TURN <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
 
         gameSystems.printWithDelay("\n\033[0;37m  [Snake closes in on the guard and engages a CQC attack!]\033[0m\n", 10);
         gameSystems.pauseText(1000);
@@ -184,7 +212,18 @@ public class Combat {
 
     private static void playerUseRation() {
         gameSystems.clearConsole();
-        Cutscene.combatTopHeader();
+        if (bossBattle) Cutscene.combatHeaderOlga(); 
+        else Cutscene.combatTopHeader();
+
+        gameSystems.printWithDelay("  Snake's Health - ", 0);        
+        player.checkSnakeHealthBar();
+        gameSystems.printWithDelay("\033[0;90m================================================================================\033[0m\n", 0);
+
+        gameSystems.pauseText(350);
+        System.out.print("\n                              ");
+        gameSystems.printWithDelay("\033[0;90m>>> UTILITY USED <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
+
         gameSystems.printWithDelay("\n\033[0;37m  [Snake takes a moment to eat a ration...]\033[0m\n\n\n", 10);
             gameSystems.pauseText(800);
             System.out.println("                              ( >_<) ");
@@ -197,16 +236,22 @@ public class Combat {
 
         
         int oldHealth = player.getHealth();
-        player.healDamage(20);
+        player.healDamage(30); // heal increased
         int healAmount = player.getHealth() - oldHealth;
-        gameSystems.printWithDelay("\n\033[0;37m  Snake recovered " + "\033[0;32m[" + healAmount +  "]\033[0m" + " health!\033[0m\n", 10);
+        gameSystems.printWithDelay("\033[0;37m  Snake has recovered " + "\033[0;32m[" + healAmount +  "]\033[0m" + " health!\033[0m\n", 10);
         gameSystems.pauseText(500);
         Cutscene.bottomHeader();
     }
 
     private static void playerUseChaff() {
         gameSystems.clearConsole();
-        Cutscene.combatTopHeader();
+        if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
+
+        gameSystems.pauseText(350);
+        System.out.print("\n                              ");
+        gameSystems.printWithDelay("\033[0;90m>>> UTILITY USED <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
+
         gameSystems.printWithDelay("\n\033[0;37m  [Snake tosses a CHAFF grenade at Olga...]\033[0m\n", 20);
         gameSystems.pauseText(1000);
         gameSystems.printWithDelay("\n\033[0;37m  Olga is temporarily blinded by swarming chaff!\033[0m\n", 20);
@@ -218,7 +263,20 @@ public class Combat {
 
     private static void playerFlee() {
         gameSystems.clearConsole();
-        Cutscene.combatTopHeader();
+        if (bossBattle) Cutscene.combatHeaderOlga(); else Cutscene.combatTopHeader();
+
+        gameSystems.pauseText(350);
+        System.out.print("\n                               ");
+        gameSystems.printWithDelay("\033[0;90m>>> SNAKE'S TURN <<<\033[0m\n", 20);
+        gameSystems.pauseText(350);
+
+        if (bossBattle) {
+            System.out.print("\n\033[1;31m  [You cannot flee from a boss fight!]\033[0m\n");
+            gameSystems.pauseText(1000);
+            Cutscene.bottomHeader();
+            combatTurn();
+            return;
+        }
 
         gameSystems.printWithDelay("\n\033[0;37m  [Snake attempts to disengage and flee...]\033[0m", 10);
         gameSystems.pauseText(1000);
@@ -250,19 +308,28 @@ public class Combat {
     private static void enemyTurn() {
         gameSystems.clearConsole();
         if (bossBattle) {
-            // boss uses special red header
             Cutscene.combatHeaderOlga();
         } else {
             Cutscene.combatTopHeader();
         }
 
-        // attack announcement UI
         if (bossBattle) {
+
+            System.out.print("  ");
+            enemy.displayHealthBar();
+            gameSystems.printWithDelay("\033[0;90m================================================================================\033[0m\n", 0);
+            System.out.print(" ");
+
             gameSystems.pauseText(350);
-            System.out.print("\n                          ");
-            gameSystems.printWithDelay("\033[1;33m>>> OLGA STRIKES <<<\033[0m\n", 20);
+            System.out.print("\n                                ");
+            gameSystems.printWithDelay("\033[1;33m>>> OLGA'S TURN <<<\033[0m\n", 20);
             gameSystems.pauseText(350);
         } else {
+            // show generic enemy health bar when it attacks
+            System.out.print("  ");
+            enemy.displayHealthBar();
+            gameSystems.printWithDelay("\033[0;90m================================================================================\033[0m\n", 0);
+
             gameSystems.pauseText(350);
             System.out.print("\n                               ");
             gameSystems.printWithDelay("\033[1;33m>>> ENEMY ATTACK <<<\033[0m\n", 20);
@@ -272,7 +339,6 @@ public class Combat {
 
         int damage = enemy.attackSnake();
         
-        // boss-specific taunt
         if (bossBattle) {
             gameSystems.printWithDelay("\n\033[1;35m  [Olga smirks and counters...]\033[0m\n", 20); // purple
             gameSystems.pauseText(700);
@@ -281,8 +347,7 @@ public class Combat {
         if (bossBattle) {
             gameSystems.printWithDelay("\n\033[0;90m  [Olga attacks!]\033[0m\n", 10); // grey
         } else {
-            gameSystems.printWithDelay("\n\033[1;31m  [The guard attacks!]\033[0m\n", 10);
-        }
+            gameSystems.printWithDelay("\n\033[0;90m  [The guard attacks!]\033[0m\n", 10);        }
         gameSystems.pauseText(600);
         
         player.takeDamage(damage);
@@ -293,16 +358,28 @@ public class Combat {
     }
 
     private static void playerVictory() {
-        // Reset bossBattle flags in case the same combat object reused
+        // capture boss info before resetting
+        boolean wasBoss = bossBattle;
+        String type = enemy.getEnemyType();
+
+        // Reset flags in case same combat reused
         bossBattle = false;
         chaffUsed = false;
         bossStunned = false;
         gameSystems.clearConsole();
-        System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
-        System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");
-        System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
 
-        gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + enemy.getEnemyType() + ", rendering him unconscious]\033[0m\n", 30);
+        if (wasBoss) {
+            // special Olga screen
+            System.out.println("\n" + "\033[1;35m" + "================================================================================" + "\033[0m");
+            System.out.println("\033[1;35m" + "                       *** OLGA BATTLE WINNER ***" + "\033[0m");
+            System.out.println("\033[1;35m" + "================================================================================" + "\033[0m\n");
+            gameSystems.printWithDelay("\033[1;35m  [Snake overcomes Olga Gurlukovich! Mission continues...]\033[0m\n", 30);
+        } else {
+            System.out.println("\n" + "\033[1;30m" + "================================================================================" + "\033[0m");
+            System.out.println("\033[1;32m" + "                            *** COMBAT VICTORY ***" + "\033[0m");
+            System.out.println("\033[1;30m" + "================================================================================" + "\033[0m\n");
+            gameSystems.printWithDelay("\033[1;36m  [Snake defeats the " + type + ", rendering him unconscious]\033[0m\n", 30);
+        }
         gameSystems.pauseText(1000);
 
         Cutscene.bottomHeader();

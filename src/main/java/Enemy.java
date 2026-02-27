@@ -35,7 +35,7 @@ public class Enemy {
         else if (isBoss) { // olga boss
             this.maxHealth = 120;
             this.enemyHealth = 120;
-            this.attackPower = 12; // toned-down damage for boss
+            this.attackPower = 10; // further reduced base damage
         }    
     }
 
@@ -66,13 +66,15 @@ public class Enemy {
             int roll = random.nextInt(100);
             if (bossPhase == 1) {
                 if (roll < 20) { // knife throw
-                    System.out.println("\033[1;33m  [Olga hurls a knife at you!]\033[0m");
-                    return attackPower + 8; // less extra damage
+                    gameSystems.printWithDelay("\033[1;33m  [Olga hurls a knife at you!]\033[0m", 20);
+                    gameSystems.pauseText(500);
+                    return attackPower + 6; // even smaller bonus
                 }
             } else if (bossPhase == 2) {
                 if (roll < 30) { // enraged flurry
-                    System.out.println("\n\033[1;33m  [Olga unleashes a furious flurry of strikes!]\033[0m");
-                    return attackPower + 10;
+                    gameSystems.printWithDelay("\n\033[1;33m  [Olga unleashes a furious flurry of strikes!]\033[0m", 20);
+                    gameSystems.pauseText(500);
+                    return attackPower + 8;
                 }
             }
             int baseDamage = attackPower;
@@ -118,7 +120,7 @@ public class Enemy {
     String color = isBoss ? "\033[1;35m" : "\033[1;31m";
     String line = color + enemyType + " Health - " + healthBar + " " + healthPercent + "%" + "\033[0m";
         if (isBoss) {
-            line += "                        \033[1;33m[Phase " + bossPhase + "]\033[0m";
+            line += "                         \033[1;33m[Phase " + bossPhase + "]\033[0m";
         }
     System.out.println(line);
     }
@@ -130,7 +132,7 @@ public class Enemy {
         if (percent <= 60 && bossPhase == 1) {
             bossPhase = 2;
             attackPower += 5;
-            System.out.println("\n\033[1;31m  [Olga suddenly becomes enraged! Her attacks intensify.]\033[0m");
+            System.out.println("\n\033[1;31m  [Olga suddenly becomes enraged! Her attacks intensify.]\033[0m\n");
             gameSystems.pauseText(1500);
         }
     }
