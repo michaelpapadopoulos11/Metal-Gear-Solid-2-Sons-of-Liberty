@@ -124,17 +124,6 @@ public class gameplayChoices {
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
     public static void secondPlayerChoice() {
         gameSystems.clearConsole();
 
@@ -294,25 +283,6 @@ public class gameplayChoices {
         break;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void lockerRoomChoice() {
         gameSystems.clearConsole();
@@ -477,14 +447,6 @@ public class gameplayChoices {
             }
         }
 
-
-
-
-
-
-
-
-
     public static void choosePostPreMetalGearRole() {
         gameSystems.clearConsole();
         // Cutscene.topHeader();
@@ -509,8 +471,6 @@ public class gameplayChoices {
                 break;
         }
     }
-
-
 
     private static void snakeEnding() {
         gameSystems.clearConsole();
@@ -644,5 +604,3 @@ public class gameplayChoices {
             }
 
 }
-
-
