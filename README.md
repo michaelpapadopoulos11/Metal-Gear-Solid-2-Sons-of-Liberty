@@ -49,10 +49,9 @@ This is a Java text-adventure game intended to be run specifically in the **VS C
 
 ## 📡 Key Features
 
-* **Digital Camera Viewer:** A specialized horizontal interface used for recon. It uses a wide-aspect ASCII field to render detailed environments while maintaining a tactical HUD with battery and time overlays.
-* **Tactical Combat Engine:** Turn-based boss encounters that move beyond simple text. Players manage health percentages, phase transitions, and tactical options like the M9 Tranquilizer, CQC, and environment-based actions like shooting out overhead lights to reduce enemy accuracy.
-* **CODEC Calls:** A radio interface (Freq: 140.85) featuring extensive dialogue. Players can call Otacon for combat tips, randomized proverbs, and Easter eggs.
-* **Navigable Environment:** A structured layout of the U.S.S. Discovery where players move between decks. Includes a dynamic Soliton Radar that updates based on Snake's position.
+* **Navigable Environment:** A structured layout of the U.S.S. Discovery where players move between decks. Includes a dynamic Soliton Radar that updates based on Snake's position and intel he acquires.
+* **Tactical Combat:** Turn-based combat encounters that move beyond simple text. Players manage health percentages, phase transitions, and have access to tactical options like the M9 Tranquilizer, CQC, and environment-based actions, such as shooting out overhead lights to reduce enemy accuracy.
+* **CODEC Calls:** A radio interface (Freq: 140.85) featuring extensive dialogue. Players can call Otacon for combat tips, randomized proverbs, and other Metal Gear Easter eggs.
 * **Inventory & Status:** Real-time rendering of health bars for both Snake and enemies, alongside a Ration system for healing and Chaff Grenades for status effects.
 
 <div align="center">
