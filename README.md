@@ -72,13 +72,16 @@ This is a Java text-adventure game intended to be run specifically in the **VS C
 
 ---
 
-## 🧠 Unique Challenges & Design Decisions
+## ⚙️ Unique Challenges & Design Decisions
 
-### The Terminal UI Struggle
-* **The Aspect Ratio Dilemma:** A major hurdle was switching between vertical and horizontal views. The **CODEC** required a narrow frame, but the **Digital Camera Viewer** required a wide horizontal field to prevent ASCII art from wrapping. I implemented custom padding logic to ensure the layout stayed stable during "lens" switches.
-* **Terminal Aesthetic:** I chose the terminal format because the raw text output naturally emulates the "military-tech" feel of the *Metal Gear* series equipment.
-* **Simulating a Game Engine:** Because terminals are built for scrolling, I implemented custom functions for variable-speed text and tactical pausing. Adding animations (like a camera shutter or loading bars) helped the terminal feel more like a deliberate game engine.
-* **Visual Persistence (HUD):** To prevent a "scrolling wall of text," I used ANSI "Clear Screen" routines and header re-rendering. This keeps a **static HUD (Heads-Up Display)** at the top of the screen so health and radar stay in view at all times.
+### Terminal UI Constraints  
+Designing a game inside a terminal meant constantly working around the limits of text‑only rendering. Different parts of the game needed completely different aspect ratios: the CODEC looked best in a narrow, vertical layout, while the Digital Camera Viewer required a wide horizontal field so ASCII images wouldn’t wrap or distort. Balancing these competing formats and keeping the UI consistent across them became one of the project’s biggest design hurdles.
+
+### Creating a “Game Engine” Inside a Terminal  
+Since terminals aren’t built for games, many features had to be faked or simulated. Loading screens, camera shutter animations, hacking sequences, and other small effects were manually crafted to make the experience feel intentional and game‑like rather than just scrolling text. Building these elements — along with the tech‑styled UI inspired by Metal Gear — helped the terminal feel more like a retro tactical interface than a command line.
+
+### Making Text Feel Dynamic  
+Even simple interactions required custom solutions. Smooth text scrolling, variable‑speed dialogue, dramatic pauses, and screen‑clearing transitions all had to be implemented by hand. These small systems worked together to give the game a sense of pacing and atmosphere, making the terminal output feel alive rather than static.
 
 ---
 
