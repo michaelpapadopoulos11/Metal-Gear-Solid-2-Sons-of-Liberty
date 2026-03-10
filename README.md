@@ -7,15 +7,15 @@ This is a Java text-adventure game intended to be run specifically in the **VS C
 <table border="0">
   <tr>
     <td align="center" valign="top" width="33%">
-      <img src="https://github.com/user-attachments/assets/dab0ccf6-ebdd-4f61-8577-74cc716c87fb" width="280" alt="Snake Intro Screen"/><br/>
+    <img width="1466" height="684" alt="gameplay upd" src="https://github.com/user-attachments/assets/6154fc57-8817-43ca-b307-4726a795e4c1" />
       <em>Gameplay</em>
     </td>
     <td align="center" valign="top" width="33%">
-      <img src="https://github.com/user-attachments/assets/fd854a85-d036-4e78-ae03-a916cd7985db" width="280" alt="Deck Map Screen"/><br/>
+      <img width="1466" height="684" alt="map upd" src="https://github.com/user-attachments/assets/4bd9e6ca-b090-41cf-be8d-9472add39cfc" />      
       <em>Map Discovery</em>
     </td>
     <td align="center" valign="top" width="33%">
-      <img src="https://github.com/user-attachments/assets/093c8d34-b541-4b39-8036-53fe13e78aea" width="280" alt="Gameplay Loop Screen"/><br/>
+    <img width="1466" height="684" alt="terminal upd" src="https://github.com/user-attachments/assets/552bac41-a20c-4b3e-9748-1c9e54c04ec6" />
       <em>Puzzles</em>
     </td>
   </tr>
