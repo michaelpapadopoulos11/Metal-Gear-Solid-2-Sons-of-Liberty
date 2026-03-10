@@ -1,6 +1,6 @@
-# 📦 MGS2: The Tanker Incident - A Terminal Text-Adventure!
+# The Tanker Incident - A Terminal Text-Adventure!
 
-## 📝 Project Summary
+## 📡 Project Summary
 This is a Java text-adventure game intended to be run specifically in the **VS Code Terminal**. This game is a retelling of the Metal Gear Solid 2 Tanker Incident and features text-based cutscenes, multi-path exploration of the U.S.S. Discovery, and a turn-based combat system including the Olga Gurlukovich boss fight from the original game.
 
 <div align="center">
@@ -24,9 +24,7 @@ This is a Java text-adventure game intended to be run specifically in the **VS C
 
 ---
 
-## 🎮 How to Play
-
-### 🚀 Quick Start
+## 💾 How to Play
 1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/michaelpapadopoulos11/MGS2-Tanker-Incident-Text-Adventure.git](https://github.com/michaelpapadopoulos11/MGS2-Tanker-Incident-Text-Adventure.git)
@@ -47,27 +45,12 @@ This is a Java text-adventure game intended to be run specifically in the **VS C
 
 ---
 
-## 📡 Key Features
+## 📦 Key Features
 
 * **Navigable Environment:** A structured layout of the U.S.S. Discovery where players move between decks. Includes a dynamic Soliton Radar that updates based on Snake's position and intel he acquires.
 * **Tactical Combat:** Turn-based combat encounters that move beyond simple text. Players manage health percentages, phase transitions, and have access to tactical options like the M9 Tranquilizer, CQC, and environment-based actions, such as shooting out overhead lights to reduce enemy accuracy.
 * **CODEC Calls:** A radio interface (Freq: 140.85) featuring extensive dialogue. Players can call Otacon for combat tips, randomized proverbs, and other Metal Gear Easter eggs.
 * **Inventory & Status:** Real-time rendering of health bars for both Snake and enemies, alongside a Ration system for healing and Chaff Grenades for status effects.
-
-<div align="center">
-<table border="0">
-  <tr>
-    <td align="center" valign="top" width="50%">
-      <img src="https://github.com/user-attachments/assets/5d166d50-6f1a-44ca-a6d8-cd139da7dfcc" width="280" alt="camera viewer"/><br/>
-      <em>Digital Camera Interface</em>
-    </td>
-    <td align="center" valign="top" width="50%">
-      <img src="https://github.com/user-attachments/assets/b425e54e-ef7c-4e78-a17f-1fd88b608de0" width="380" alt="boss fights"/><br/>
-      <em>Turn-Based Boss Logic</em>
-    </td>
-  </tr>
-</table>
-</div>
 
 ---
 
